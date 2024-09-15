@@ -25,6 +25,7 @@ function printWinner(equipos) {
     const maxPro = Math.max(...promedios);  //... spread operator, propaga todas las iteraciones del array
     const winner = equipos.filter(equipo => averagePoints(equipo.puntos) === maxPro); // filter devuelve un array find el object
 
+
     if (winner.length > 1) {
         console.log(`Ha habido un empate:`)
         winner.forEach(team => {
