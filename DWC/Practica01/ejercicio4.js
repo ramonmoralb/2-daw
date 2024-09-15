@@ -7,3 +7,4 @@ function invoices(name = 'Producto genérico', value = 100, tax = 21) {
 invoices()
 invoices('Pelotas', 7, 8)
 invoices('Pelotas', 'error', 8)
+
