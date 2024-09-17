@@ -1,6 +1,6 @@
 function dibujarCruz(lado) {
     'use strict';
-
+    if (lado % 3 !== 0) return console.error('No es divisible entre tres')
     var tercio = lado / 3;
     var a = new Array(lado);
     var count = 0;
@@ -24,3 +24,5 @@ function dibujarCruz(lado) {
 }
 
 dibujarCruz(9);
+dibujarCruz(8);
+dibujarCruz(21);
