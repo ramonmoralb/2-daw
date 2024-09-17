@@ -1,5 +1,5 @@
 function imcCalculator(masa, altura) {
-    return (masa / (altura ** 2)).toFixed(2)
+    return (masa / (altura ** 2))
 }
 
 const imcComparator = (subject1, subject2) => {
