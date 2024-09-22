@@ -3,18 +3,18 @@ function dibujarMarco(tamanoExterior, tamanoInterior) {
     if (tamanoExterior % 3 !== 0) return console.error('Se debe introducir un tamaño exterior divisible entre 3')
     if (tamanoExterior <= 0 || tamanoInterior <= 0) return console.error('Se deben introducir números positivos')
     var marco = [];
-    var margen = (tamanoExterior - tamanoInterior) / 2;
-    // Crea las líneas del marco.
+    var margen = (tamanoExterior - tamanoInterior) / 2
+    // Crea las líneas del marco
     for (let i = 0; i < tamanoExterior; i++) {
-        var linea = '';
+        var linea = ''
 
         for (let j = 0; j < tamanoExterior; j++) {
-            // Si la posición está en el margen agrega un '#'.
+            // Si la posición está en el margen agrega un '#'
             if (i < margen || i >= tamanoExterior - margen || j < margen || j >= tamanoExterior - margen) {
-                linea += '#';
-                // Si está fuera del margen agrega un '*'.
+                linea += '#'
+                // Si está fuera del margen agrega un '*'
             } else {
-                linea += '*';
+                linea += '*'
             }
         }
         marco.push(linea);
