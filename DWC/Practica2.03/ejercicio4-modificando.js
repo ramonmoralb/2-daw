@@ -32,14 +32,6 @@ function printCusro(curso) {
     console.log('----------------------------')
     console.log('Amumnado:')
     alumnado.map(a => a.imprimirInforme())
-    /*
-    alumnado.forEach(a => {
-        a.imprimirInforme()
-        console.log('----------------------------')
-          })
-*/
-
-
 }
 printCusro(cursoSin)
 
