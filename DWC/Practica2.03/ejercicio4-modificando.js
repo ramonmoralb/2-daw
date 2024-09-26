@@ -1,3 +1,4 @@
+'use strict'
 // importo los objetos
 const { discente, discente2 } = require("./ejercicio3-discente")
 
