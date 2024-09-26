@@ -4,9 +4,9 @@ function mostrando(e) {
     const resultado = []
 
     for (let p in e) {
-        const tipo = typeof e[p];
-        const nombre = p;
-        const valor = e[p];
+        const tipo = typeof e[p]
+        const nombre = p
+        const valor = e[p]
 
         resultado.push({
             nombre: nombre,
@@ -24,7 +24,7 @@ const objeto = {
     antiguedad: 1999,
     caracteristicas: ['Bueno', 'bonito', 'barato'],
     obj: { nombre: 'Objeto', antiguedad: 46 },
-    fn: () => { console.log('Función de prueba'); }
+    fn: () => { console.log('Función de prueba') }
 };
 
 mostrando(objeto)
