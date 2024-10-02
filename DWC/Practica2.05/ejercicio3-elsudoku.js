@@ -1,13 +1,3 @@
-/**Ejercicio 3 - Descomponiendo el problema III: el sudoku
-Con todas las funciones elaboradas en los dos ejercicios anteriores, haz un programa que sea
-capaz de comprobar que la solución a un sudoku es correcta. Puedes generar funciones nuevas
-si así lo estimas oportuno. Esta función recibirá por parámetro el array con los valores del sudoku
-(uno de nueve por nueve) y devolverá true o false en función de si es correcto o no.
-Ten presente que un sudoku es un array bidimensional de nueve filas por nueve columnas que
-a su vez se puede dividir en nueve arrays bidimensionales de tres por tres.
-A continuación, dispones de un sudoku válido e invalido para hacer las pruebas. La explicación
-de las reglas del Sudoku se puede consultar aquí. Deberás comprobar que cumple la regla de
-las filas, de las columnas y opcionalmente los bloques de 3 */
 'use strict'
 const { repetido } = require('./ejercicio1-elinicio.js')
 var sudokuCorrecto = [];
@@ -41,15 +31,9 @@ function comprobarLineasHorizontales(sudoku) {
     return comprobacion
 }
 
-const lhorCorrecto = comprobarLineasHorizontales(sudokuCorrecto)
-const lhorIncorrecto = comprobarLineasHorizontales(sudokuIncorrecto)
-
-console.log('lineas horizontales  correctas: ', lhorCorrecto)
-console.log('lineas horizontales  incorrectas: ', lhorIncorrecto)
-console.log('---------------------')
-
 //comprueba las lineas verticales
 function comprobarLineasVerticales(sudoku) {
+    //itera sobre las lineas verticales, si encuentra algún false, devulve false
     for (let col = 0; col < sudoku.length; col++) {
         for (let linea = 0; linea < sudoku.length; linea++) {
             let pos = sudoku[col][linea]
@@ -60,14 +44,8 @@ function comprobarLineasVerticales(sudoku) {
     }
     return true
 }
-const lineasVerticalesCorr = comprobarLineasVerticales(sudokuCorrecto)
-console.log(' lineas verticales correctas:', lineasVerticalesCorr)
-const lineasVerticalesIncorr = comprobarLineasVerticales(sudokuIncorrecto)
-console.log(' lineas verticales Incorrectas:', lineasVerticalesIncorr)
-console.log('---------------------')
 
-
-// convierte el cada cuadro en un array, devuelve array de cuadros y lo puedo comprobar con conprobar lineas horizontales
+// convierte ecada cuadro en un array, devuelve array de cuadros y lo puedo comprobar con ()conprobar lineas horizontales
 function crearCuadrados(sudoku) {
     let cuadrados = []
     // saltos de 3 en tres tanto en filas como columnas
@@ -86,20 +64,16 @@ function crearCuadrados(sudoku) {
     }
     return cuadrados
 }
-const arrayCuadradosCorrectos = crearCuadrados(sudokuCorrecto)
-const comprobacionCuadradosCorr = comprobarLineasHorizontales(arrayCuadradosCorrectos)
-console.log('cuadrados correcos: ', comprobacionCuadradosCorr)
-const arrayCuadradosIncorrectos = crearCuadrados(sudokuIncorrecto)
-const comprobacionCuadradosIncorr = comprobarLineasHorizontales(arrayCuadradosIncorrectos)
-console.log('cuadrados incorrecos: ', comprobacionCuadradosIncorr)
-
 
 function comprobarSudoku(sudoku) {
+    if (!Array.isArray(sudoku) || sudoku.length !== 9) return console.error('El sudoku introducido no es correcto.')
+
     // devuelve true si es correcto y false si no lo es
     return comprobarLineasHorizontales(sudoku) && comprobarLineasVerticales(sudoku) && comprobarLineasHorizontales(crearCuadrados(sudoku))
 }
-const comprobacionFinalCorrecta = comprobarSudoku(sudokuCorrecto)
+//comprobaciones
+const comprobacionFinalCorrecta = comprobarSudoku(sudokuCorrecto) // recibe sudoku correcto
 console.log('Comprobación final correcta: ', comprobacionFinalCorrecta)
-
-const comprobacionFinalIncorrecta = comprobarSudoku(sudokuIncorrecto)
+console.log('----------------------------')
+const comprobacionFinalIncorrecta = comprobarSudoku(sudokuIncorrecto)// recibe sudoku incorrecto
 console.log('Comprobación final incorrecta: ', comprobacionFinalIncorrecta)
