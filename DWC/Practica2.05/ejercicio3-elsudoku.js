@@ -92,3 +92,14 @@ console.log('cuadrados correcos: ', comprobacionCuadradosCorr)
 const arrayCuadradosIncorrectos = crearCuadrados(sudokuIncorrecto)
 const comprobacionCuadradosIncorr = comprobarLineasHorizontales(arrayCuadradosIncorrectos)
 console.log('cuadrados incorrecos: ', comprobacionCuadradosIncorr)
+
+
+function comprobarSudoku(sudoku) {
+    // devuelve true si es correcto y false si no lo es
+    return comprobarLineasHorizontales(sudoku) && comprobarLineasVerticales(sudoku) && comprobarLineasHorizontales(crearCuadrados(sudoku))
+}
+const comprobacionFinalCorrecta = comprobarSudoku(sudokuCorrecto)
+console.log('Comprobación final correcta: ', comprobacionFinalCorrecta)
+
+const comprobacionFinalIncorrecta = comprobarSudoku(sudokuIncorrecto)
+console.log('Comprobación final incorrecta: ', comprobacionFinalIncorrecta)
