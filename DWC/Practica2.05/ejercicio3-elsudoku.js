@@ -40,6 +40,7 @@ function comprobarLineasHorizontales(sudoku) {
     const comprobacion = !lineasHorizontales.includes(false)
     return comprobacion
 }
+
 const lhorCorrecto = comprobarLineasHorizontales(sudokuCorrecto)
 const lhorIncorrecto = comprobarLineasHorizontales(sudokuIncorrecto)
 
@@ -47,7 +48,7 @@ console.log('lineas horizontales  correctas: ', lhorCorrecto)
 console.log('lineas horizontales  incorrectas: ', lhorIncorrecto)
 console.log('---------------------')
 
-//comprueba verticales
+//comprueba las lineas verticales
 function comprobarLineasVerticales(sudoku) {
     for (let col = 0; col < sudoku.length; col++) {
         for (let linea = 0; linea < sudoku.length; linea++) {
@@ -65,10 +66,10 @@ const lineasVerticalesIncorr = comprobarLineasVerticales(sudokuIncorrecto)
 console.log(' lineas verticales Incorrectas:', lineasVerticalesIncorr)
 console.log('---------------------')
 
+
 // convierte el cada cuadro en un array, devuelve array de cuadros y lo puedo comprobar con conprobar lineas horizontales
 function crearCuadrados(sudoku) {
     let cuadrados = []
-
     // saltos de 3 en tres tanto en filas como columnas
     for (let fila = 0; fila < 9; fila += 3) {
         for (let col = 0; col < 9; col += 3) {
@@ -79,12 +80,11 @@ function crearCuadrados(sudoku) {
                     cuadrado.push(sudoku[fila + i][col + j])
                 }
             }
-            //añade cuadro para crequearlo posteriormente
+            //añade cuadro para chequearlo posteriormente
             cuadrados.push(cuadrado)
         }
     }
-
-    return cuadrados;
+    return cuadrados
 }
 const arrayCuadradosCorrectos = crearCuadrados(sudokuCorrecto)
 const comprobacionCuadradosCorr = comprobarLineasHorizontales(arrayCuadradosCorrectos)
