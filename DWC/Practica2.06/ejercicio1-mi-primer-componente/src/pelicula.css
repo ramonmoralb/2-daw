@@ -1,0 +1,69 @@
+.contenedor {
+    padding: 20px;
+    background-color: #a2a2a2;
+    border-radius: 10px;
+    width: 1200px;
+    min-width: 1200px;
+
+    margin: 20px auto;
+    display: grid;
+    column-gap: 12px;
+
+    grid-template-areas:
+        "titulo titulo titulo"
+        "cartela resumen resumen"
+        "elenco elenco elenco"
+    ;
+
+}
+
+.titulo {
+    grid-area: titulo;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.titulo h1 {
+    font-size: 1.1rem;
+    color: #272424;
+}
+
+.titulo h2 {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.cartela {
+    grid-area: cartela;
+    width: 250px;
+}
+
+.cartela img {
+    padding: 4px;
+    width: 100%;
+}
+
+.resumen {
+    grid-area: resumen;
+}
+
+.elenco {
+    grid-area: elenco;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.elenco img {
+    width: 100px;
+    padding: 14px;
+}
+
+.elenco-actor {
+    display: flex;
+}
+
+.elenco h3 {
+    padding: 14px;
+}

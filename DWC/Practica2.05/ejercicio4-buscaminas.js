@@ -26,8 +26,7 @@ var tablero =
 function minasAdyacentes(tablero) {
     var columna = tablero[0].length
     var filas = tablero.length
-    let tableroMinas = [] // albergará el tablero con el resultadi
-    console.log(columna, filas)
+    let tableroMinas = [] // albergará el tablero con el resultado
     for (let i = 0; i < filas; i++) {
         tableroMinas[i] = []
         for (let j = 0; j < columna; j++) {
@@ -53,7 +52,6 @@ function colocarMinas(tablero, fila, columna) {
         for (let j = columna - 1; j <= columna + 1; j++) {
             if (i >= 0 && i < filas && j >= 0 && j < columnas && (i !== fila || j !== columna)) {
                 //si la posicion del tablero contiene mina suma 1 a los adyacentes
-                //la función que contiene este método maneja que
                 if (tablero[i][j] === -1) {
                     minas++
                 }
