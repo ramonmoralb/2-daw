@@ -1,8 +1,7 @@
-import './pelicula.css'
+'use strict'
+import '../css/pelicula.css'
 
 export function Elenco({ actores, children, titulo }) {
-
-
     return (
         <div className='elenco'>
             <h2>Elenco de la pelicula {titulo}</h2>

@@ -1,5 +1,5 @@
 'use strict'
-const { repetido } = require('./ejercicio1-elinicio.js')
+const { buscadorItemRepetido } = require('./ejercicio1-elinicio.js')
 var sudokuCorrecto = [];
 sudokuCorrecto[0] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 sudokuCorrecto[1] = [7, 8, 9, 1, 2, 3, 4, 5, 6]
@@ -25,8 +25,10 @@ sudokuIncorrecto[8] = [5, 6, 4, 8, 9, 7, 2, 3, 1]
 // comprueba las lineas horizontales
 function comprobarLineasHorizontales(sudoku) {
     // mapea las 9 lineas retorna true si es correcto y falso si no lo es 
-    const lineasHorizontales = sudoku.map(repetido)
-    // si incluye algun falso en el mapa anterior devuelve false
+    //el map usa el metodo del ejercicio1 buscadorItemRepetido() itera sobre cada item y devuelve true si no encuentra repetidos , false si encuentra repetidos
+    const lineasHorizontales = sudoku.map(buscadorItemRepetido)
+
+    // si incluye algun falso en el mapa anterior devuelve false(lo niego con  not si no devolvería true)
     const comprobacion = !lineasHorizontales.includes(false)
     return comprobacion
 }
@@ -45,7 +47,7 @@ function comprobarLineasVerticales(sudoku) {
     return true
 }
 
-// convierte ecada cuadro en un array, devuelve array de cuadros y lo puedo comprobar con ()conprobar lineas horizontales
+// convierte ecada cuadro en un array, devuelve array de cuadros y lo puedo comprobar con ()comprobar lineas horizontales
 function crearCuadrados(sudoku) {
     let cuadrados = []
     // saltos de 3 en tres tanto en filas como columnas
@@ -65,12 +67,14 @@ function crearCuadrados(sudoku) {
     return cuadrados
 }
 
+
+// recibe un sudoku y le aplica todos los metodos para verificarlo
 function comprobarSudoku(sudoku) {
     if (!Array.isArray(sudoku) || sudoku.length !== 9) return console.error('El sudoku introducido no es correcto.')
-
     // devuelve true si es correcto y false si no lo es
     return comprobarLineasHorizontales(sudoku) && comprobarLineasVerticales(sudoku) && comprobarLineasHorizontales(crearCuadrados(sudoku))
 }
+
 //comprobaciones
 const comprobacionFinalCorrecta = comprobarSudoku(sudokuCorrecto) // recibe sudoku correcto
 console.log('Comprobación final correcta: ', comprobacionFinalCorrecta)
