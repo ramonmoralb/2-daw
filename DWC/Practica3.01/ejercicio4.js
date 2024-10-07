@@ -2,14 +2,11 @@
 /**Importante muchos metodos devuelven colecciones, se necesita acceder a un elemento en concreto */
 
 function insertAfter(nuevoElemento, elementoExixtente) {
-    // busca el padre del elemento exixtente en el dom
+    // busca el padre del elemento existente en el dom
     var parent = elementoExixtente.parentNode
-    // comprueba si tiene hermanos a continuación
-    if (elementoExixtente.nextSibling) {
-        parent.insertBefore(nuevoElemento, elementoExixtente.nextSibling)
-    } else {
-        parent.appendChild(nuevoElemento)
-    }
+    // con nextSibling añade a continuación
+    parent.insertBefore(nuevoElemento, elementoExixtente.nextSibling)
+
 }
 
 
