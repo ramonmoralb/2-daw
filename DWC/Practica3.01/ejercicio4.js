@@ -4,7 +4,7 @@
 function insertAfter(nuevoElemento, elementoExixtente) {
     // busca el padre del elemento existente en el dom
     var parent = elementoExixtente.parentNode
-    // con nextSibling añade a continuación
+    // con nextSibling(siguiente hermano) añade a continuación
     parent.insertBefore(nuevoElemento, elementoExixtente.nextSibling)
 
 }
@@ -18,5 +18,5 @@ var elementoDelDom = elementosDelDom[1]
 //creo un nuevo elemento
 var elementoNuevo = document.createElement('p')
 elementoNuevo.innerText = 'Este el elemento nuevo'
-//pruebo 
+//prueba
 insertAfter(elementoNuevo, elementoDelDom)
