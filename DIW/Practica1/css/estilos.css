@@ -110,7 +110,7 @@ footer {
     font-family: var(--font-cites);
 }
 
-.index-introduccion {
+.main-index__introduccion {
     display: flex;
     flex-direction: column;
     justify-content: center;
