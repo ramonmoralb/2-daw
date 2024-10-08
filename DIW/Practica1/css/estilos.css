@@ -1,0 +1,316 @@
+:root {
+    --font-principal: Arial, Helvetica, sans-serif;
+    --font-header: Georgia, "Times New Roman", Times, serif;
+    --font-cites: Georgia, "Times New Roman", Times, serif;
+    --text-color-principal: rgb(0, 0, 25);
+    --color-fondo-footer: rgb(0, 0, 25);
+    --color-a-index: rgb(240, 93, 80);
+    --color-a-hoover: rgba(240, 93, 80, 0.5);
+    --color-footer: rgb(255, 255, 255);
+    --color-enlace-menu-principal: rgb(0, 0, 25);
+    --color-hoover-menu-principal: rgba(0, 0, 25, 0.5);
+    --color-ano-lista-descriptiva: rgba(0, 0, 25, 0.5);
+}
+
+/*eliminar propiedades por defecto*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a {
+    color: var(--color-a-index);
+}
+
+a:hover {
+    color: var(--color-a-hoover);
+}
+
+/*Barra de navegación*/
+header {
+    min-width: 1240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-header);
+    margin-bottom: 35px;
+}
+
+header h1 {
+    color: rgb(240, 93, 80);
+    margin: 25px 25px;
+}
+
+header h1 a {
+    color: var(--color-a-index);
+}
+
+header h1 a:hover {
+    color: var(--color-a-hoover);
+}
+
+header li {
+    list-style: none;
+}
+
+header ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+header a {
+    color: var(--color-enlace-menu-principal);
+}
+
+header a:hover {
+    color: var(--color-hoover-menu-principal);
+}
+
+#nav-item-bold {
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+
+footer {
+    font-size: 18px;
+    height: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-fondo-footer);
+    color: var(--color-footer);
+}
+
+/*index*/
+.main-index {
+    width: 95%;
+    max-width: 1140px;
+    margin: 0 auto;
+    font-family: var(--font-principal);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 75px;
+}
+
+.main-index cite {
+    font-family: var(--font-cites);
+}
+
+.index-introduccion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.index-introduccion #premio-descripcion {
+    background-color: rgb(255, 255, 255);
+    width: 600px;
+    text-align: center;
+
+}
+
+.index-introduccion h2 {
+    font-size: 40px;
+}
+
+#descripcion-premio {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.8;
+    width: 700px;
+}
+
+figure {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 12px;
+}
+
+img {
+    width: 100%;
+}
+
+#opinion {
+    align-self: flex-start;
+    text-align: left;
+    width: 650px;
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 1.8;
+}
+
+#multimedia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    gap: 15px;
+}
+
+.index-articulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px
+}
+
+
+
+#discurso p {
+    font-size: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 4px;
+}
+
+#discurso p em {
+    font-size: 20px;
+
+}
+
+#discurso p:last-of-type em {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/*motivacion premios*/
+.main-motivacion-premios,
+.main-nobel-literatura {
+    width: 95%;
+    min-width: 1240px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    font-family: var(--font-principal);
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.cabecera-motivación-premios,
+.cabecera-listado-nobel-literatura {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 45px;
+}
+
+.cabecera-motivación-premios h2,
+.cabecera-listado-nobel-literatura h2 {
+    font-size: 34px;
+}
+
+.cabecera-listado-nobel-literatura p {
+    font-size: 12px;
+}
+
+.lista-motivacion {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.lista-motivacion a,
+.premiado-lista-idioma a {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.lista-motivacion em {
+    font-family: var(--font-cites);
+}
+
+.lista-motivacion dd {
+    margin-left: 25px;
+    line-height: 1.8;
+}
+
+.lista-motivacion-ano,
+.lista-idioma-ano,
+.lista-idioma-nombre {
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--color-ano-lista-descriptiva);
+}
+
+.info-fuente {
+    grid-column: 2;
+    margin-top: 32px;
+    text-align: center;
+}
+
+.listas-idiomas {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-left: 200px;
+}
+
+.lista-idioma-premiados {
+    list-style-image: url("../img/idioma.png");
+}
+
+.premiados-idioma {
+    margin-top: 12px;
+    margin-left: 40px;
+    margin-bottom: 12px;
+}
+
+.premiado-lista-idioma {
+    margin-bottom: 6px;
+    list-style: square;
+}
+
+#info-listado {
+    font-size: 14px;
+    grid-column: 2;
+    text-align: center;
+    margin-top: 32px;
+}
+
+.listas-idiomas li {
+
+    font-size: 22px;
+    font-weight: 400;
+}
+
+#footer-listado {
+    font-size: 18px;
+    width: 100%;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#footer-listado p:last-child {
+    font-size: 12px;
+}

@@ -1,38 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
+<html lang="es">
 
-  <body>
-    <header>
-      <h1><a href="#">Letras</a></h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">Bob Dylan, premio Nobel de literatura. 2016</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body>
+  <header>
+    <h1><a href="#">Letras</a></h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Bob Dylan, premio Nobel de literatura. 2016</a>
+        </li>
+        <li>
+          <a id="nav-item-bold" href="listado-nobel-literatura.html">Premios Nobel de literatura (2013-2022).</a>
+        </li>
+        <li>
+          <a href="motivacion-premios.html">Motivación de los premios (2013-2022).</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-nobel-literatura">
+    <hgroup class="cabecera-listado-nobel-literatura">
+      <h2>Premios Nobel de literatura</h2>
+      <p>2013 - 2022</p>
+      <p>ORDENADOS POR EL IDIOMA DE SU PRODUCCIÓN LITERARIA</p>
+    </hgroup>
+
+    <ul class="listas-idiomas">
+
+      <li class="lista-idioma-premiados"><span class="lista-idioma-nombre">Inglés:</span>
+        <ul class="premiados-idioma">
+          <li class="premiado-lista-idioma"><span class="lista-idioma-ano">2013</span>: <a
+              href="motivacion-premios.html#alicemunro">Alice Munro</a>
           </li>
-          <li>
-            <a id="nav-item-bold" href="listado-nobel-literatura.html"
-              >Premios Nobel de literatura (2013-2022).</a
-            >
+          <li class="premiado-lista-idioma"><span class="lista-idioma-ano">2016</span>:
+            <a href="motivacion-premios.html#bobdylan">Bob Dylan</a>
           </li>
-          <li>
-            <a href="motivacion-premios.html"
-              >Motivación de los premios (2013-2022).</a
-            >
+          <li class="premiado-lista-idioma"><span class="lista-idioma-ano">2017</span>:
+            <a href="motivacion-premios.html#kazuo">Kazuo Ishiguro</a>
+          </li>
+          <li class="premiado-lista-idioma"><span class="lista-idioma-ano">2020</span>:
+            <a href="motivacion-premios.html#louise">Louise Glück</a>
+          </li>
+          <li class="premiado-lista-idioma"><span class="lista-idioma-ano">2021</span>:
+            <a href="motivacion-premios.html#abdulrazak">Abdulrazak Gurnah</a>
           </li>
         </ul>
-      </nav>
-    </header>
+      </li>
 
-    <footer>
-      <p>
-        Avtividad realizada por Ramón Moreno Albert Diseño de interfaces web
-      </p>
-    </footer>
-  </body>
+
+      <li class="lista-idioma-premiados"><span class="lista-idioma-nombre">Francés</span>:
+        <ul class="premiados-idioma">
+          <li class="premiado-lista-idioma"><span class="lista-idioma-ano">2014</span>:
+            <a href="motivacion-premios.html#patrickmodiano">Patrick Modiano</a>
+          </li>
+          <li class="premiado-lista-idioma"><span class="lista-idioma-ano">2022</span>:
+            <a href="motivacion-premios.html#annie">Annie Emaux</a>
+          </li>
+        </ul>
+      </li>
+      <li class="lista-idioma-premiados"><span class="lista-idioma-nombre">Ruso</span>:
+        <ul class="premiados-idioma">
+          <li class="premiado-lista-idioma"><span class="lista-idioma-ano">2015</span>:
+            <a href="motivacion-premios.html#svletana">Svetlana Aleksievich</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="lista-idioma-premiados"><span class="lista-idioma-nombre">Polaco</span>:
+        <ul class="premiados-idioma">
+          <li class="premiado-lista-idioma"><span class="lista-idioma-ano">2018</span>:
+            <a href="motivacion-premios.html#olga"> Olga Tokarczuk</a>
+          </li>
+        </ul>
+      </li>
+      <li class="lista-idioma-premiados"><span class="lista-idioma-nombre">Alemán</span>:
+        <ul class="premiados-idioma">
+          <li class="premiado-lista-idioma"><span class="lista-idioma-ano">2019</span>:
+            <a href="motivacion-premios.html#peter"> Peter Handke</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+
+    <div id="info-listado">
+      <p>Consultado en <a href="https://www.nobelprize.org/prizes/lists/all-nobel-prizes-inliterature/">All Nobel Prizes
+          in Literature</a></p>
+    </div>
+  </main>
+  <footer id="footer-listado">
+    <p>
+      Avtividad realizada por Ramón Moreno Albert Diseño de interfaces web
+    </p>
+    <p><a href="https://www.flaticon.es/iconos-gratis/opcion-de-chat"></a>&copy; Icono por th studio – Flaticon</p>
+  </footer>
+</body>
+
 </html>
