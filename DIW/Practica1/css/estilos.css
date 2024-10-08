@@ -314,3 +314,7 @@ img {
 #footer-listado p:last-child {
     font-size: 12px;
 }
+
+#footer-listado a {
+    color: var(--color-footer);
+}
