@@ -97,7 +97,7 @@ footer {
 /*index*/
 .main-index {
     width: 95%;
-    max-width: 1140px;
+    width: 1140px;
     margin: 0 auto;
     font-family: var(--font-principal);
     display: grid;
@@ -125,7 +125,7 @@ footer {
 
 }
 
-.index-introduccion h2 {
+.main-index__introduccion h2 {
     font-size: 40px;
 }
 
