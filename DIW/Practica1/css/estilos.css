@@ -85,7 +85,7 @@ header a:hover {
 footer {
     font-size: 18px;
     height: 75px;
-    width: 100%;
+    min-width: 1224px;
     display: flex;
     flex-direction: row;
     justify-content: center;
