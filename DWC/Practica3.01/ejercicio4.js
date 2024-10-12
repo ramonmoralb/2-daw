@@ -1,22 +1,16 @@
 'use strict'
-/**Importante muchos metodos devuelven colecciones, se necesita acceder a un elemento en concreto */
-
 function insertAfter(nuevoElemento, elementoExixtente) {
-    // busca el padre del elemento existente en el dom
-    var parent = elementoExixtente.parentNode
-    // con nextSibling(siguiente hermano) añade a continuación
-    parent.insertBefore(nuevoElemento, elementoExixtente.nextSibling)
-
+    // al elemento recibido del dom ha continuación con afterEnd se le añade un nuevo elemento
+    elementoExixtente.insertAdjacentElement("afterend", nuevoElemento)
 }
 
-
-// elemento del DOM devuelve una colccion
+// elemento del DOM devuelve una colecciónn
 var elementosDelDom = document.getElementsByTagName('h2')
 // selecciono uno en concreto
 var elementoDelDom = elementosDelDom[1]
 
 //creo un nuevo elemento
 var elementoNuevo = document.createElement('p')
-elementoNuevo.innerText = 'Este el elemento nuevo'
+elementoNuevo.innerText = 'Este el contenido elemento nuevo'
 //prueba
 insertAfter(elementoNuevo, elementoDelDom)
