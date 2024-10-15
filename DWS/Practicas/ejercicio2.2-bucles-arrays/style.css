@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.container{
+    width: 1260px;
+    margin: 0 auto;
+}
+.lista{
+    display: grid;
+    grid-template-columns: repeat(5 , 1fr);
+}
+ul{
+    margin-bottom: 50px;
+}
+li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    border: 1px solid  grey;
+    background-color: antiquewhite;
+}
+li:hover{
+    background-color: gainsboro;
+}
+.container-listas-frutas{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+}
+footer{
+    height: 100px;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
