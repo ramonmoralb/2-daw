@@ -1,18 +1,20 @@
 'use strict'
-var body = document.body;
-var tiposDeNodos = body.childNodes // devuelve nodelist
-var nodosDeTexto = []
-
-// recupera los nodos de texto, 
-console.log(tiposDeNodos)
-for (let i = 0; i < tiposDeNodos.length; i++) {
-    if (tiposDeNodos[i].nodeType === Node.TEXT_NODE) {
-        nodosDeTexto.push(tiposDeNodos[i])
-    }
+var nodosBody = document.body.childNodes
+function evaluacionContenido(nodo, censura) {
+    return nodo.textContent.match(censura)
 }
-console.log(nodosDeTexto)
-// ! siguiente-> buscar en el contenido la palabra a censurar
+nodosBody.forEach(nodo => {
+    if (evaluacionContenido(e, 'sexo')) {
+        console.log(nodo.textContent)
+        var nuevoNodo = document.createElement('h4');
+        nuevoNodo.style.color = 'red';
+        nuevoNodo.style.fontWeight = 'bold';
+        nuevoNodo.style.fontStyle = 'italic';
+        nuevoNodo.textContent = 'Contenido bloqueado'
+        e.replaceWith(nuevoNodo)
+    }
+})
 
 
 
-//! siguiente-> b remmplazar palabra y modicar tamaño y color
+
