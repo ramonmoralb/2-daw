@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 1800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            background-image: url('./img/fondo.jpg');
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            width: 80%;
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+
+            margin: 0;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        #contenedor-imagenes {
+            width: 1260px;
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+
+        }
+
+        img {
+            width: 125%;
+            border-radius: 9px;
+            visibility: hidden;
+
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .visible {
+            visibility: visible;
+
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100px;
+            background-color: black;
+            color: azure;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <hgroup>
+            <h1>El eslabón del desarrollador web perdido</h1>
+            <p>
+                A continuación se muestra la evolución histórica del estudiante de DAW semipresencial.
+            </p>
+        </hgroup>
+    </header>
+    <div id="contenedor-imagenes">
+
+    </div>
+    <footer>
+        <p>Tarea realizada por Ramón Moreno Albert</p>
+    </footer>
+</body>
+<script src="ejercicio4.js"></script>
+
+</html>

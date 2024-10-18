@@ -1,10 +1,3 @@
-/**Ejercicio 2 - Primos DOM 
-Escribe un programa mediante JavaScript que cree dinámicamente (al cargar la página) una 
-tabla de 10 por 10 celdas. Cada celda de la tabla tendrá un número único que empezará en 
-uno y se irá incrementando en uno. 
-Esta página, además, tendrá un botón encima de la tabla con el texto Calcular números primos, 
-que, al pulsarlo, hará que todas las celdas de la tabla que tengan números primos se pongan 
-con un fondo rojo y el texto en negrita (utiliza clases). */
 
 'use strict'
 
