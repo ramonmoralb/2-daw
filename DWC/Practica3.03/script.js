@@ -1,15 +1,39 @@
 'use strict'
-// recojo el botón del form
+// elementos del dom
 const botonAgregar = document.getElementById('boton-agregar')
 const areaTarea = document.getElementById('text-area-tarea-nueva')
 const todoDiv = document.getElementById('div-todo')
 const archivoDiv = document.getElementById('div-do')
 const mostrarOcultos = document.getElementById('boton-mostrar')
 
-
+// botones del dom, evento onclick: ejecución de funciones
 botonAgregar.onclick = anadirTarea
 mostrarOcultos.onclick = mostrarArchivados
 
+// funciones
+// función para crear div, creara los elementos internos, así como los botones necesarios.
+function crearDiv() {
+    const bBorrar = botonBorrar()
+    const bAcabar = botonAcabar()
+    const divTarea = document.createElement('div')
+    divTarea.classList.add('tarea-todo')
+    const pTarea = document.createElement('p')
+
+    divTarea.appendChild(pTarea)
+    divTarea.appendChild(bBorrar)
+    divTarea.appendChild(bAcabar)
+    todoDiv.appendChild(divTarea)
+    return divTarea
+}
+function anadirTarea() {
+    if (areaTarea.value.trim() !== '') {
+        const tarea = crearDiv()
+        tarea.firstChild.innerText = areaTarea.value
+        areaTarea.value = ''
+    } else {
+        alert('El cuadro de texto no puede estar vacio.')
+    }
+}
 
 function mostrarArchivados() {
     const ocultos = document.querySelectorAll('.ocultar')
@@ -18,6 +42,8 @@ function mostrarArchivados() {
     })
 }
 
+
+// botones, la función crear botones, recibe el texto que contiene el botón, la clase para el CSS y la función que ejecutará el onclick
 
 function crearBoton(texto, clase, onclick) {
     const boton = document.createElement('button')
@@ -48,6 +74,7 @@ function botonVolver() {
         event.target.remove()
         divAVolver.appendChild(bBorrar)
         divAVolver.appendChild(bAcabar)
+        divAVolver.classList.remove('tarea-archivada')
         todoDiv.appendChild(divAVolver)
     })
 }
@@ -78,27 +105,6 @@ function botonArchivar() {
     })
 }
 
-// Creador de div
-function crearDiv() {
-    const bBorrar = botonBorrar()
-    const bAcabar = botonAcabar()
-    const divTarea = document.createElement('div')
-    divTarea.classList.add('tarea-todo')
-    const pTarea = document.createElement('p')
 
-    divTarea.appendChild(pTarea)
-    divTarea.appendChild(bBorrar)
-    divTarea.appendChild(bAcabar)
-    todoDiv.appendChild(divTarea)
-    return divTarea
-}
 
-function anadirTarea() {
-    if (areaTarea.value.trim() !== '') {
-        const tarea = crearDiv()
-        tarea.firstChild.innerText = areaTarea.value
-        areaTarea.value = ''
-    } else {
-        alert('El cuadro de texto no puede estar vacio.')
-    }
-}
+
