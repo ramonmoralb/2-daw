@@ -6,7 +6,7 @@
     --color-fondo-footer: rgb(0, 0, 25);
     --color-a-index: rgb(240, 93, 80);
     --color-a-hoover: rgba(240, 93, 80, 0.5);
-    --color-footer: rgb(255, 255, 255);
+    --color-footer: white;
     --color-enlace-menu-principal: rgb(0, 0, 25);
     --color-hoover-menu-principal: rgba(0, 0, 25, 0.5);
     --color-ano-lista-descriptiva: rgba(0, 0, 25, 0.5);
@@ -21,10 +21,6 @@
 
 a {
     text-decoration: none;
-    color: inherit;
-}
-
-a {
     color: var(--color-a-index);
 }
 
@@ -43,16 +39,7 @@ header {
 }
 
 header h1 {
-    color: rgb(240, 93, 80);
     margin: 25px 25px;
-}
-
-header h1 a {
-    color: var(--color-a-index);
-}
-
-header h1 a:hover {
-    color: var(--color-a-hoover);
 }
 
 header li {
@@ -67,11 +54,12 @@ header ul {
     gap: 4px;
 }
 
-header a {
+/*enlaces barnav*/
+header ul li a {
     color: var(--color-enlace-menu-principal);
 }
 
-header a:hover {
+header ul li a:hover {
     color: var(--color-hoover-menu-principal);
 }
 
@@ -81,7 +69,7 @@ header a:hover {
 }
 
 
-
+/*Foter*/
 footer {
     font-size: 18px;
     height: 75px;
@@ -94,10 +82,11 @@ footer {
     color: var(--color-footer);
 }
 
+
 /*index*/
 .main-index {
     width: 95%;
-    width: 1140px;
+    max-width: 1140px;
     margin: 0 auto;
     font-family: var(--font-principal);
     display: grid;
@@ -118,11 +107,9 @@ footer {
     gap: 20px;
 }
 
-.index-introduccion #premio-descripcion {
-    background-color: rgb(255, 255, 255);
+#premio-descripcion {
     width: 600px;
     text-align: center;
-
 }
 
 .main-index__introduccion h2 {
@@ -169,14 +156,17 @@ img {
     gap: 15px;
 }
 
+iframe {
+    width: 560px;
+    height: 315px;
+}
+
 .index-articulo {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 20px
 }
-
-
 
 #discurso p {
     font-size: 20px;
@@ -185,21 +175,19 @@ img {
     margin-bottom: 4px;
 }
 
-#discurso p em {
-    font-size: 20px;
-
-}
 
 #discurso p:last-of-type em {
     font-size: 14px;
     font-weight: 500;
 }
 
-/*motivacion premios*/
+
+
+/*motivacion y listados*/
 .main-motivacion-premios,
 .main-nobel-literatura {
     width: 95%;
-    min-width: 1240px;
+    max-width: 1240px;
     margin: 0 auto;
     padding-bottom: 60px;
     font-family: var(--font-principal);
@@ -218,15 +206,6 @@ img {
     margin-bottom: 45px;
 }
 
-.cabecera-motivación-premios h2,
-.cabecera-listado-nobel-literatura h2 {
-    font-size: 34px;
-}
-
-.cabecera-listado-nobel-literatura p {
-    font-size: 12px;
-}
-
 .lista-motivacion {
     grid-column: 2;
     display: flex;
@@ -235,11 +214,30 @@ img {
     gap: 24px;
 }
 
+.listas-idiomas {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-left: 200px;
+}
+
+.cabecera-motivación-premios h2,
+.cabecera-listado-nobel-literatura h2 {
+    font-size: 30px;
+}
+
 .lista-motivacion a,
 .premiado-lista-idioma a {
     font-size: 20px;
     font-weight: 600;
 }
+
+
+
+
+
 
 .lista-motivacion em {
     font-family: var(--font-cites);
@@ -258,20 +256,14 @@ img {
     color: var(--color-ano-lista-descriptiva);
 }
 
+
+
 .info-fuente {
     grid-column: 2;
     margin-top: 32px;
     text-align: center;
 }
 
-.listas-idiomas {
-    grid-column: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    margin-left: 200px;
-}
 
 .lista-idioma-premiados {
     list-style-image: url("../img/idioma.png");
