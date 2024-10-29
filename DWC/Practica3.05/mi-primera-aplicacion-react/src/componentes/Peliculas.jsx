@@ -9,6 +9,7 @@ const Peliculas = ({ peliculas }) => {
                     nombre={pelicula.nombre}
                     cartelera={pelicula.cartelera}
                     actores={pelicula.actores}
+                    recaudacion={pelicula.recaudacion}
                 >
                     {pelicula.resumen}
                 </Pelicula>

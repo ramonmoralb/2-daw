@@ -36,9 +36,10 @@ header {
     width: 85%;
     display: grid;
     grid-template-areas:
-        "titulo titulo"
-        "poster resumen"
-        "elenco elenco";
+        "titulo titulo titulo"
+        "poster resumen resumen"
+        "botones recaudacion recaudacion"
+        "elenco elenco elenco";
     gap: 20px;
     background-color: #2a2a2a;
     padding: 20px;
@@ -68,7 +69,8 @@ header {
     color: #bbb;
 }
 
-.contenedor-pelicula .interpretes {
+.interpretes {
+    display: none;
     grid-area: elenco;
 }
 
@@ -101,4 +103,54 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.botones {
+    grid-area: botones;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.botones button {
+    width: 84px;
+    padding: 18px;
+    border: 1px solid #555;
+    background-color: #808080;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.botones button:hover {
+    background-color: #5c5959;
+
+}
+
+/*para la práctica useRef*/
+.recaudacion {
+    visibility: hidden;
+    grid-area: recaudacion;
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    justify-content: center;
+    width: 45%;
+    border: 1px solid #555;
+    background-color: #222;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    margin: 8px;
+    transition: 0.3s ease;
+}
+
+.mostrar-taquilla {
+    visibility: visible;
+}
+
+.mostrar-elenco {
+    display: block;
 }
