@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #1a1a1a;
+}
+
+.container__app {
+    margin: 0 auto;
+    width: 95%;
+    background-color: #333;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+header {
+    width: 100%;
+    background-color: #444;
+    color: #ccc;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-pelicula {
+    width: 85%;
+    display: grid;
+    grid-template-areas:
+        "titulo titulo titulo"
+        "poster resumen resumen"
+        "botones recaudacion recaudacion"
+        "elenco elenco elenco";
+    gap: 20px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contenedor-pelicula h2 {
+    grid-area: titulo;
+    font-size: 40px;
+    color: #ddd;
+}
+
+.contenedor-pelicula .contenedor-pelicula__poster {
+    grid-area: poster;
+    width: 250px;
+    border-radius: 7px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.contenedor-pelicula .contenedor-pelicula__poster:hover {
+    scale: 1.04;
+}
+
+.contenedor-pelicula p {
+    grid-area: resumen;
+    color: #bbb;
+}
+
+.interpretes {
+    display: none;
+    grid-area: elenco;
+}
+
+.interprete {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    border: 1px solid #555;
+    background-color: #222;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    margin: 8px;
+    transition: 0.3s ease;
+}
+
+.interprete:hover {
+    scale: 1.05;
+}
+
+.interprete__img {
+    width: 60px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    height: 75px;
+    color: #ccc;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones {
+    grid-area: botones;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.botones button {
+    width: 84px;
+    padding: 18px;
+    border: 1px solid #555;
+    background-color: #808080;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.botones button:hover {
+    background-color: #5c5959;
+
+}
+
+/*para la práctica useRef*/
+.recaudacion {
+    visibility: hidden;
+    grid-area: recaudacion;
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    justify-content: center;
+    width: 45%;
+    border: 1px solid #555;
+    background-color: #222;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    margin: 8px;
+    transition: 0.3s ease;
+}
+
+.mostrar-taquilla {
+    visibility: visible;
+}
+
+.mostrar-elenco {
+    display: block;
+}
