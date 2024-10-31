@@ -1,0 +1,32 @@
+{
+    "subMenus": {
+        "subMenuPeliculas": [
+            {
+                "ruta": "/flitrarportitulo",
+                "texto": "Filtrar por título"
+            },
+            {
+                "ruta": "/filtrarporinterprte",
+                "texto": "Filtrar por intérprete"
+            },
+            {
+                "ruta": "/filtrapordirector",
+                "texto": "Filtrar por director"
+            }
+        ],
+        "subMenuGaleria": [
+            {
+                "ruta": "/flitrarportitulo",
+                "texto": "Filtrar por título"
+            },
+            {
+                "ruta": "/filtrarporinterprte",
+                "texto": "Filtrar por intérprete"
+            },
+            {
+                "ruta": "/filtrapordirector",
+                "texto": "Filtrar por director"
+            }
+        ]
+    }
+}

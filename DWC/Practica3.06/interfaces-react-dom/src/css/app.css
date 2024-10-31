@@ -26,8 +26,8 @@ header {
     width: 100%;
     background-color: #444;
     color: #ccc;
-    height: 75px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }

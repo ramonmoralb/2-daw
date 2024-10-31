@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom"
-/**en la barra de navegación uso link. Link a la ruta deseada */
-const Menu = () => {
+/**Creo un componente menu.
+ * Puedo reendereizar el menu donde quiera
+ * Recibe un array de objetos, sobre el que iterará para crear los barnav 
+ * el array contendrá la ruta y el texto de del link, además el nav recibe el nombre de la clase deseado, y la lista desordenada tamb.
+ * */
+
+const Menu = ({ itemsMenu, barNavClass, ulClass }) => {
     return (
-        <div className="menu">
-            <nav className="bar-nav">
-                <ul className="bar-nav-lista">
-                    <li className="bar-nav-item"><Link to='/'>Inicio</Link></li>
-                    <li className="bar-nav-item"><Link to='/peliculas'>Películas</Link></li>
-                    <li className="bar-nav-item"><Link to='/interpretes'>Interpretes</Link></li>
-                    <li className="bar-nav-item"><Link to='/galeria'>Galería</Link></li>
-                    <li className="bar-nav-item"><Link to='/acercaDe'>Acerca de</Link></li>
-                </ul>
-            </nav>
-        </div>
+        <nav className={barNavClass}>
+            <ul className={ulClass}>
+                {itemsMenu.map((item, i) =>
+                (<li key={i}>
+                    <Link to={item.ruta}>{item.texto}</Link>
+                </li>))
+                }
+            </ul>
+        </nav>
     )
 }
 export default Menu
