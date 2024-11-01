@@ -1,5 +1,6 @@
 import Menu from "../componentes/Menu"
 import { subMenus } from "../objetos/subMenus.json"
+import '../css/galeria.css'
 
 const Galeria = ({ peliculas }) => {
 

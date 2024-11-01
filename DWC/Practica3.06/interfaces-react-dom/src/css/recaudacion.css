@@ -1,0 +1,27 @@
+/*para la práctica useRef*/
+.recaudacion {
+    visibility: hidden;
+    grid-area: recaudacion;
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    justify-content: center;
+    width: 50%;
+    height: 75px;
+    border: 1px solid #555;
+    background-color: #222;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    margin: 8px;
+    transition: 0.3s ease;
+}
+
+.recaudacion p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mostrar-taquilla {
+    visibility: visible;
+}

@@ -1,0 +1,14 @@
+.inicio {
+    background-image: url('../imagenes/cinema.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio h2 {
+    font-size: 60px;
+    color: #ddd;
+}

@@ -2,6 +2,7 @@ import { useRef, useState } from "react"
 import Interpretes from "../rutas/Interpretes"
 import Recaudacion from "./Recaudacion"
 import Boton from "./Boton"
+import '../css/pelicula.css'
 
 
 const Pelicula = ({ nombre, cartelera, actores, recaudacion, children }) => {
