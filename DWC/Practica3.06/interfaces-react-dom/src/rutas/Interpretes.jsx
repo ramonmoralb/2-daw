@@ -1,4 +1,4 @@
-import Interprete from "./Interprete"
+import Interprete from "../componentes/Interprete"
 import { generarUuidAleatorio } from "../bibliotecas/funciones"
 const Interpretes = ({ referencia, actores, className }) => {
     return (

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import Menu from "./Menu"
-import { subMenus } from "../objetos/subMenus"
+import Menu from "../componentes/Menu"
+import { subMenus } from "../objetos/subMenus.json"
 // recibe por prop el JSON
 const Peliculas = ({ peliculas }) => {
 

@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import Interpretes from "./Interpretes"
+import Interpretes from "../rutas/Interpretes"
 import Recaudacion from "./Recaudacion"
 import Boton from "./Boton"
 

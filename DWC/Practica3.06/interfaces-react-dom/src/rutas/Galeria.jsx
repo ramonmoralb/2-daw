@@ -1,5 +1,5 @@
-import Menu from "./Menu"
-import { subMenus } from "../objetos/subMenus"
+import Menu from "../componentes/Menu"
+import { subMenus } from "../objetos/subMenus.json"
 
 const Galeria = ({ peliculas }) => {
 

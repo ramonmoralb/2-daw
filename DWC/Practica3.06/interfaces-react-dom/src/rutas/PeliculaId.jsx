@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import Pelicula from "./Pelicula"
+import Pelicula from "../componentes/Pelicula"
 
 const PeliculaId = ({ peliculas }) => {
     const { id } = useParams()  // devuelve los parametros de url !!! Ojo tiene que coincidir el nombre, casi me vuelvo loco 

@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
-import Inicio from '../componentes/Inicio'
-import Peliculas from '../componentes/Peliculas'
+import Inicio from '../rutas/Inicio'
+import Peliculas from '../rutas/Peliculas'
 import peliculas from "../objetos/peliculas.json"
-import PeliculaId from '../componentes/PeliculaId'
-import Interpretes from '../componentes/Interpretes'
-import Galeria from '../componentes/Galeria'
-import AcercaDe from '../componentes/AcercaDe'
-import Error from '../componentes/Error'
+import PeliculaId from '../rutas/PeliculaId'
+import Interpretes from '../rutas/Interpretes'
+import Galeria from '../rutas/Galeria'
+import AcercaDe from '../rutas/AcercaDe'
+import Error from '../rutas/Error'
 const Contenido = () => {
     const actores = peliculas.peliculas.flatMap((a) => a.actores) // necesito aplanar el array para actores
     return (
