@@ -263,6 +263,7 @@ footer {
 .galeria {
     margin-top: 5px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 5px;
 }
@@ -272,6 +273,21 @@ footer {
     flex-direction: column;
     gap: 15px;
     padding: 14px;
+}
+
+.lista-interpretes {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    color: white;
+}
+
+.interprete {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
 }
 
 .item-galeria {

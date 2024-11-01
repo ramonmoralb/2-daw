@@ -15,7 +15,7 @@ const Contenido = () => {
                 <Route element={<Inicio />} path='/' />
                 <Route element={<Peliculas peliculas={peliculas.peliculas} />} path='/peliculas' />
                 <Route element={<PeliculaId peliculas={peliculas.peliculas} />} path='/peliculas/:id' />
-                <Route element={<Interpretes actores={actores} className={''} />} path='/interpretes' />
+                <Route element={<Interpretes actores={actores} className={'lista-interpretes'} />} path='/interpretes' />
                 <Route element={<Galeria peliculas={peliculas.peliculas} />} path='/galeria' />
                 <Route element={<AcercaDe />} path='/acercade' />
                 <Route element={<Error />} path='*' />
