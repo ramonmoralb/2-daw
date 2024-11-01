@@ -6,7 +6,6 @@ const Galeria = ({ peliculas }) => {
     return (
         <div className="galeria">
             <Menu barNavClass={'submenu-galeria'} itemsMenu={subMenus.subMenuGaleria} />
-
             {peliculas ?
                 (
                     <ul className="lista-galeria">
