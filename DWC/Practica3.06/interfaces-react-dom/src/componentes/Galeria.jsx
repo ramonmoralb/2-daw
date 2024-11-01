@@ -4,15 +4,27 @@ import { subMenus } from "../objetos/subMenus"
 const Galeria = ({ peliculas }) => {
 
     return (
-        <main className="contenedor-principal">
+        <div className="galeria">
             <Menu barNavClass={'submenu-galeria'} itemsMenu={subMenus.subMenuGaleria} />
-            {peliculas.map((p) => (
-                <div key={p.id}> {/* Agregar `key` aquí */}
-                    <h2>{p.nombre}</h2> {/* Puedes cambiar el texto aquí */}
-                    <img src={p.cartelera} alt={`Poster de ${p.nombre}`} /> {/* Alt más descriptivo */}
-                </div>
-            ))}
-        </main>
+
+            {peliculas ?
+                (
+                    <ul className="lista-galeria">
+                        {peliculas.map((p) => (
+                            <li className="item-galeria" key={p.id}> {/* Agregar `key` aquí */}
+                                <figure>
+                                    <img src={p.cartelera} alt={`Poster de ${p.nombre}`} /> {/* Alt más descriptivo */}
+                                    <figcaption><h2>{p.nombre}</h2></figcaption>
+                                </figure>
+
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No hay películas disponibles.</p>
+                )}
+
+        </div>
     );
 }
 export default Galeria;

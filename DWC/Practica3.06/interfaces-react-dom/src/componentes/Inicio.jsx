@@ -1,8 +1,8 @@
 const Inicio = () => {
     return (
-        <main className="contenido-principal">
-            <h2>Inicio..</h2>
-        </main>
+        <div className="inicio">
+            <h2>Inicio</h2>
+        </div>
     )
 }
 export default Inicio

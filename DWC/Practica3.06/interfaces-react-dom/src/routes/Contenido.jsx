@@ -10,15 +10,18 @@ import Error from '../componentes/Error'
 const Contenido = () => {
     const actores = peliculas.peliculas.flatMap((a) => a.actores) // necesito aplanar el array para actores
     return (
-        <Routes>
-            <Route element={<Inicio />} path='/' />
-            <Route element={<Peliculas peliculas={peliculas.peliculas} />} path='/peliculas' />
-            <Route element={<PeliculaId peliculas={peliculas.peliculas} />} path='/peliculas/:id' />
-            <Route element={<Interpretes actores={actores} className={''} />} path='/interpretes' />
-            <Route element={<Galeria peliculas={peliculas.peliculas} />} path='/galeria' />
-            <Route element={<AcercaDe />} path='/acercade' />
-            <Route element={<Error />} path='*' />
-        </Routes>
+        <main className='contenedor-main'>
+            <Routes>
+                <Route element={<Inicio />} path='/' />
+                <Route element={<Peliculas peliculas={peliculas.peliculas} />} path='/peliculas' />
+                <Route element={<PeliculaId peliculas={peliculas.peliculas} />} path='/peliculas/:id' />
+                <Route element={<Interpretes actores={actores} className={''} />} path='/interpretes' />
+                <Route element={<Galeria peliculas={peliculas.peliculas} />} path='/galeria' />
+                <Route element={<AcercaDe />} path='/acercade' />
+                <Route element={<Error />} path='*' />
+            </Routes>
+        </main>
+
     )
 }
 export default Contenido

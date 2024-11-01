@@ -1,0 +1,24 @@
+{
+    "menuInicio": [
+        {
+            "ruta": "/",
+            "texto": "Inicio"
+        },
+        {
+            "ruta": "/peliculas",
+            "texto": "Peliculas"
+        },
+        {
+            "ruta": "/galeria",
+            "texto": "Galeria"
+        },
+        {
+            "ruta": "/interpretes",
+            "texto": "Interpretes"
+        },
+        {
+            "ruta": "/acercade",
+            "texto": "Acerca de"
+        }
+    ]
+}
