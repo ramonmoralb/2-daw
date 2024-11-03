@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 80vh;
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        dl {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2px;
+            width: 500px;
+
+            & dt,
+            dd {
+                margin: 0;
+                padding: 12px;
+                border: solid 2px black;
+                border-radius: 3px;
+            }
+        }
+
+        .ocultar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor-acordeon">
+
+        <dl id="lista">
+            <dt class="item-lista">Elemento 1</dt>
+            <dd class="item-lista">Descripción 1</dd>
+            <dt class="item-lista">Elemento 2</dt>
+            <dd class="item-lista">Descripción 2</dd>
+            <dt class="item-lista">Elemento 3</dt>
+            <dd class="item-lista">Descripción 3</dd>
+        </dl>
+    </div>
+</body>
+<script type="module" src="./ejercicio4.js" defer></script>
+
+</html>
