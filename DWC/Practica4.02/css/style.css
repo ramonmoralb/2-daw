@@ -39,7 +39,8 @@ body {
 
 }
 
-.square {
+.square-puzzle,
+.square-imagen {
 
     width: 100%;
     display: flex;
