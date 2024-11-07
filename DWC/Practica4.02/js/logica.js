@@ -1,7 +1,16 @@
+'use strict'
+const modal = document.getElementById("myModal");
 
 
+const desordenarArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));  // Cambié const a let aquí
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
-const crearTablero = (contenedodorTab, nombreClaseId) => {
+const crearTablero = (contenedorTab, nombreClaseId) => {
     for (let i = 0; i < 9; i++) {
         //crea los divs los cuales deben tener la propiedad dragable
         let div = document.createElement('div')
@@ -22,7 +31,7 @@ const crearTablero = (contenedodorTab, nombreClaseId) => {
                 puzzleCorrecto()
             }
         }
-        contenedodorTab.appendChild(div)
+        contenedorTab.appendChild(div)
     }
 }
 
@@ -59,28 +68,36 @@ const comprobarTablero = () => {
 const puzzleCorrecto = () => {
     const puzzle = document.getElementById('contenedor-puzzle')
     const squares = puzzle.querySelectorAll('div')
+    const modalGanador = document.getElementById('modal-ganador')
+    const modalPerdedor = document.getElementById('modal-perdedor')
     for (let square of squares) {
         const img = square.querySelector('img')
         console.log(square.id.charAt(square.id.length - 1))
         console.log(img.id)
         if (img.id != square.id.charAt(square.id.length - 1)) {
-            return alert('has perdido')
+
+            return modalPerdedor.classList.add('modal-mostrar')
+
         }
 
     }
-    return alert('has ganado')
-}
-// coloca en el html dentro del div las piezas del puzle
-//desordena el array con un metodo encontrado en stackoverflow(fisher-yates)
-
-
-
-const desordenarArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1))
-        [array[i], array[j]] = [array[j], array[i]]
-    }
-    return array
+    return modalGanador.classList.add('modal-mostrar')
 }
 
-export { crearTablero, ponerImagenesIniciales }
+
+
+
+const iniciarPartida = (contenedorPuzzle, clasePuzzle, contenedorImg, claseImagnes, imagenes) => {
+    crearTablero(contenedorPuzzle, clasePuzzle)
+    crearTablero(contenedorImg, claseImagnes)
+    ponerImagenesIniciales(contenedorImg, imagenes)
+}
+const reset = ((contenedorPuzzle, clasePuzzle, contenedorImg, claseImagnes, imagenes) => {
+    contenedorPuzzle.innerHTML = ''
+    contenedorImg.innerHTML = ''
+    iniciarPartida(contenedorPuzzle, clasePuzzle, contenedorImg, claseImagnes, imagenes)
+}
+)
+
+
+export { crearTablero, ponerImagenesIniciales, iniciarPartida, reset } 

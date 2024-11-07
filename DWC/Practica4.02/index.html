@@ -8,21 +8,35 @@
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
-<header>
-    <h1>
-        Rompecabezas
-    </h1>
-</header>
-<div id="contenedor-piezas">
-
-</div>
-<div id="contenedor-puzzle">
-
-</div>
-<button id="btn-reset" type="reset">Reset</button>
 
 <body>
-
+    <header>
+        <h1>
+            Rompecabezas
+        </h1>
+    </header>
+    <main class="contenedor-principal">
+        <div id="modal-ganador" class="modal-ganador">
+            <p>Lo lograste</p>
+            <Div>
+                <button id="btn-modal-ganar" class="btn-modal">Volver a empezar</button>
+            </Div>
+        </div>
+        <div id="modal-perdedor" class="modal-perdedor">
+            <p>No es correcto</p>
+            <Div>
+                <button id="btn-modal-perder" class="btn-modal">Volver a empezar</button>
+            </Div>
+        </div>
+        <div id="contenedor-piezas">
+        </div>
+        <div id="contenedor-puzzle">
+        </div>
+        <button id="btn-reset" type="reset">Reset</button>
+    </main>
+    <footer>
+        <p>Actividad realizada por Ramón Moreno Albert</p>
+    </footer>
 </body>
 <script type="module" src="./js/rompecabezas.js" defer></script>
 
