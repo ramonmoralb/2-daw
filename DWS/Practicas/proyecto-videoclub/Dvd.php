@@ -9,11 +9,10 @@ class Dvd extends Soporte{
         $this->formatoPantalla=$formatoPantalla;
     }
     public function muestraResumen(){
+        echo "DVD <br>";
         parent::muestraResumen();
-        echo "<br>";
-        echo "Idiomas: " . $this->idiomas;
-        echo "<br>";
-        echo "Formato pantalla: " . $this->formatoPantalla;
+        echo "Idiomas: " . $this->idiomas ."<br>"; 
+        echo "Formato pantalla: " . $this->formatoPantalla . "<br>";
     }
 }
 ?>

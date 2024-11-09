@@ -11,13 +11,15 @@ class Juego extends Soporte{
         $this->minNumJugadores=$minNumJugadores;
     }
     public function muestraJugadoresPosibles(){
-        echo "<br>";
+        
         echo $this->maxNumJugadores === 1 
-        ? "Para un jugador." 
+        ? "Para un jugador.<br>" 
         : "De " . $this->minNumJugadores . " a " . $this->maxNumJugadores . " jugadores.<br>";
-        echo "<br>";
+       
     }
     public function muestraResumen() {
+        echo "Videojuego <br>";
+        echo "Juego para: ". $this->consola ."<br>";
         parent::muestraResumen();
         $this->muestraJugadoresPosibles();
     }

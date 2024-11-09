@@ -10,6 +10,7 @@ $soporte1->muestraResumen();
 
 echo "<hr>";
 echo "<h3>Clase cinta de video</h3>";
+
 include "CintaVideo.php";
 
 
