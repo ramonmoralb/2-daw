@@ -6,9 +6,9 @@
 }
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -112,3 +112,65 @@ li {
 }
 
 /*hasta aqui el indice */
+
+
+
+.ceramica-header,
+.cursos-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    background-color: var(--color-fondos-cabecera-pie);
+}
+
+.ceramica-header__titulo,
+.cursos-header__titulo {
+    color: #ffffff;
+    letter-spacing: -0.1rem;
+    font-size: 3rem;
+}
+
+.ceramica-header__lista,
+.cursos-header__lista {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    height: 3.5rem;
+
+}
+
+.ceramica-header a,
+.cursos-header a {
+    color: #ffffff;
+}
+
+.ceramica-header a:hover,
+.cursos-header a:hover {
+    color: var(--color-hover-enlaces-header-pie);
+}
+
+.ceramica-header__figure,
+.cursos-header__figure {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.ceramica-header__img,
+.cursos-header__img {
+    width: 4rem;
+}
+
+#ceramica-header__lista__activo,
+#cursos-header__lista__activo {
+    border-bottom: 1px solid #ffffff;
+
+    /* Cambia el grosor y color según prefieras */
+    padding-bottom: .8rem;
+}
