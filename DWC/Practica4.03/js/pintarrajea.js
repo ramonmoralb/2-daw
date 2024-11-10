@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    seleccionarColor()
-    construirLienzo()
-    pintar()
     colocarPaleta()
-
-
-
+    construirLienzo()
+    seleccionarColor()
+    pintar()
+    resetear()
 })
-import { construirLienzo, seleccionarColor, pintar, colocarPaleta } from "../logica/funciones.js"
+import { construirLienzo, seleccionarColor, pintar, colocarPaleta, resetear } from "../logica/funciones.js"

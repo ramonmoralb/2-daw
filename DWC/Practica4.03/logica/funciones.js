@@ -8,6 +8,12 @@ const ponerNombre = (c) => {
     info.style.backgroundColor = c
     info.firstElementChild.innerText = c.toUpperCase()
 };
+const resetear = () => {
+    const celdas = document.querySelectorAll('.celda')
+    const botonReset = document.getElementById('reset')
+    botonReset.onclick = () => celdas.forEach((celda) => celda.style.backgroundColor = 'white', console.log('reset'))
+
+}
 
 const colocarPaleta = () => {
     for (let i = 0; i < paleta.length; i++) {
@@ -49,11 +55,10 @@ const pintar = () => {
         celdas[i].addEventListener('mouseover', (e) => {
             if (pinta) {
                 e.target.style.backgroundColor = color
-                console.log('p')
-                console.log('no')
             }
         })
     }
 }
+
 ponerNombre(color)
-export { seleccionarColor, construirLienzo, pintar, ponerNombre, colocarPaleta }
+export { seleccionarColor, construirLienzo, pintar, ponerNombre, colocarPaleta, resetear }
