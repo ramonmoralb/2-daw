@@ -2,6 +2,7 @@
 :root {
     --color-fondos-cabecera-pie: #000000;
     --color-hover-enlaces-header-pie: #6bdec8;
+    --color-enlace-textos: #942C0B;
 
 }
 
@@ -25,8 +26,7 @@ li {
 }
 
 .contenedor-main {
-    width: 95%;
-    margin: 0 auto;
+    min-width: 960px;
 }
 
 .body-index {
@@ -102,12 +102,14 @@ li {
     margin-bottom: 1rem;
 }
 
-.index-footer a {
+.index-footer a,
+.footer-ceramica-cursos-formulario__enlace {
     color: #ffffff;
     transition: 0.5ms ease;
 }
 
-.body-index a:hover {
+.body-index a:hover,
+.footer-ceramica-cursos-formulario__enlace:hover {
     color: var(--color-hover-enlaces-header-pie);
 }
 
@@ -169,8 +171,131 @@ li {
 
 #ceramica-header__lista__activo,
 #cursos-header__lista__activo {
-    border-bottom: 1px solid #ffffff;
-
-    /* Cambia el grosor y color según prefieras */
+    border-bottom: 2px solid #ffffff;
     padding-bottom: .8rem;
 }
+
+/*que es la cerámica*/
+.body-ceramica {
+    min-width: 960px;
+}
+
+.ceramica-main__intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.ceramica-main__intro__figure iframe {
+    width: 37.5rem;
+    height: 18.75rem;
+
+}
+
+.ceramica-main {
+    margin: 2rem 0;
+}
+
+.ceramica-main__intro h1 {
+    font-size: 2rem;
+}
+
+.ceramica-main__intro__figure figcaption {
+    font-size: 0.8rem;
+}
+
+.ceramica-main__articulo {
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.ceramica-main__section__titulo {
+    padding-bottom: .6rem;
+    border-bottom: 1px solid black;
+}
+
+.ceramica-main__section {
+    display: grid;
+    gap: 1rem;
+}
+
+.footer-ceramica-cursos-formulario {
+
+    background-color: #000000;
+
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+
+}
+
+.footer-ceramica-cursos-formulario__lista {
+
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.footer-ceramica-cursos-formulario__creditos {
+    font-size: 0.8rem;
+    width: 65%;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.ceramica-main__section__lista-tecnica-material__referencia {
+    font-size: 0.8rem;
+}
+
+.ceramica-main__section__lista-tecnica-material__referencia a {
+    color: var(--color-enlace-textos);
+    border-bottom: 1px dotted var(--color-enlace-textos);
+}
+
+.ceramica-main__section__lista-tecnica-material__referencia a:hover {
+    border-bottom: 1px solid var(--color-enlace-textos);
+}
+
+.ceramica-main__section__lista-utensilios {
+    margin-left: 3rem;
+    display: grid;
+    gap: 0.5rem;
+
+
+}
+
+.ceramica-main__section__lista-utensilios li {
+    list-style-type: square;
+}
+
+.ceramica-main__section__lista-tecnica-material {
+    display: grid;
+
+    margin-left: 3rem;
+}
+
+.ceramica-main__section__lista-tecnica-material dt {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.ceramica-main__section__lista-tecnica-material dd {
+    margin-left: 1.9rem;
+    margin-bottom: 0.6rem;
+
+}
+
+/*hasta aquí cerámica */
