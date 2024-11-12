@@ -229,7 +229,6 @@ li {
 .footer-ceramica-cursos-formulario {
 
     background-color: #000000;
-
     height: 6rem;
     display: flex;
     flex-direction: column;
@@ -299,3 +298,27 @@ li {
 }
 
 /*hasta aquí cerámica */
+.cursos-main {
+    width: 65%;
+    margin: 0 auto;
+    display: grid;
+}
+
+.cursos-main__cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin: 2rem;
+}
+
+.cursos-main__cabecera__titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cursos-main__cabecera__titulo span {
+    font-size: 3rem;
+}
