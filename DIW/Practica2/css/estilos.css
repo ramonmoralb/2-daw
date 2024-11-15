@@ -118,7 +118,8 @@ li {
 
 
 .ceramica-header,
-.cursos-header {
+.cursos-header,
+.inscripcion-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -128,7 +129,8 @@ li {
 }
 
 .ceramica-header__titulo,
-.cursos-header__titulo {
+.cursos-header__titulo,
+.inscripcion-header__titulo {
     color: #ffffff;
     letter-spacing: -0.1rem;
     font-size: 3rem;
@@ -136,7 +138,8 @@ li {
 
 
 .ceramica-header__lista,
-.cursos-header__lista {
+.cursos-header__lista,
+.inscripcion-header__lista {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -147,17 +150,20 @@ li {
 }
 
 .ceramica-header a,
-.cursos-header a {
+.cursos-header a,
+.inscripcion-header a {
     color: #ffffff;
 }
 
 .ceramica-header__lista a:hover,
-.cursos-header__lista a:hover {
+.cursos-header__lista a:hover,
+.inscripcion-header__lista a:hover {
     color: var(--color-hover-enlaces-header-pie);
 }
 
 .ceramica-header__figure,
-.cursos-header__figure {
+.cursos-header__figure,
+.inscripcion-header__figure {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -166,18 +172,22 @@ li {
 }
 
 .ceramica-header__img,
-.cursos-header__img {
+.cursos-header__img,
+.inscripcion-header__img {
     width: 4rem;
 }
 
 #ceramica-header__lista__activo,
-#cursos-header__lista__activo {
+#cursos-header__lista__activo,
+#inscripcion-header__lista__activo {
     border-bottom: 2px solid #ffffff;
     padding-bottom: .8rem;
 }
 
 /*que es la cerámica*/
-.body-ceramica {
+.body-ceramica,
+.body-cursos,
+.body.inscripcion {
     min-width: 960px;
 }
 
@@ -362,6 +372,16 @@ li {
 
 .cursos-main__cabecera__imagen {
     width: 100%;
+}
+
+.cursos-main__cabecera__hgroup {
+    width: 75%;
+}
+
+.cursos-main__cabecera__hgroup__titulo,
+.cursos-main__cabecera__hgroup__parrafo {
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .cursos-main__table__encabezados {
