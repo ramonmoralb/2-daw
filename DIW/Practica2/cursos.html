@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/estilos.css">
   <link rel="icon" href="./img/favicon-32x32.png" type="image/x-icon">
@@ -20,8 +20,9 @@
   <header class="cursos-header">
     <nav class="cursos-header__barnav">
       <figure class="cursos-header__figure">
-        <img class="cursos-header__img" src="./img/isologo-taller.png" alt="Logtotipo de la empresa">
-        <h1 class="cursos-header__titulo">El taller</h1>
+        <a href="index.html"><img class="cursos-header__img" src="./img/isologo-taller.png"
+            alt="Logtotipo de la empresa"></a>
+        <h2 class="cursos-header__titulo"><a href="index.html">El taller</a></h2>
       </figure>
       <ul class="cursos-header__lista">
         <li><a href="./que-es-la-ceramica.html">CERÁMICA</a> </li>
@@ -33,63 +34,70 @@
   <main class="cursos-main contenedor-main">
     <div class="cursos-main__cabecera">
       <h1 class="cursos-main__cabecera__titulo">Cursos de cerámica<span>2023</span></h1>
-      <figure>
-        <img src="./img/cursos-ceramica.jpg" alt="Tranajos de alfarería">
-        <figcaption>&copy; Foto de <a target="_blank" href="https://unsplash.com/@courtneymcook">Courtney Cook</a> en
+      <figure class="cursos-main__cabecera__figure">
+        <img class="cursos-main__cabecera__imagen" src="./img/cursos-ceramica.jpg" alt="Tranajos de alfarería">
+        <figcaption class="cursos-main__cabecera__figcaption">&copy; Foto de <a target="_blank"
+            href="https://unsplash.com/@courtneymcook">Courtney Cook</a> en
           <a target="_blank" href="https://unsplash.com/es/fotos/jZLozXwxgbo">Unsplash</a>
         </figcaption>
       </figure>
-      <hgroup>
-        <h2>Cursos de cerámica para todos los niveles.</h2>
-        <p>Artesanos expertos te guiarán para que aprendas el oficio y des
+      <hgroup class="cursos-main__cabecera__hgroup">
+        <h2 class="cursos-main__cabecera__hgroup__titulo">Cursos de cerámica para todos los niveles.</h2>
+        <p class="cursos-main__cabecera__hgroup__parrafpo">Artesanos expertos te guiarán para que aprendas el oficio y
+          des
           rienda suelta
           a tu creatividad.
         </p>
       </hgroup>
     </div>
-    <table>
-      <h3>Programación de cursos</h3>
-      <thead>
-        <th>Cursos</th>
-        <th>Precio</th>
-        <th>Duración</th>
-        <th>Horario</th>
+    <table class="cursos-main__table">
+
+      <caption class="cursos-main__table__titulo">
+        Programación cursos
+      </caption>
+      <thead class="cursos-main__table__encabezados">
+        <tr class="cursos-main__table__encabezados__linea">
+          <th class="cursos__main__table__encabezados__celda">Cursos</th>
+          <th class="cursos__main__table__encabezados__celda">Precio</th>
+          <th class="cursos__main__table__encabezados__celda">Duración</th>
+          <th class="cursos__main__table__encabezados__celda">Horario</th>
+        </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>Torno</td>
-          <td>150 €</td>
-          <td>4 horas</td>
-          <td>Un sábado al mes de 10 a 14h</td>
+      <tbody class="cursos-main__table__body">
+        <tr class="cursos-main__table__body__linea">
+          <td class="cursos-main__table__body__celda">Torno</td>
+          <td class="cursos-main__table__body__celda">150 €</td>
+          <td class="cursos-main__table__body__celda">4 horas</td>
+          <td class="cursos-main__table__body__celda">Un sábado al mes de 10 a 14h</td>
         </tr>
-        <tr>
-          <td>Cerámica</td>
-          <td>100 €</td>
-          <td>4 horas</td>
-          <td>Jueves alternos de 19 a 21 h</td>
+        <tr class="cursos-main__table__body__linea">
+          <td class="cursos-main__table__body__celda">Cerámica</td>
+          <td class="cursos-main__table__body__celda">100 €</td>
+          <td class="cursos-main__table__body__celda">4 horas</td>
+          <td class="cursos-main__table__body__celda">Jueves alternos de 19 a 21 h</td>
         </tr>
-        <tr>
-          <td>Modelado</td>
-          <td>200 €</td>
-          <td>12 horas</td>
-          <td>Un miercoles al mes de 18 a 21 h</td>
+        <tr class="cursos-main__table__body__linea">
+          <td class="cursos-main__table__body__celda">Modelado</td>
+          <td class="cursos-main__table__body__celda">200 €</td>
+          <td class="cursos-main__table__body__celda">12 horas</td>
+          <td class="cursos-main__table__body__celda">Un miercoles al mes de 18 a 21 h</td>
         </tr>
-        <tr>
-          <td>Esmaltes</td>
-          <td>250 €</td>
-          <td>16 horas</td>
-          <td>Martes y jueves de 19 a 21 h</td>
+        <tr class="cursos-main__table__body__linea">
+          <td class="cursos-main__table__body__celda">Esmaltes</td>
+          <td class="cursos-main__table__body__celda">250 €</td>
+          <td class="cursos-main__table__body__celda">16 horas</td>
+          <td class="cursos-main__table__body__celda">Martes y jueves de 19 a 21 h</td>
         </tr>
-        <tr>
-          <td>Joyería cerámica</td>
-          <td>160 €</td>
-          <td>4 horas</td>
-          <td>Un sábado al mes de 10 a 14h</td>
+        <tr class="cursos-main__table__body__linea">
+          <td class="cursos-main__table__body__celda">Joyería cerámica</td>
+          <td class="cursos-main__table__body__celda">160 €</td>
+          <td class="cursos-main__table__body__celda">4 horas</td>
+          <td class="cursos-main__table__body__celda">Un sábado al mes de 10 a 14h</td>
         </tr>
       </tbody>
-      <tfoot>
-        <tr>
-          <td>Plazas limitadas a 15 alumnos por sesión</td>
+      <tfoot class="cursos-main__table__body__footer">
+        <tr class="cursos-main__table__body__linea__footer">
+          <td class="cursos-main__table__body__celda__footer" colspan="4">Plazas limitadas a 15 alumnos por sesión</td>
         </tr>
       </tfoot>
     </table>

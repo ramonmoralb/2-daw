@@ -58,7 +58,7 @@ li {
 
 .index-header__lista a {
     color: #ffffff;
-    transition: 0.5 ease;
+    transition: 0.5ms ease;
 }
 
 .index-main {
@@ -134,6 +134,7 @@ li {
     font-size: 3rem;
 }
 
+
 .ceramica-header__lista,
 .cursos-header__lista {
     display: flex;
@@ -150,8 +151,8 @@ li {
     color: #ffffff;
 }
 
-.ceramica-header a:hover,
-.cursos-header a:hover {
+.ceramica-header__lista a:hover,
+.cursos-header__lista a:hover {
     color: var(--color-hover-enlaces-header-pie);
 }
 
@@ -301,15 +302,22 @@ li {
 .cursos-main {
     width: 65%;
     margin: 0 auto;
-    display: grid;
-}
-
-.cursos-main__cabecera {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
-    margin: 2rem;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.cursos-main__cabecera {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
 }
 
 .cursos-main__cabecera__titulo {
@@ -321,4 +329,75 @@ li {
 
 .cursos-main__cabecera__titulo span {
     font-size: 3rem;
+}
+
+/*cursos*/
+.cursos-main__table {
+    width: 100%;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+    border-bottom: 1px solid black;
+}
+
+.cursos-main__cabecera__figure {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-start;
+}
+
+.cursos-main__cabecera__figcaption {
+    font-size: 0.7rem;
+}
+
+.cursos-main__cabecera__figcaption a {
+    color: var(--color-enlace-textos);
+    border-bottom: 1px dotted var(--color-enlace-textos);
+}
+
+.cursos-main__cabecera__figcaption a:hover {
+    border-bottom: 1px solid var(--color-enlace-textos);
+}
+
+.cursos-main__cabecera__imagen {
+    width: 100%;
+}
+
+.cursos-main__table__encabezados {
+    text-align: left;
+
+}
+
+.cursos-main__table__titulo {
+    border-top: 1px solid black;
+    padding: 0.5rem;
+}
+
+.cursos__main__table__encabezados__celda {
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0.7rem;
+}
+
+.cursos-main__table__body__linea {
+    height: 2.5rem;
+}
+
+.cursos-main__table__body__celda {
+    padding: 0.7rem;
+}
+
+.cursos-main__table__body__linea:nth-child(odd) {
+    background-color: var(--color-hover-enlaces-header-pie);
+
+}
+
+.cursos-main__table__body__linea td:first-of-type {
+    font-weight: 700;
+}
+
+.cursos-main__table__body__celda__footer {
+    font-size: 0.7rem;
+    padding: 0.7rem;
 }
