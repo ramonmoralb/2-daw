@@ -1,17 +1,25 @@
-// archivo principal
-import { crearForm, crearSelect, crearOption } from './logica.js'
-
 document.addEventListener('DOMContentLoaded', () => {
-    const cont = document.getElementById('cont')
-    const form = crearForm('formulario', 'id-formularo', 'post')
-    cont.appendChild(form)
-    const listaOptions = ['Negrita', 'Subrayado', 'Fondo rojo']
-    const options = []
-    listaOptions.forEach(element => {
-        options.push(crearOption(element))
+    document.getElementById('crearParrafo').addEventListener('click', function () {
+        const texto = document.getElementById('texto').value;
+        const estiloSeleccionado = document.getElementById('estilos').value
+        const errorDiv = document.getElementById('error')
+        const resultadoDiv = document.getElementById('resultado')
+
+        errorDiv.style.display = 'none'
+
+        if (!texto || !estiloSeleccionado) {
+            errorDiv.style.display = 'block'
+            errorDiv.textContent = 'Tienes que escribir algo y seleccionar un estilo.'
+            return
+        }
+
+        const nuevoParrafo = document.createElement('p');
+        nuevoParrafo.classList.add(estiloSeleccionado);
+        nuevoParrafo.textContent = texto
+
+        resultadoDiv.appendChild(nuevoParrafo)
+
+        document.getElementById('texto').value = ''
+        document.getElementById('estilos').value = ''
     });
-    const select = crearSelect(options)
-    form.appendChild(select)
-
-
-})
+});

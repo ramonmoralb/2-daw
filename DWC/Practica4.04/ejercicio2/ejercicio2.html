@@ -1,20 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario de Estilos</title>
+    <style>
+        .estilo1 {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .estilo2 {
+            text-decoration: underline;
+        }
+
+        .estilo3 {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>
-        hola
-    </h1>
-    <div id="cont"></div>
-    <div id="resultado"></div>
-</body>
-<script type="module" src="ejercicio2.js"></script>
 
+    <form id="formulario">
+        <textarea id="texto" placeholder="Escribe tu texto aquí..."></textarea>
+        <select id="estilos">
+            <option value="">Selecciona un estilo</option>
+            <option value="estilo1">Estilo Negrita y Cursiva</option>
+            <option value="estilo2">Estilo Subrayado</option>
+            <option value="estilo3">Estilo Color Rojo</option>
+        </select>
+        <button type="button" id="crearParrafo">Crear párrafo</button>
+    </form>
+
+    <div id="error" style="display:none; color: red;"></div>
+    <div id="resultado"></div>
+
+    <script src='./ejercicio2.js'></script>
+</body>
 
 </html>
