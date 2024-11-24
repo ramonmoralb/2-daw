@@ -11,7 +11,7 @@ function verificarExistencia(nombre, id) {
 
 
 function crearInputText() {
-    const nombre = prompt("Introduce el nombre (id) del input de tipo texto:")
+    const nombre = prompt("Introduce el nombre e id del input de tipo texto:")
     if (verificarExistencia(nombre, nombre)) {
         alert("El nombre o id ya está en uso.")
         return
@@ -26,7 +26,7 @@ function crearInputText() {
 
 
 function crearInputPassword() {
-    const nombre = prompt("Introduce el nombre (id) del input de tipo contraseña:")
+    const nombre = prompt("Introduce el nombre e id del input de tipo contraseña:")
     if (verificarExistencia(nombre, nombre)) {
         alert("El nombre o id ya está en uso.")
         return
@@ -40,7 +40,7 @@ function crearInputPassword() {
 }
 
 function crearTextarea() {
-    const nombre = prompt("Introduce el nombre (id) del textarea:")
+    const nombre = prompt("Introduce el nombre e id del textarea:")
     if (verificarExistencia(nombre, nombre)) {
         alert("El nombre o id ya está en uso.")
         return
@@ -54,7 +54,7 @@ function crearTextarea() {
 }
 
 function crearLabel() {
-    const nombre = prompt("Introduce el nombre (id) al que va referido el label:")
+    const nombre = prompt("Introduce el nombre e id  al que va referido el label:")
     const texto = prompt("Introduce el texto del label:")
     if (verificarExistencia(nombre, nombre)) {
         alert("El nombre o id ya está en uso.")
@@ -68,8 +68,8 @@ function crearLabel() {
 }
 
 function crearImagen() {
-    const ruta = prompt("Introduce la ruta de la imagen (src):")
-    const nombre = prompt("Introduce el nombre (id) de la imagen:")
+    const ruta = prompt("Introduce la ruta de la imagen:")
+    const nombre = prompt("Introduce el nombre e id de la imagen:")
     if (verificarExistencia(nombre, nombre)) {
         alert("El nombre o id ya está en uso.")
         return
@@ -114,8 +114,8 @@ function crearRadio() {
 
 
 function crearBotonSubmit() {
-    const nombre = prompt("Introduce el nombre (id) del botón submit:")
-    const valor = prompt("Introduce el valor (valor) del botón submit:")
+    const nombre = prompt("Introduce el nombre e id del botón submit:")
+    const valor = prompt("Introduce el texto del botón submit:")
     if (verificarExistencia(nombre, nombre)) {
         alert("El nombre o id ya está en uso.")
         return

@@ -1,4 +1,5 @@
 'use strict'
+/* clidNodes devuelve modulosNode más complejo*/
 var nodosBody = document.body.childNodes
 
 function evaluacionContenido(nodo, censura) {
@@ -16,6 +17,17 @@ function censor(document, palabraACendurar) {
         }
     })
 }
+
+
+/** otra manera
+const body = document.body.getElementsByTagName('*')
+console.log(body)
+
+for (let i = 0; i < body.length; i++) {
+    if (body[i].innerHTML.includes('sexo')) {
+        body[i].innerHTML = body[i].innerHTML.replace(/sexo/g, '<span>Contenido bloqueado</span>')
+    }
+}*/
 censor(document, 'sexo')
 
 

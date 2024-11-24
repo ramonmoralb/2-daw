@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         switch (seleccion) {
             case 'text':
                 nuevoElemento = crearInputText()
+                break
             case 'password':
                 nuevoElemento = crearInputPassword()
                 break
