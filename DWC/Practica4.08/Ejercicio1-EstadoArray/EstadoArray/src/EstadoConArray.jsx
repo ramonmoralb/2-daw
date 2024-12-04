@@ -1,39 +1,35 @@
 import { useState } from "react";
 
-const numerosAleatorios = [];
-
 const EstadoConArray = () => {
-    const [numeroAleatorio, setNumeroAleatorio] = useState();
+    const generarNumeroAleatorio = () => {
+        return Math.floor((Math.random() * 100) + 1)
+    }
+    const [numeros, setNumeros] = useState([])
+    const anadirALista = () => {
+        setNumeros(valorAnterior => [...valorAnterior, generarNumeroAleatorio()])
+    }
+    const borrarListaCompleta = () => {
+        setNumeros([])
+    }
 
-    const generarNumero = () => {
-        const nuevoNumero = Math.floor((Math.random() * 100) + 1);
-        setNumeroAleatorio(nuevoNumero)
+    const borrarPorIndice = (indice) => {
+        setNumeros(valorAnterior => valorAnterior.filter((_, i) => i !== indice))
+    }
 
-        if (!numerosAleatorios.includes(numeroAleatorio)) {
-            numerosAleatorios.push(numeroAleatorio)
-        }
+    return <div>
+        <button onClick={anadirALista} >Generar</button>
+        <button onClick={borrarListaCompleta}>Eliminar</button>
+        <ul>
+            {numeros.map((numero, indice) =>
+            (
+                <li onClick={() => {
+                    borrarPorIndice(indice)
+                }} key={indice}> {numero}</li>
+            )
+            )}
+        </ul>
+    </div >
 
-        console.log(numerosAleatorios)
-    };
+}
 
-    return (
-        <div>
-            <div id="botonera">
-                <button onClick={generarNumero}>Generar</button>
-                <button>Eliminar</button>
-            </div>
-            <p id="parrafo">Lista </p>
-            <ul>
-                {
-                    numerosAleatorios.map((numero, indice) =>
-                    (
-                        <li key={indice}>{numero}</li>
-                    )
-                    )
-                }
-            </ul>
-        </div>
-    );
-};
-
-export { EstadoConArray };
+export { EstadoConArray }
