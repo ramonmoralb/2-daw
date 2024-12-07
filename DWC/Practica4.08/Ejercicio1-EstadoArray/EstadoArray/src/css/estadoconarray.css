@@ -1,0 +1,26 @@
+.contenedor-estado-array {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.contenedor-estado-array ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.contenedor-estado-array li {
+    padding: 5px;
+    margin: 5px 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.contenedor-estado-array button {
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}

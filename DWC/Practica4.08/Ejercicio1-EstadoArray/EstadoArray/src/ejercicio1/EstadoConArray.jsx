@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from "react"
+import "../css/estadoconarray.css"
 
 const EstadoConArray = () => {
     const generarNumeroAleatorio = () => {
@@ -16,13 +17,14 @@ const EstadoConArray = () => {
         setNumeros(valorAnterior => valorAnterior.filter((_, i) => i !== indice))
     }
 
-    return <div>
+    return <div className="contenedor-estado-array">
+        <h1>Estado array</h1>
         <button onClick={anadirALista} >Generar</button>
         <button onClick={borrarListaCompleta}>Eliminar</button>
         <ul>
             {numeros.map((numero, indice) =>
             (
-                <li onClick={() => {
+                <li className="li-numero" onClick={() => {
                     borrarPorIndice(indice)
                 }} key={indice}> {numero}</li>
             )
