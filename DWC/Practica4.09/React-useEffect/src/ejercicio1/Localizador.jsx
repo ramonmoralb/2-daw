@@ -1,14 +1,21 @@
-import { useState } from "react"
-
+import { useEffect, useState } from "react"
 
 const Localizador = () => {
     const [posY, setPosY] = useState(0)
     const [posX, setPosx] = useState(0)
-    document.addEventListener('mousemove', (e) => {
-        setPosx(e.clientX)
-        setPosY(e.clientY)
-    })
 
+    useEffect(() => {
+        document.addEventListener('mousemove', (e) => {
+            setPosx(e.clientX)
+            setPosY(e.clientY)
+        })
+        return () => {
+            document.removeEventListener('mousemove', (e) => {
+                setPosx(e.clientX)
+                setPosY(e.clientY)
+            })
+        }
+    }, [])
     return <div>
         <div>
             <h2>Posición del puntero</h2>
