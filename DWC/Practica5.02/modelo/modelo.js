@@ -10,7 +10,10 @@ const cargarLista = async () => {
                 throw new Error("Error al recuperar todas las películas");
             }
         })
-        .then((data) => data.results)
+        .then((data) =>
+
+            data.results
+        )
         .catch((error) => {
             console.log("Error:", error.message);
 
@@ -27,6 +30,8 @@ const peliculaPorId = async (url) => {
                 throw new Error(`Error al recuperar la película `);
             }
         })
+        .then((data) =>
+            data)
         .catch((error) => {
             console.log("Error:", error.message);
         });

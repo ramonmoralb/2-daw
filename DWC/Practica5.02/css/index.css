@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: gainsboro;
+    color: dimgray;
+}
+
+header {
+    background-color: darkslategray;
+    color: lightgray;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+#lista {
+    width: 40%;
+
+    height: 100%;
+}
+
+#lista ul {
+    list-style: none;
+    padding: 0;
+    height: 100%;
+}
+
+.li-titulo {
+    background-color: silver;
+    margin-bottom: 10px;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.li-titulo:hover {
+    background-color: lightgray;
+}
+
+.p-titulo {
+    font-weight: bold;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+#info-pelicula {
+    height: 80%;
+    width: 60%;
+}
+
+.contenedor-resumen {
+    background-color: silver;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: darkslategray;
+    color: lightgray;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

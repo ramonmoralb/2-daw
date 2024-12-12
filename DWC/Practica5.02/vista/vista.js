@@ -5,8 +5,6 @@ import { mostrarResumen } from "../controlador/controlador.js"
 const listaTitulo = async () => {
     const ul = document.createElement('ul')
     const listaPeliculasJson = await cargarLista()
-
-
     listaPeliculasJson.forEach(pelicula => {
         const { title, episode_id, url } = pelicula
         const pTitulo = document.createElement('p')
@@ -14,6 +12,7 @@ const listaTitulo = async () => {
         const li = document.createElement('li')
         li.classList.add("li-titulo")
         pTitulo.innerHTML = `Titulo: ${title}`
+        pTitulo.classList.add("p-titulo")
         pTitulo.onclick = () => { mostrarResumen(url) }
         pId.innerHTML = `Id episodio: ${episode_id}`
         li.appendChild(pTitulo)
