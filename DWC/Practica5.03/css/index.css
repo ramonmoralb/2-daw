@@ -63,6 +63,7 @@ header h1 {
 }
 
 .contenedor-resumen {
+    margin: 1rem;
     background-color: silver;
     padding: 20px;
     border-radius: 5px;
@@ -77,4 +78,27 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+.span-nombre-interprete {
+    cursor: pointer;
+    transition: ease 0.5ms;
+}
+
+.span-nombre-interprete:hover {
+    color: blue;
+}
+
+
+.lista-ineterpretes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.li-interpretes {
+
+    padding: 0.5rem;
+
 }

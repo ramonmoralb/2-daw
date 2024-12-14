@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    listaTitulo()
-
+    listaTitulo();
 
 })
 import { listaTitulo } from "./vista/vista.js"

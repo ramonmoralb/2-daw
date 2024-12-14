@@ -14,7 +14,7 @@ const cargarLista = async () => {
             data.results
         )
         .catch((error) => {
-            console.log("Error:", error.message);
+            console.log("Error al cargar lista:", error.message);
         });
 };
 
@@ -25,29 +25,30 @@ const peliculaPorId = async (url) => {
 
                 return respuesta.json();
             } else {
-                throw new Error(`Error al recuperar la película `);
+                throw new Error(`Fallo al recuperar la pelicula`);
             }
         })
-        .then((data) =>
-            data)
+        .then((data) => data)
         .catch((error) => {
-            console.log("Error:", error.message);
+            console.log("Error al recuperar pelicula por id:", error.message);
         });
 };
+
 const interpretePorId = async (url) => {
-    try {
-        const respuesta = await fetch(url);
+    return fetch(url)
+        .then((respuesta) => {
+            if (respuesta.ok) {
+                return respuesta.json()
+            }
+            else {
+                throw new Error("Fallo al recuperar interpretes")
+            }
+        })
+        .then((data) => data)
+        .catch((error) => {
+            console.log("Error al recuperar interprete por id:", error.message);
+        });
 
-        if (!respuesta.ok) {
-            throw new Error(`Error ${respuesta.status}: ${respuesta.statusText}`);
-        }
-
-        const datos = await respuesta.json();
-        //  console.log(datos); // Opcional: para depuración
-        return datos;
-    } catch (error) {
-        console.error(`Error al realizar la solicitud: ${error.message}`);
-    }
 };
 
 
