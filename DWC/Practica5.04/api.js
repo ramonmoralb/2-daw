@@ -2,7 +2,7 @@ async function getAllMovies() {
     try {
         const respuesta = await fetch("https://swapi.py4e.com/api/films/")
         if (!respuesta.ok) {
-            throw new Error(`Fallo al recuoperar datos`);
+            throw new Error("Fallo al recuoperar datos");
         }
         const datos = await respuesta.json()
         return datos.results
@@ -10,6 +10,7 @@ async function getAllMovies() {
         return error.message;
     }
 }
+
 async function getMovie(url) {
     try {
         const respuesta = await fetch(url)

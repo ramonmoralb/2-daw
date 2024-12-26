@@ -58,7 +58,7 @@ const motrarInfo = async (url) => {
             divInfo.innerHTML = "Vaya algo salió mal.";
         }
     } catch (error) {
-        divInfo.innerHTML = "fallo al recuperar la película ";
+        divInfo.innerHTML = "Fallo al recuperar la película ";
     }
 
 }
