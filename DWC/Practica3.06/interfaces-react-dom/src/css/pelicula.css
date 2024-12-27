@@ -1,0 +1,36 @@
+.contenedor-pelicula {
+    width: 85%;
+    display: grid;
+    grid-template-areas:
+        "titulo titulo titulo"
+        "poster resumen resumen"
+        "botones recaudacion recaudacion"
+        "elenco elenco elenco";
+    gap: 20px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contenedor-pelicula h2 {
+    grid-area: titulo;
+    font-size: 40px;
+    color: #ddd;
+}
+
+.contenedor-pelicula .contenedor-pelicula__poster {
+    grid-area: poster;
+    width: 250px;
+    border-radius: 7px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.contenedor-pelicula .contenedor-pelicula__poster:hover {
+    scale: 1.04;
+}
+
+.contenedor-pelicula p {
+    grid-area: resumen;
+    color: #bbb;
+}

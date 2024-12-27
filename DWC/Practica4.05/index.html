@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Formularios</title>
+</head>
+
+<body>
+    <h1>Generador de Formularios Dinámico</h1>
+
+    <label for="elementSelect">Selecciona un tipo de campo:</label>
+    <select id="elementSelect">
+        <option value="text">Input</option>
+        <option value="password">Contraseña</option>
+        <option value="textarea">Área de Texto</option>
+        <option value="label">Label</option>
+        <option value="image">Imagen</option>
+        <option value="checkbox">Checkbox</option>
+        <option value="radio">Radio</option>
+        <option value="submit">Botón Submit</option>
+    </select>
+
+    <button id="crearCampo">Crear Campo</button>
+    <button id="recogerCampos">Recoger Campos</button>
+
+    <div id="formularioGenerado"></div>
+
+
+    <script type="module" src="generador-formularios.js"></script>
+</body>
+
+</html>

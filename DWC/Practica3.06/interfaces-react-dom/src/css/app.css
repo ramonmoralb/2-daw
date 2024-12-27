@@ -9,20 +9,6 @@ body {
     background-color: #1a1a1a;
 }
 
-.container__app {
-    border-radius: 5px;
-    padding: 12px;
-    margin: 0 auto;
-    width: 95%;
-    background-color: #333;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-}
-
 header {
     padding: 18px;
     width: 100%;
@@ -35,69 +21,6 @@ header {
     justify-content: space-around;
 }
 
-.contenedor-pelicula {
-    width: 85%;
-    display: grid;
-    grid-template-areas:
-        "titulo titulo titulo"
-        "poster resumen resumen"
-        "botones recaudacion recaudacion"
-        "elenco elenco elenco";
-    gap: 20px;
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.contenedor-pelicula h2 {
-    grid-area: titulo;
-    font-size: 40px;
-    color: #ddd;
-}
-
-.contenedor-pelicula .contenedor-pelicula__poster {
-    grid-area: poster;
-    width: 250px;
-    border-radius: 7px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
-}
-
-.contenedor-pelicula .contenedor-pelicula__poster:hover {
-    scale: 1.04;
-}
-
-.contenedor-pelicula p {
-    grid-area: resumen;
-    color: #bbb;
-}
-
-.interpretes {
-    display: none;
-    grid-area: elenco;
-}
-
-.interprete {
-    display: flex;
-    flex-direction: row;
-    padding: 8px;
-    border: 1px solid #555;
-    background-color: #222;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
-    margin: 8px;
-    transition: 0.3s ease;
-}
-
-.interprete:hover {
-    scale: 1.05;
-}
-
-.interprete__img {
-    width: 60px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-}
 
 footer {
     height: 75px;
@@ -108,85 +31,15 @@ footer {
     justify-content: center;
 }
 
-.botones {
-    grid-area: botones;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-
-}
-
-.botones button {
-    width: 84px;
-    padding: 18px;
-    border: 1px solid #555;
-    background-color: #808080;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
-    transition: 0.3s ease;
-    cursor: pointer;
-}
-
-.botones button:hover {
-    background-color: #5c5959;
-
-}
-
-/*para la práctica useRef*/
-.recaudacion {
-    visibility: hidden;
-    grid-area: recaudacion;
-    display: flex;
-    flex-direction: row;
-    padding: 16px;
-    justify-content: center;
-    width: 45%;
-    border: 1px solid #555;
-    background-color: #222;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
-    margin: 8px;
-    transition: 0.3s ease;
-}
-
-.mostrar-taquilla {
-    visibility: visible;
-}
-
-.mostrar-elenco {
-    display: block;
-}
-
 .contenedor-main {
-
     display: flex;
     justify-content: center;
     min-height: 80vh;
 }
 
-.inicio {
-    background-image: url('../imagenes/cinema.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.inicio h2 {
-    font-size: 60px;
-    color: #ddd;
-}
-
-.bar-nav-inicio,
-.submenu-peliculas,
-.submenu-galeria {
+.bar-nav-inicio {
     width: 85%;
-
 }
-
 
 .bar-nav-inicio ul {
     list-style: none;
@@ -195,17 +48,6 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
-
-.submenu-galeria ul,
-.submenu-peliculas ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-
-}
-
 
 .bar-nav-inicio a {
     display: flex;
@@ -219,105 +61,12 @@ footer {
     color: white;
 }
 
-.submenu-peliculas a,
-.submenu-galeria a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    width: 200px;
-    border: 1px solid #808080;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-}
-
-.bar-nav-inicio a:hover,
-.submenu-peliculas a:hover,
-.submenu-galeria a:hover {
+.bar-nav-inicio a:hover {
     background-color: rgb(101, 93, 93);
 }
 
-.peliculas {
-    margin-top: 5px;
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    align-items: center;
-    justify-content: center;
-}
-
-.container__app a {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 80%;
-    padding: 12px;
-    border: 1px solid #808080;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-}
-
-.galeria {
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.lista-galeria {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 14px;
-}
-
-.lista-interpretes {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    color: white;
-}
-
-.interprete {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 40px;
-}
-
-.item-galeria {
-    padding: 10px;
-    border: 1px solid #5c5959;
-    border-radius: 5px;
-    transition: 0.3s ease;
-}
-
-.item-galeria:hover {
-    background-color: #5c5959;
-}
 
 
-.item-galeria figure {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-}
-
-.item-galeria img {
-    width: 150px;
-    border-radius: 8px;
-}
-
-.item-galeria h2 {
-    color: white;
-    font-size: 35px;
-}
 
 .acercade {
     width: 100%;

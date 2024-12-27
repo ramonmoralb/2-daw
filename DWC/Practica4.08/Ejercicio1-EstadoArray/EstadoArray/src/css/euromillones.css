@@ -1,0 +1,46 @@
+.contenedor-euromillon {
+
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+
+}
+
+.contenedor-euromillon h1 {
+    text-align: center;
+}
+
+.contenedor-euromillon ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.combinacion-ganadora {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.apuesta {
+    border-radius: 5px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+
+.apuesta p {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.premiado {
+    background-color: red;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discos de música</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Discos de música</h1>
+    </header>
+    <main class="contenedor-main">
+        <form id="formulario">
+            <div>
+                <label for="nombre">Nombre de disco:</label>
+                <input type="text" id="nombre" name="nombre">
+                <p id="error-nombre" class="error"></p>
+            </div>
+            <div>
+                <label for="nombre-grupo-interprete">Nombre grupo/interprete:</label>
+                <input type="text" id="nombre-grupo-interprete" name="nombre-grupo-interprete">
+                <p id="error-grupo" class="error"></p>
+            </div>
+            <div>
+                <label for="anio">Año publicación:</label>
+                <input type="text" id="anio" name="anio">
+                <p id="error-anio" class="error"></p>
+            </div>
+            <div>
+                <label for="genero-musical">Género musical:</label>
+                <select name="genero-musical" id="genero-musical">
+                    <option value="">Selecciona un género</option>
+                    <option value="rock">Rock</option>
+                    <option value="progressive">Progressive</option>
+                    <option value="punk">Punk</option>
+                    <option value="trash">Trash</option>
+                </select>
+                <p id="error-genero" class="error"></p>
+            </div>
+            <div>
+                <label for="localizacion">Localización:</label>
+                <input type="text" name="localizacion" id="localizacion">
+                <p id="error-localizacion" class="error"></p>
+            </div>
+            <div>
+                <input type="radio" name="prestado" value="prestado-si" id="prestado-si">
+                <label for="prestado-si">Prestado</label>
+                <input checked type="radio" name="prestado" value="prestado-no" id="prestado-no">
+                <label for="prestado-no">No Prestado</label>
+            </div>
+            <div>
+                <button name="guardar">Guardar</button>
+
+            </div>
+        </form>
+        <button name="mostrar" id="mostrar">Mostrar</button>
+        <div id="lista-discos"></div>
+    </main>
+
+</body>
+<script type="module" src="./ejercicio3.js"></script>
+
+</html>

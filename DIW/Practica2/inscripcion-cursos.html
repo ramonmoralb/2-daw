@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="icon" href="./img/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>Inscipcion cursos cerámica - El taller</title>
+</head>
+
+<body class="body-inscripcion">
+    <header class="inscripcion-header">
+        <nav class="inscripcion-header__barnav">
+            <figure class="inscripcion-header__figure">
+                <a href="./index.html"><img class="inscripcion-header__img" src="./img/isologo-taller.png"
+                        alt="Logtotipo de la empresa"></a>
+                <h2 class="inscripcion-header__titulo"><a href="./index.html">El taller</a></h2>
+            </figure>
+            <ul class="inscripcion-header__lista">
+                <li><a href="./que-es-la-ceramica.html">CERÁMICA</a> </li>
+                <li><a href="./cursos.html">CURSOS</a> </li>
+                <li><a id="inscripcion-header__lista__activo" href="./inscripcion-cursos.html">INSCRIPCIÓN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="inscripcion-main contenedor-main">
+        <h2 class="inscripcion-main__titulo">Inscripción a los cursos</h2>
+
+        <form class="inscripcion-main__formulario">
+
+            <fieldset class="inscripcion-main__formulario__campo-detalles">
+                <legend class="inscripcion-main__formulario__campo-detalles__cabecera">Detalles de la inscripción
+                </legend>
+                <div class="inscripcion-main__formulario__detalles">
+                    <div class="inscripcion-main__formulario__detalles__seccion">
+                        <label class="inscripcion-main__formulario__label" for="nombre">Nombre *</label>
+                        <input class="inscripcion-main__formulario__input" type="text" name="nombre" id="nombre"
+                            required minlength="2" maxlength="64" pattern="^[A-Za-zÀ-ÿ'\- ]+$"
+                            title="Solo se pueden introducir letras de la a a la z en minúscula o mayusculas, apostrofes, guiones y tildes en la vocales">
+                    </div>
+                    <div class="inscripcion-main__formulario__detalles__seccion">
+                        <label class="inscripcion-main__formulario__label" for="apellidos">Apellidos *</label>
+                        <input class="inscripcion-main__formulario__input" type="text" name="apellidos" id="apellidos"
+                            required minlength="2" maxlength="128" pattern="^[A-Za-zÀ-ÿ'\- ]+$"
+                            title="Solo se pueden introducir letras de la a a la z en minúscula o mayusculas, apostrofes, guiones y tildes en la vocales">
+                    </div>
+                    <div class="inscripcion-main__formulario__detalles__seccion">
+                        <label class="inscripcion-main__formulario__label" for="email">Correo electrónico *</label>
+                        <input class="inscripcion-main__formulario__input" type="email" name="email" id="email"
+                            required>
+                    </div>
+                    <div class="inscripcion-main__formulario__detalles__seccion">
+                        <label class="inscripcion-main__formulario__label" for="telefono">Teléfono *</label>
+                        <input class="inscripcion-main__formulario__input" type="text" name="telefono" id="telefono"
+                            required minlength="9" maxlength="9" pattern="^[0-9]+$"
+                            title="El número de teléfono debe contener nueve dígitos.">
+                    </div>
+                    <div class="inscripcion-main__formulario__detalles__seccion">
+                        <label class="inscripcion-main__formulario__label" for="nacimiento">Fecha nacimiento *</label>
+                        <input class="inscripcion-main__formulario__input" type="date" name="nacimiento" id="nacimiento"
+                            required>
+                    </div>
+                    <div class="inscripcion-main__formulario__detalles__seccion">
+                        <label class="inscripcion-main__formulario__label" for="curso">Curso *</label>
+                        <select class="inscripcion-main__formulario__input" name="curso" id="curso" required>
+                            <option selected value="">Selecciona curso</option>
+                            <option value="torno">Torno</option>
+                            <option value="ceramica">Cerámica</option>
+                            <option value="moldeado">Modelado</option>
+                            <option value="esmaltes">Esmaltes</option>
+                            <option value="joyeria">Joyería cerámica</option>
+                        </select>
+
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset class="inscripcion-main__formulario__campo-otras-informaciones">
+                <legend class="inscripcion-main__formulario__campo-otras-informaciones__cabecera">Otras informaciones
+                </legend>
+
+                <div class="inscripcion-main__formulario__campo-otras-informaciones__campo-interior__div">
+                    <fieldset class="inscripcion-main__formulario__campo-otras-informaciones__campo-interior">
+                        <legend
+                            class="inscripcion-main__formulario__campo-otras-informaciones__campo-interior__cabecera">
+                            ¿Has hecho otros cursos con nosotros? *
+                        </legend>
+
+                        <div class="inscripcion-main__formulario__campo-otras-informaciones__campo-interior__radios">
+                            <div
+                                class="inscripcion-main__formulario__campo-otras-informaciones__campo-interior__radios__radio">
+                                <input name="radio__option"
+                                    class="inscripcion-main__formulario__campo-otras-informaciones__campo-interior__radios__input"
+                                    type="radio" value="si" id="radio-value__si">
+                                <label
+                                    class="inscripcion-main__formulario__campo-otras-informaciones__campo-interior__label"
+                                    for="radio-value__si">Si</label>
+                            </div>
+                            <div
+                                class="inscripcion-main__formulario__campo-otras-informaciones__campo-interior__radios__radio">
+                                <input name="radio__option"
+                                    class="inscripcion-main__formulario__campo-otras-informaciones__campo-interior__input"
+                                    type="radio" value="no" id="radio-value__no">
+                                <label
+                                    class="inscripcion-main__formulario__campo-otras-informaciones__campo-interior__label"
+                                    for="radio-value__no">No</label>
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+
+                    <div class="inscripcion-main__formulario__campo-otras-informaciones__comentarios">
+                        <label class="inscripcion-main__formulario__campo-otras-informaciones__comentarios__label"
+                            for="inscripcion__comentarios">¿Quieres comentar o preguntar algo?</label>
+                        <textarea
+                            class="inscripcion-main__formulario__campo-otras-informaciones__comentarios__text-area"
+                            name="inscripcion__comentarios" id="inscripcion__comentarios"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="inscripcion-main__formulario__campo-pagos">
+                <legend class="inscripcion-main__formulario__campo-pagos__cabecera">
+                    Elige un método de pago *
+                </legend>
+                <div class="inscripcion-main__formulario__campo-otras-informaciones__pago">
+                    <div class="inscripcion-main__formulario__campo-otras-informaciones__pago__tipo">
+                        <input type="radio" name="pago__tipo" id="transferencia">
+                        <label for="transferencia">Transferencia</label>
+                    </div>
+                    <div class="inscripcion-main__formulario__campo-otras-informaciones__pago__tipo">
+                        <input type="radio" name="pago__tipo" id="tarjeta">
+                        <label for="tarjeta">Tarjeta</label>
+                    </div>
+                    <div class="inscripcion-main__formulario__campo-otras-informaciones__pago__tipo">
+                        <input type="radio" name="pago__tipo" id="efectivo">
+                        <label for="efectivo">En efectivo</label>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="inscripcion-main__formulario__proteccion-datos">
+                <p class="inscripcion-main__formulario__proteccion-datos__info">INFORMACIÓN SOBRE PROTECCIÓN DE DATOS DE
+                    <strong>EL TALLER</strong>. <strong>Finalidades</strong>: recogida de datos para la
+                    inscripción como socio del interesado. <strong>Legitimación</strong>: Consentimiento del interesado.
+                    Destinatarios:
+                    No están previstas
+                    cesiones de datos a terceros, excepto obligación legal. <strong>Derechos</strong>: Puede retirar su
+                    consentimiento en
+                    cualquier
+                    momento, así como acceder, rectificar, suprimir sus datos y otros derechos dirigiéndose a
+                    <a class="inscripcion-main__formulario__proteccion-datos__info__enlace"
+                        href="mailto:info@eltaller.es">info@eltaller.es</a>. <strong>Información
+                        Adicional</strong>: Puede ampliar la información en el enlace de <a
+                        class="inscripcion-main__formulario__proteccion-datos__info__enlace" href="#">Aviso Legal</a>.
+                </p>
+                <div class="inscripcion-main__formulario__proteccion-datos__info__check">
+                    <input type="checkbox" name="politica-privacidad" id="politica-privacidad">
+                    <label for="politica-privacidad">He leído y acepto la <a
+                            class="inscripcion-main__formulario__proteccion-datos__info__enlace" href="#">Política de
+                            privacidad</a></label>
+                </div>
+                <input class="inscripcion__formulario__input" type="submit" value="Inscríbeme">
+            </div>
+
+        </form>
+
+    </main>
+    <footer class="footer-ceramica-cursos-formulario">
+        <ul class="footer-ceramica-cursos-formulario__lista">
+            <li><a href="#" class="footer-ceramica-cursos-formulario__enlace">Aviso legal</a></li>
+            <li><a href="#" class="footer-ceramica-cursos-formulario__enlace">Política de privacidad</a></li>
+            <li><a href="#" class="footer-ceramica-cursos-formulario__enlace">Política de cookies</a></li>
+        </ul>
+        <p class="footer-ceramica-cursos-formulario__creditos">2024 &copy; Ramón Moreno Albert</p>
+    </footer>
+
+</body>
+
+</html>

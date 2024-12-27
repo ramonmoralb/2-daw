@@ -1,3 +1,5 @@
+import '../css/inicio.css'
+
 const Inicio = () => {
     return (
         <div className="inicio">

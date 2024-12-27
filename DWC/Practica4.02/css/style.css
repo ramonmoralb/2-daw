@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 40px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: #475a48;
+    width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 36px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pieza-puzzle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#contenedor-piezas,
+#contenedor-puzzle {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.square-puzzle,
+.square-imagen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+
+}
+
+footer {
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    color: white;
+}
+
+footer p {
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+
+button {
+    background-color: #333;
+    color: #f1f1f1;
+    border: none;
+    padding: 18px;
+    width: 250px;
+    height: 125px;
+    font-size: 35px;
+    border-radius: 12px;
+    transition: 0.5s ease;
+}
+
+button:hover {
+    scale: 1.2
+}
+
+.modal-ganador,
+.modal-perdedor {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+
+    p {
+        font-size: 56px;
+    }
+
+}
+
+.modal-mostrar {
+    display: flex;
+}

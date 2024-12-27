@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* El tamaño se convierte en 10px
+    * para usar rem es muy intuitivo 1rem = 10px */
+    font-size: 62.5%;
+}
+
+header {
+    height: 8rem;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.contenedor-main {
+    width: 95%;
+    margin: 0 auto;
+    font-size: 1.9rem;
+
+}
+
+.contenedor-main__section {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+
+}
+
+.contenedor-main__section__article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border: 0.1rem solid black;
+    gap: 2.5rem;
+}
+
+.contenedor-main__section__article__img {
+    width: 72%;
+}
+
+.contenedor-main__section__article__figure {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-main__section__article__figcaption {
+    width: 72%;
+}
+
+/* Entra cuando se cumple la condicion */
+/** Cuando la resolución llega a 768 de maximo cambia el grid de 2 columnas a 1*/
+@media(max-width: 768px) {
+    .contenedor-main {
+        font-size: 1.5rem;
+    }
+
+    .contenedor-main__section {
+        grid-template-columns: 1fr;
+
+    }
+
+    .contenedor-main__section__article {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .contenedor-main__section__article__img {
+        width: 90%;
+    }
+}

@@ -1,21 +1,534 @@
-:root{
-    --imagen-fondo-indice: url("../img/home-hero.jpg");
+/*Work Sans de Google Fonts (weight 400 y 700, normal y cursiva).*/
+:root {
+    --color-fondos-cabecera-pie: #000000;
+    --color-hover-enlaces-header-pie: #6bdec8;
+    --color-enlace-textos: #942C0B;
+
 }
 
-*{
-    box-sizing: border-box;
+* {
     margin: 0;
     padding: 0;
-}
-a{
-   text-decoration: none;
+    box-sizing: border-box;
 }
 
-.body-index{
-    width: 100%;
-    height: 100%;
-    background-image: var(--imagen-fondo-indice); 
-    background-size: cover;
+body {
+    font-family: "Work Sans", sans-serif;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.contenedor-main {
+    min-width: 960px;
+}
+
+.body-index {
+    height: 100vh;
+    background-image: url("../img/home-hero.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
+
+
+.index-header {
+    margin-top: 1.2rem;
+}
+
+.index-header__lista {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    height: 3.5rem;
+}
+
+.index-header__lista a {
+    color: #ffffff;
+    transition: 0.5ms ease;
+}
+
+.index-main {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.index-main__titulo {
+    font-weight: 700;
+    font-size: 8rem;
+    letter-spacing: -0.7rem;
+}
+
+.index-main__grupo {
+    text-align: center;
+}
+
+.index-main__parrafo {
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+}
+
+.index-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    gap: .5rem;
+    margin-bottom: 1.2rem;
+}
+
+.index-footer__lista {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.index-footer a,
+.footer-ceramica-cursos-formulario__enlace {
+    color: #ffffff;
+    transition: 0.5ms ease;
+}
+
+.body-index a:hover,
+.footer-ceramica-cursos-formulario__enlace:hover {
+    color: var(--color-hover-enlaces-header-pie);
+}
+
+/*hasta aqui el indice */
+
+
+
+.ceramica-header,
+.cursos-header,
+.inscripcion-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    background-color: var(--color-fondos-cabecera-pie);
+}
+
+.ceramica-header__titulo,
+.cursos-header__titulo,
+.inscripcion-header__titulo {
+    color: #ffffff;
+    letter-spacing: -0.1rem;
+    font-size: 3rem;
+}
+
+
+.ceramica-header__lista,
+.cursos-header__lista,
+.inscripcion-header__lista {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    height: 3.5rem;
+
+}
+
+.ceramica-header a,
+.cursos-header a,
+.inscripcion-header a {
+    color: #ffffff;
+}
+
+.ceramica-header__lista a:hover,
+.cursos-header__lista a:hover,
+.inscripcion-header__lista a:hover {
+    color: var(--color-hover-enlaces-header-pie);
+}
+
+.ceramica-header__figure,
+.cursos-header__figure,
+.inscripcion-header__figure {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.ceramica-header__img,
+.cursos-header__img,
+.inscripcion-header__img {
+    width: 4rem;
+}
+
+#ceramica-header__lista__activo,
+#cursos-header__lista__activo,
+#inscripcion-header__lista__activo {
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: .8rem;
+}
+
+/*que es la cerámica*/
+.body-ceramica,
+.body-cursos,
+.body-inscripcion {
+    min-width: 960px;
+}
+
+.ceramica-main__intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.ceramica-main__intro__figure iframe {
+    width: 37.5rem;
+    height: 18.75rem;
+
+}
+
+.ceramica-main {
+    margin: 2rem 0;
+}
+
+.ceramica-main__intro h1 {
+    font-size: 2rem;
+}
+
+.ceramica-main__intro__figure figcaption {
+    font-size: 0.8rem;
+}
+
+.ceramica-main__articulo {
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.ceramica-main__section__titulo {
+    padding-bottom: .6rem;
+    border-bottom: 1px solid black;
+}
+
+.ceramica-main__section {
+    display: grid;
+    gap: 1rem;
+}
+
+.footer-ceramica-cursos-formulario {
+
+    background-color: #000000;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+
+}
+
+.footer-ceramica-cursos-formulario__lista {
+
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.footer-ceramica-cursos-formulario__creditos {
+    font-size: 0.8rem;
+    width: 65%;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.ceramica-main__section__lista-tecnica-material__referencia {
+    font-size: 0.8rem;
+}
+
+.ceramica-main__section__lista-tecnica-material__referencia a {
+    color: var(--color-enlace-textos);
+    border-bottom: 1px dotted var(--color-enlace-textos);
+}
+
+.ceramica-main__section__lista-tecnica-material__referencia a:hover {
+    border-bottom: 1px solid var(--color-enlace-textos);
+}
+
+.ceramica-main__section__lista-utensilios {
+    margin-left: 3rem;
+    display: grid;
+    gap: 0.5rem;
+
+
+}
+
+.ceramica-main__section__lista-utensilios li {
+    list-style-type: square;
+}
+
+.ceramica-main__section__lista-tecnica-material {
+    display: grid;
+
+    margin-left: 3rem;
+}
+
+.ceramica-main__section__lista-tecnica-material dt {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.ceramica-main__section__lista-tecnica-material dd {
+    margin-left: 1.9rem;
+    margin-bottom: 0.6rem;
+
+}
+
+/*hasta aquí cerámica */
+.cursos-main {
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.cursos-main__cabecera {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.cursos-main__cabecera__titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cursos-main__cabecera__titulo span {
+    font-size: 3rem;
+}
+
+/*cursos*/
+.cursos-main__table {
+    width: 100%;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+    border-bottom: 1px solid black;
+}
+
+.cursos-main__cabecera__figure {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-start;
+}
+
+.cursos-main__cabecera__figcaption {
+    font-size: 0.7rem;
+}
+
+.cursos-main__cabecera__figcaption a,
+.inscripcion-main__formulario__proteccion-datos__info__enlace {
+    color: var(--color-enlace-textos);
+    border-bottom: 1px dotted var(--color-enlace-textos);
+}
+
+.cursos-main__cabecera__figcaption a:hover,
+.inscripcion-main__formulario__proteccion-datos__info__enlace:hover {
+    border-bottom: 1px solid var(--color-enlace-textos);
+}
+
+.cursos-main__cabecera__imagen {
+    width: 100%;
+}
+
+.cursos-main__cabecera__hgroup {
+    width: 75%;
+}
+
+.cursos-main__cabecera__hgroup__titulo,
+.cursos-main__cabecera__hgroup__parrafo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.cursos-main__table__encabezados {
+    text-align: left;
+
+}
+
+.cursos-main__table__titulo {
+    border-top: 1px solid black;
+    padding: 0.5rem;
+}
+
+.cursos__main__table__encabezados__celda {
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0.7rem;
+}
+
+.cursos-main__table__body__linea {
+    height: 2.5rem;
+}
+
+.cursos-main__table__body__celda {
+    padding: 0.7rem;
+}
+
+.cursos-main__table__body__linea:nth-child(odd) {
+    background-color: var(--color-hover-enlaces-header-pie);
+
+}
+
+.cursos-main__table__body__linea td:first-of-type {
+    font-weight: 700;
+}
+
+.cursos-main__table__body__celda__footer {
+    font-size: 0.7rem;
+    padding: 0.7rem;
+}
+
+/*inscripción*/
+.inscripcion-main {
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inscripcion-main__titulo {
+    padding: 2rem;
+}
+
+
+
+.inscripcion-main__formulario__campo-detalles__cabecera,
+.inscripcion-main__formulario__campo-pagos__cabecera,
+.inscripcion-main__formulario__campo-otras-informaciones__cabecera,
+.inscripcion-main__formulario__campo-otras-informaciones__campo-interior__cabecera {
+    margin-left: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.inscripcion-main__formulario__campo-otras-informaciones__campo-interior__div {
+    padding: 2rem;
+
+}
+
+.inscripcion-main__formulario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.inscripcion-main__formulario__detalles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    gap: 0.7rem;
+
+}
+
+.inscripcion-main__formulario__detalles__seccion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.8rem;
+
+}
+
+.inscripcion-main__formulario__input {
+    width: 100%;
+    height: 2.5rem;
+}
+
+
+.inscripcion-main__formulario__campo-otras-informaciones__campo-interior__radios__radio {
+    padding: 0.8rem;
+}
+
+.inscripcion-main__formulario__campo-otras-informaciones__comentarios {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inscripcion-main__formulario__campo-otras-informaciones__comentarios__label {
+    padding: 1rem 0;
+}
+
+.inscripcion-main__formulario__campo-otras-informaciones__comentarios__text-area {
+    height: 7rem;
+}
+
+.inscripcion-main__formulario__campo-otras-informaciones__pago {
+    padding: 1rem 0;
+}
+
+.inscripcion-main__formulario__campo-otras-informaciones__pago__tipo {
+    padding-left: 2rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+
+.inscripcion-main__formulario__proteccion-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.inscripcion__formulario__input {
+    cursor: pointer;
+    color: #ffffff;
+    width: 7rem;
+    height: 2rem;
+    border: none;
+    background-color: var(--color-enlace-textos);
+    transition: 0.5ms ease;
+
+}
+
+.inscripcion__formulario__input:hover {
+    background-color: gray;
+}

@@ -1,0 +1,45 @@
+.interpretes {
+    display: none;
+    grid-area: elenco;
+}
+
+.interprete {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    border: 1px solid #555;
+    background-color: #222;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    margin: 8px;
+    transition: 0.3s ease;
+}
+
+.interprete:hover {
+    scale: 1.05;
+}
+
+.interprete__img {
+    width: 60px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.mostrar-elenco {
+    display: block;
+}
+
+.lista-interpretes {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    color: white;
+}
+
+.interprete {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+}

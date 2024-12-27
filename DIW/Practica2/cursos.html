@@ -1,10 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/estilos.css">
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/estilos.css">
+  <link rel="icon" href="./img/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <title>Cusrsos Ceramica</title>
+</head>
+
+<body class="body-cursos">
+  <header class="cursos-header">
+    <nav class="cursos-header__barnav">
+      <figure class="cursos-header__figure">
+        <a href="index.html"><img class="cursos-header__img" src="./img/isologo-taller.png"
+            alt="Logtotipo de la empresa"></a>
+        <h2 class="cursos-header__titulo"><a href="index.html">El taller</a></h2>
+      </figure>
+      <ul class="cursos-header__lista">
+        <li><a href="./que-es-la-ceramica.html">CERÁMICA</a> </li>
+        <li><a id="cursos-header__lista__activo" href="#">CURSOS</a> </li>
+        <li><a href="./inscripcion-cursos.html">INSCRIPCIÓN</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="cursos-main contenedor-main">
+    <div class="cursos-main__cabecera">
+      <h1 class="cursos-main__cabecera__titulo">Cursos de cerámica<span>2023</span></h1>
+      <figure class="cursos-main__cabecera__figure">
+        <img class="cursos-main__cabecera__imagen" src="./img/cursos-ceramica.jpg" alt="Tranajos de alfarería">
+        <figcaption class="cursos-main__cabecera__figcaption">&copy; Foto de <a target="_blank"
+            href="https://unsplash.com/@courtneymcook">Courtney Cook</a> en
+          <a target="_blank" href="https://unsplash.com/es/fotos/jZLozXwxgbo">Unsplash</a>
+        </figcaption>
+      </figure>
+      <hgroup class="cursos-main__cabecera__hgroup">
+        <h2 class="cursos-main__cabecera__hgroup__titulo">Cursos de cerámica para todos los niveles.</h2>
+        <p class="cursos-main__cabecera__hgroup__parrafo">Artesanos expertos te guiarán para que aprendas el oficio y
+          des
+          rienda suelta
+          a tu creatividad.
+        </p>
+      </hgroup>
+    </div>
+    <table class="cursos-main__table">
+
+      <caption class="cursos-main__table__titulo">
+        Programación cursos
+      </caption>
+      <thead class="cursos-main__table__encabezados">
+        <tr class="cursos-main__table__encabezados__linea">
+          <th class="cursos__main__table__encabezados__celda">Cursos</th>
+          <th class="cursos__main__table__encabezados__celda">Precio</th>
+          <th class="cursos__main__table__encabezados__celda">Duración</th>
+          <th class="cursos__main__table__encabezados__celda">Horario</th>
+        </tr>
+      </thead>
+      <tbody class="cursos-main__table__body">
+        <tr class="cursos-main__table__body__linea">
+          <td class="cursos-main__table__body__celda">Torno</td>
+          <td class="cursos-main__table__body__celda">150 €</td>
+          <td class="cursos-main__table__body__celda">4 horas</td>
+          <td class="cursos-main__table__body__celda">Un sábado al mes de 10 a 14h</td>
+        </tr>
+        <tr class="cursos-main__table__body__linea">
+          <td class="cursos-main__table__body__celda">Cerámica</td>
+          <td class="cursos-main__table__body__celda">100 €</td>
+          <td class="cursos-main__table__body__celda">4 horas</td>
+          <td class="cursos-main__table__body__celda">Jueves alternos de 19 a 21 h</td>
+        </tr>
+        <tr class="cursos-main__table__body__linea">
+          <td class="cursos-main__table__body__celda">Modelado</td>
+          <td class="cursos-main__table__body__celda">200 €</td>
+          <td class="cursos-main__table__body__celda">12 horas</td>
+          <td class="cursos-main__table__body__celda">Un miercoles al mes de 18 a 21 h</td>
+        </tr>
+        <tr class="cursos-main__table__body__linea">
+          <td class="cursos-main__table__body__celda">Esmaltes</td>
+          <td class="cursos-main__table__body__celda">250 €</td>
+          <td class="cursos-main__table__body__celda">16 horas</td>
+          <td class="cursos-main__table__body__celda">Martes y jueves de 19 a 21 h</td>
+        </tr>
+        <tr class="cursos-main__table__body__linea">
+          <td class="cursos-main__table__body__celda">Joyería cerámica</td>
+          <td class="cursos-main__table__body__celda">160 €</td>
+          <td class="cursos-main__table__body__celda">4 horas</td>
+          <td class="cursos-main__table__body__celda">Un sábado al mes de 10 a 14h</td>
+        </tr>
+      </tbody>
+      <tfoot class="cursos-main__table__body__footer">
+        <tr class="cursos-main__table__body__linea__footer">
+          <td class="cursos-main__table__body__celda__footer" colspan="4">Plazas limitadas a 15 alumnos por sesión</td>
+        </tr>
+      </tfoot>
+    </table>
+
+  </main>
+  <footer class="footer-ceramica-cursos-formulario">
+    <ul class="footer-ceramica-cursos-formulario__lista">
+      <li><a href="#" class="footer-ceramica-cursos-formulario__enlace">Aviso legal</a></li>
+      <li><a href="#" class="footer-ceramica-cursos-formulario__enlace">Política de privacidad</a></li>
+      <li><a href="#" class="footer-ceramica-cursos-formulario__enlace">Política de cookies</a></li>
+    </ul>
+    <p class="footer-ceramica-cursos-formulario__creditos">2024 &copy; Ramón Moreno Albert</p>
+  </footer>
+
+</body>
+
 </html>

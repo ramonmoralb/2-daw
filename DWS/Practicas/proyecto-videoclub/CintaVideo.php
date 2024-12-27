@@ -8,8 +8,10 @@ class CintaVideo extends Soporte {
     }
 
     public function muestraResumen() {
+        
+        echo "Cinta de vídeo <br>";
         parent::muestraResumen();
-        echo " Duración: " . $this->duracion . " minutos.";
+        echo " Duración: " . $this->duracion . " minutos.<br>";
     }
 }
 ?>

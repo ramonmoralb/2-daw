@@ -10,6 +10,9 @@ class Soporte {
         $this->numero = $numero;
         $this->precio = $precio;
     }
+    public function getNumero(){
+        return $this->numero;
+    }
 
     public function getPrecio() {
         return $this->precio;
@@ -20,7 +23,7 @@ class Soporte {
     }
 
     public function muestraResumen() {
-        echo $this->titulo . " " . $this->precio . " Euros (IVA no incluido)";
+        echo $this->titulo . "<br>" . $this->precio . " Euros (IVA no incluido)<br>";
     }
 }
 ?>

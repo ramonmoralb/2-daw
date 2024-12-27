@@ -1,3 +1,4 @@
+import '../css/recaudacion.css'
 const Recaudacion = ({ refRecaudacion, recaudacion }) => {
     return (
         <div ref={refRecaudacion} className="recaudacion">
