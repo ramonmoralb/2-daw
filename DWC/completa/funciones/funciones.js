@@ -1,6 +1,6 @@
 //mostrar películas recibe las peliculas 
 //retorna un div con un div con un lista desordenada
-
+import { getCharacter } from "../api/api.js";
 const mostraPeliculas = (movies) => {
     const { peliculas, error } = movies;
     const div = document.createElement("div");
@@ -24,6 +24,31 @@ const mostraPeliculas = (movies) => {
         return div;
     }
 }
+const personajeToLi = (personaje) => {
+    const li = document.createElement("p");
+    const pNombre = document.createElement("p");
+    pNombre.innerHTML = personaje.name;
+    li.appendChild(pNombre)
+    return li;
+}
+const flistaPersonajes = async (personajesUrls) => {
+    const ul = document.createElement("ul");
+
+    for (const personajeUrl of personajesUrls) {
+        const { personaje, error } = await getCharacter(personajeUrl);
+        // mejorar la condición..
+        if (error === null) {
+            const li = personajeToLi(personaje);
+            ul.appendChild(li);
+        } else {
+            console.error(`Error al recuperar el personaje: ${error}`);
+        }
+    }
+
+    return ul;
+};
+
+
 
 // recibe objeto película y retorna el html li 
 const peliculaToLi = (pelicula) => {
@@ -48,35 +73,35 @@ const peliculaToLi = (pelicula) => {
     return li;
 }
 
-const infoPelicula = (pelicula) => {
+const infoPelicula = async (pelicula) => {
     const contenedorPrincipal = document.getElementById("contenido-principal");
     const divExistente = document.getElementById("info-pelicula");
     if (divExistente) {
         divExistente.remove();
     }
 
-
     const div = document.createElement("div");
     div.id = "info-pelicula";
     const tituloH2 = document.createElement("h2");
     tituloH2.classList.add("titulo-info");
-    tituloH2.innerHTML = `Sipnopsis de: ${pelicula.title} `
+    tituloH2.innerHTML = `Sinopsis de: ${pelicula.title} `;
     const pSipnopsis = document.createElement("p");
     pSipnopsis.innerHTML = pelicula.opening_crawl;
-    pSipnopsis.classList.add("parrafo-sipnopsis")
+    pSipnopsis.classList.add("parrafo-sipnopsis");
     const pDirector = document.createElement("p");
-    pDirector.classList.add("p-director")
+    pDirector.classList.add("p-director");
     const pProductor = document.createElement("p");
-    pProductor.classList.add("p-productor")
-    pDirector.innerHTML = `Director: <strong>${pelicula.director}</strong>`
-    pProductor.innerHTML = `Productor: <strong>${pelicula.producer}</strong>`
+    pProductor.classList.add("p-productor");
+    pDirector.innerHTML = `Director: <strong>${pelicula.director}</strong>`;
+    pProductor.innerHTML = `Productor: <strong>${pelicula.producer}</strong>`;
 
-
+    const listaPersonajes = await flistaPersonajes(pelicula.characters);
 
     div.appendChild(tituloH2);
     div.appendChild(pDirector);
     div.appendChild(pProductor);
     div.appendChild(pSipnopsis);
+    div.appendChild(listaPersonajes);
 
     contenedorPrincipal.appendChild(div);
 };
