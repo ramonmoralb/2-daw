@@ -1,4 +1,5 @@
-import { getMovie, getCharactersUrl } from "./api.js";
+import { getMovie, getCharactersUrl, getCharacter } from "./api.js";
+
 const mostrarPeliculas = (movies, contenedor) => {
     if (Array.isArray(movies) && movies.length > 0) {
         const listaPeliculas = document.createElement("ul");
@@ -36,6 +37,8 @@ const mostarPelicula = (pelicula) => {
 
     return { parrafoTitulo, parrafoCapitulo }
 }
+
+
 const motrarInfo = async (url) => {
     const divInfo = document.getElementById("div-info");
     var html = "Cargando datos..."
@@ -45,22 +48,52 @@ const motrarInfo = async (url) => {
 
         if (pelicula) {
             const { title, opening_crawl, producer, characters } = pelicula
-            const p = await getCharactersUrl(characters);
-            console.log(p)
+            const personajes = await getCharactersUrl(characters)
+            const divPersonajes = await mostrarPersonajes(personajes)
+
             html =
                 `<div class="info-pelicula">
-            <p>Datos de: ${title} </p>
-            <p>Sipnopsis:${opening_crawl} </p>
-            <p>Productor: ${producer}</p>
-        </div>`;
+                    <p>Datos de: ${title} </p>
+                    <p>Sipnopsis:${opening_crawl} </p>
+                    <p>Productor: ${producer}</p>
+                </div>`;
             divInfo.innerHTML = html
+            divInfo.appendChild(divPersonajes)
         } else {
             divInfo.innerHTML = "Vaya algo salió mal.";
         }
+
     } catch (error) {
         divInfo.innerHTML = "Fallo al recuperar la película ";
     }
 
+}
+
+const mostrarPersonajes = async (personajesUrl) => {
+    const div = document.createElement("div");
+    div.classList.add("div-personajes");
+    div.innerHTML = "Cargando personajes...";
+
+    if (personajesUrl) {
+        const ul = document.createElement("ul");
+        ul.classList.add("lista-personajes");
+        personajesUrl.forEach(async (personajeUrl) => {
+            const li = document.createElement("li");
+            li.classList.add("li-personaje");
+            const { name, vehiculosResueltos } = await getCharacter(personajeUrl);
+            console.log(vehiculosResueltos)
+            li.innerText = name;
+            if (vehiculosResueltos.length > 0) {
+                console.log("vehiculos de : ", name, "  ", vehiculosResueltos)
+            }
+            ul.appendChild(li)
+        })
+        div.innerHTML = "";
+        div.appendChild(ul);
+    } else {
+        div.innerHTML = "No hay personajes";
+    }
+    return div;
 }
 
 export { mostrarPeliculas }

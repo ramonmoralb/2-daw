@@ -23,6 +23,7 @@ async function getMovie(url) {
         throw new Error(error.message);
     }
 }
+
 async function getCharacter(url) {
     try {
         const respuesta = await fetch(url)
@@ -30,8 +31,13 @@ async function getCharacter(url) {
             throw new Error("Fallo al recuperar personaje.");
         }
         const personaje = await respuesta.json();
-        return personaje
+        const vehiculosPromesas = await getVehicles(personaje.vehicles);
+        const vehiculosResueltos = await Promise.all(vehiculosPromesas)
 
+        return {
+            ...personaje,
+            vehiculosResueltos
+        }
     } catch (error) {
         throw new Error(error.message);
     }
@@ -39,13 +45,24 @@ async function getCharacter(url) {
 
 
 async function getCharactersUrl(characters) {
-    const arrPersonajes = [];
     const personajesUrl10 = characters.splice(0, 10);
-    personajesUrl10.forEach(async (personajeUrl) => {
-        const personaje = await getCharacter(personajeUrl);
-        arrPersonajes.push(personaje)
-    });
-    return arrPersonajes;
+    return personajesUrl10;
+}
+async function getVehicles(vehiclesUrls) {
+    try {
+        const vehiculosPromesas = vehiclesUrls.map(vehiclesUrl => fetch(vehiclesUrl).then(res => {
+            if (!res.ok) {
+                throw new Error(`Error al obtener vehículo: ${res.statusText}`);
+            }
+            return res.json();
+        }));
+        return await vehiculosPromesas;
+    } catch (error) {
+        console.error(`Error en getVehicles: ${error.message}`);
+        throw new Error(error.message);
+    }
 }
 
-export { getAllMovies, getMovie, getCharactersUrl }
+
+
+export { getAllMovies, getMovie, getCharactersUrl, getCharacter }
