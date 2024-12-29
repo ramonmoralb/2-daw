@@ -9,6 +9,7 @@ const getFilms = async () => {
 
         const datos = await res.json();
         // el retorno es un objeto con el atributo error, el cual voy a usar para controlar la reenderización
+        // de este modo puedo devolver el status de la respuesta o lo que quiera o necesite dentro del objeto...
         return { peliculas: datos.results, error: null };
     } catch (error) {
         console.log(error.message);
@@ -28,4 +29,39 @@ const getCharacter = async (characterUrl) => {
         return { personaje: null, error: error.message }
     }
 }
-export { getFilms, getCharacter };
+
+const getVehicle = async (vehicleUrl) => {
+    try {
+        const res = await fetch(vehicleUrl);
+        if (!res.ok) {
+            throw new Error("Error al recuperar vehículo.");
+        }
+        const vehicle = await res.json();
+        return { vehicle: vehicle, error: null };
+    } catch (error) {
+        return { vehicle: null, error: error.message };
+    }
+}
+const getStarship = async (starshipUrl) => {
+    try {
+        const res = await fetch(starshipUrl);
+        if (!res.ok) {
+            throw new Error("Error al recuperar vehículo.");
+        }
+        const starship = await res.json();
+        return { starship: starship, error: null };
+    } catch (error) {
+        return { starship: null, error: error.message };
+    }
+}
+const getFlota = async (vehiclesUrls, starshipsUrls) => {
+    try {
+        const vehicles = await Promise.all(vehiclesUrls.map(vehicleUrl => getVehicle(vehicleUrl)));
+        const starships = await Promise.all(starshipsUrls.map(starshipUrl => getStarship(starshipUrl)));
+        return { vehicles: vehicles, starships: starships, error: null }
+    } catch (error) {
+        return { vehicles: null, starships: null, error: error }
+    }
+
+}
+export { getFilms, getCharacter, getFlota };
