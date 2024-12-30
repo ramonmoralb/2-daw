@@ -6,13 +6,11 @@ const getFilms = async () => {
         if (!res.ok) {
             throw new Error("Error al recuperar peliculas");
         }
-
         const datos = await res.json();
         // el retorno es un objeto con el atributo error, el cual voy a usar para controlar la reenderización
-        // de este modo puedo devolver el status de la respuesta o lo que quiera o necesite dentro del objeto...
+        // de este modo puedo devolver el status de la respuesta o lo que quiera o necesite dentro del objeto...            
         return { peliculas: datos.results, error: null };
     } catch (error) {
-        console.log(error.message);
         return { peliculas: null, error: error.message };
     }
 }
@@ -42,6 +40,7 @@ const getVehicle = async (vehicleUrl) => {
         return { vehicle: null, error: error.message };
     }
 }
+
 const getStarship = async (starshipUrl) => {
     try {
         const res = await fetch(starshipUrl);
@@ -54,6 +53,7 @@ const getStarship = async (starshipUrl) => {
         return { starship: null, error: error.message };
     }
 }
+
 const getFlota = async (vehiclesUrls, starshipsUrls) => {
     try {
         const vehicles = await Promise.all(vehiclesUrls.map(vehicleUrl => getVehicle(vehicleUrl)));
@@ -62,6 +62,6 @@ const getFlota = async (vehiclesUrls, starshipsUrls) => {
     } catch (error) {
         return { vehicles: null, starships: null, error: error }
     }
-
 }
+
 export { getFilms, getCharacter, getFlota };

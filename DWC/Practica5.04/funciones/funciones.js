@@ -1,3 +1,4 @@
+"use strict"
 //mostrar películas recibe las peliculas 
 //retorna un div con un div con un lista desordenada
 import { getCharacter, getFlota } from "../api/api.js";
@@ -38,18 +39,29 @@ const personajeToLi = (personaje) => {
 const infoPersonaje = (evento, personaje) => {
     const contenedorActual = evento.target.parentNode;
     const divExistente = document.querySelector(".descripcion-personaje");
+
+    if (divExistente && divExistente.dataset.personajename === personaje.name) {
+        divExistente.remove();
+        return;
+    }
+
+    // Si existe otra descripción, la eliminamos
     if (divExistente) {
         divExistente.remove();
     }
+
     const botonPilota = document.createElement("button");
     botonPilota.innerHTML = "Pilota";
-    botonPilota.onclick = (e) => { mostrarNaves(e, personaje.vehicles, personaje.starships) }
+    botonPilota.onclick = (e) => {
+        mostrarNaves(e, personaje.vehicles, personaje.starships);
+    };
+
     const pGenero = document.createElement("p");
     pGenero.innerHTML = `Género: ${personaje.gender}`;
     const pPeso = document.createElement("p");
     pPeso.innerHTML = `Peso: ${personaje.mass}`;
     const pAltura = document.createElement("p");
-    pAltura.innerHTML = `Altura ${personaje.height}`;
+    pAltura.innerHTML = `Altura: ${personaje.height}`;
     const pColorOjos = document.createElement("p");
     pColorOjos.innerHTML = `Color ojos: ${personaje.eye_color}`;
     const pColorPelo = document.createElement("p");
@@ -57,6 +69,12 @@ const infoPersonaje = (evento, personaje) => {
 
     const divDescripcionPersonaje = document.createElement("div");
     divDescripcionPersonaje.classList.add("descripcion-personaje");
+
+    // para quitar del dom el elemento actual
+    //  dataset asocia al contenedor investigar sobre su uso
+    divDescripcionPersonaje.dataset.personajename = personaje.name;
+    //  console.log("name con dataset: ", divDescripcionPersonaje.dataset.personajename);
+
     divDescripcionPersonaje.appendChild(pGenero);
     divDescripcionPersonaje.appendChild(pPeso);
     divDescripcionPersonaje.appendChild(pAltura);
@@ -65,26 +83,83 @@ const infoPersonaje = (evento, personaje) => {
     divDescripcionPersonaje.appendChild(botonPilota);
 
     contenedorActual.appendChild(divDescripcionPersonaje);
-}
+};
+
 const mostrarNaves = async (e, vehiclesUrls, starshipsUrls) => {
     const divFlota = document.createElement("div");
+    const divExistente = document.querySelector(".contenedor-flota");
+    if (divExistente) {
+        divExistente.remove();
+    }
     divFlota.classList.add("contenedor-flota");
+
     const { vehicles, starships, error } = await getFlota(vehiclesUrls, starshipsUrls);
+
     if (error === null) {
-        console.log(starships)
-        console.log(vehicles)
-        const p = document.createElement("p");
-        // el array contiene objetos starship, y error
-        // todo controlar los arrays vacios...de naves y vehiculos
-        p.innerHTML = `naves ${starships[0].starship.name}`
-        divFlota.appendChild(p);
+        const navesDiv = document.createElement("div");
+        navesDiv.classList.add("flota-naves");
+
+        const vehiculosDiv = document.createElement("div");
+        vehiculosDiv.classList.add("flota-vehiculos");
+        const navesTitulo = document.createElement("h3");
+        navesTitulo.innerText = "Naves pilotadas";
+        navesDiv.appendChild(navesTitulo);
+
+        const vehiculosTitulo = document.createElement("h3");
+        vehiculosTitulo.innerText = "Vehículos pilotados";
+        vehiculosDiv.appendChild(vehiculosTitulo);
+
+
+        if (starships.length > 0) {
+            const ulNaves = document.createElement("ul");
+            ulNaves.classList.add("lista-naves");
+
+            starships.forEach(starship => {
+                const li = document.createElement("li");
+                li.classList.add("item-nave");
+                li.innerHTML = `
+                    <strong>${starship.starship.name}</strong>
+                    <p>Fabricante: ${starship.starship.manufacturer}</p>
+                    <p>Modelo: ${starship.starship.model}</p>
+                `;
+                ulNaves.appendChild(li);
+            });
+
+            navesDiv.appendChild(ulNaves);
+        } else {
+            navesDiv.innerHTML += "<p>No pilota ninguna nave.</p>";
+        }
+
+        if (vehicles.length > 0) {
+            const ulVehiculos = document.createElement("ul");
+            ulVehiculos.classList.add("lista-vehiculos");
+
+            vehicles.forEach(vehicle => {
+                const li = document.createElement("li");
+                li.classList.add("item-vehiculo");
+                li.innerHTML = `
+                    <strong>${vehicle.vehicle.name}</strong>
+                    <p>Fabricante: ${vehicle.vehicle.manufacturer}</p>
+                    <p>Modelo: ${vehicle.vehicle.model}</p>
+                `;
+                ulVehiculos.appendChild(li);
+            });
+
+            vehiculosDiv.appendChild(ulVehiculos);
+        } else {
+            vehiculosDiv.innerHTML += "<p>No pilota ningún vehículo.</p>";
+        }
+
+        divFlota.appendChild(navesDiv);
+        divFlota.appendChild(vehiculosDiv);
         e.target.parentNode.appendChild(divFlota);
 
     } else {
-        console.log(" errorr")
-
+        divFlota.innerHTML = "<p>Algo ha fallado al cargar los vehículos y las naves.</p>";
+        e.target.parentNode.appendChild(divFlota);
     }
-}
+};
+
 
 
 const MorstarListaPersonajes = async (personajesUrls) => {
