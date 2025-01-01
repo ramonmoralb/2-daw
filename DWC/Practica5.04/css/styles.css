@@ -1,0 +1,193 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+}
+
+
+header .cabecera {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .cabecera h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+
+main #contenido-principal {
+    padding: 20px;
+}
+
+
+.contenedor-peliculas {
+    margin-bottom: 30px;
+}
+
+.lista-peliculas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.li-pelicula-item {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.li-pelicula-item:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.li-titulo {
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.span-titulo {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.span-titulo:hover {
+    color: #0056b3;
+}
+
+
+#info-pelicula {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-info {
+    color: #007bff;
+    margin-top: 0;
+}
+
+.p-director,
+.p-productor {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.parrafo-sipnopsis {
+    font-size: 1rem;
+    margin: 15px 0;
+}
+
+
+.lista-personajes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.li-personaje {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.li-personaje:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nombre-personaje-parrafo {
+    cursor: pointer;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+
+
+.descripcion-personaje p {
+    margin: 5px 0;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.contenedor-flota {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.flota-naves,
+.flota-vehiculos {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+h3 {
+    margin: 0 0 10px;
+    color: #007bff;
+}
+
+.lista-naves,
+.lista-vehiculos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-nave,
+.item-vehiculo {
+    margin-bottom: 10px;
+}
+
+.item-nave strong,
+.item-vehiculo strong {
+    color: #343a40;
+}
+
+footer.footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #dee2e6;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
