@@ -50,8 +50,9 @@ body {
     width: 100%;
     margin: 0 auto;
     color: var(--color-texto);
-    background-color: grey;
+
 }
+
 
 
 .header {
@@ -72,7 +73,7 @@ body {
 }
 
 .header__nav-item {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
 }
 
@@ -107,7 +108,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        width: 80%;
+        width: 70%;
         gap: 0;
         margin: 0 auto;
     }
@@ -122,7 +123,7 @@ body {
         display: flex;
         flex-direction: column;
 
-        width: 80%;
+        width: 70%;
         gap: 0;
         margin: 0 auto;
         /*Pruebas de centrado ... */
@@ -133,7 +134,7 @@ body {
 .footer {
     display: flex;
     flex-direction: column;
-    padding: 2.5rem;
+    padding: 2.5rem 0 2.5rem 0;
     gap: 1.2rem;
     background-color: #000000;
 }
@@ -150,8 +151,7 @@ body {
     flex-direction: row;
     gap: 0.3rem;
     justify-content: center;
-    align-items: center;
-    margin-top: 0.7rem;
+
 
     img {
         width: 100%;
@@ -167,8 +167,15 @@ body {
     color: var(--color-hover-enlace-footer);
 }
 
+.footer__nav-social__logo:hover {
+    opacity: var(--opacidad-logo-redes);
+
+
+}
+
 .footer__copyright,
 .footer__autor {
+    text-align: center;
     color: var(--color-textos-fondo-negro);
 }
 
@@ -178,9 +185,111 @@ body {
     align-items: center;
 }
 
-@media(min-width: 768px) {
-    .footer {}
+@media(min-width: 1024px) {
+
+    .footer__nav-legal,
+    .footer__nav-social,
+    .contenedor-copyright {
+        margin: 0 auto;
+        width: 70%;
+    }
+
+    .footer__nav-legal__lista {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 2.1rem;
+
+    }
+
+    .footer__nav-social__lista {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1.1rem;
+        margin-top: 0;
+    }
+
+
+
+    .footer__nav-legal__item:nth-last-child(-n+3) {
+        list-style: disc;
+    }
+
+    .contenedor-copyright {
+        display: flex;
+        align-items: flex-start;
+    }
+
 }
+
+
+/*Lema*/
+.section-lema {
+    padding: 4.3rem 2.4rem;
+    background-image: url("../materiales3/img/bg-hero-home-m.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.section-lema__descripcion {
+    color: var(--color-textos-fondo-negro);
+    width: 400px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.7rem;
+}
+
+@media(min-width: 768px) {
+    .section-lema {
+        padding: 4.3rem 3rem;
+    }
+
+    .section-lema__descripcion {
+        width: 700px;
+        font-size: 3.8rem;
+    }
+}
+
+@media(min-width: 1024px) {
+    .section-lema {
+        padding: 4.8rem 3rem;
+    }
+
+    .section-lema__descripcion {
+        width: 900px;
+        font-size: 4rem;
+        line-height: 3.8rem;
+    }
+}
+
+.section-info {
+    display: flex;
+    padding: 0 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-info__h2 {
+    padding: 1rem 0;
+}
+
+.section-info__parrafo:last-of-type {
+    margin-top: 0.6rem;
+}
+
+@media(min-width: 768px) {
+    .section-info {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+
 
 img {
     width: 85px;
