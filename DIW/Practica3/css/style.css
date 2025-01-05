@@ -61,7 +61,15 @@ body {
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    padding: 1.8rem 0 1rem 0;
+    padding: 1.8rem 0 0 0;
+}
+
+.header__nav {
+    position: sticky;
+    top: 0;
+
+    background-color: var(--color-textos-fondo-negro);
+    padding: 1rem 0 1rem 0;
 }
 
 .header__nav-item {
@@ -113,9 +121,14 @@ body {
         margin: 0 auto;
     }
 
+
+
     .header__nav-lista {
+        width: 70%;
         flex-direction: row;
         gap: 1rem;
+        margin: 0 auto;
+        justify-content: flex-start;
     }
 
 
@@ -127,6 +140,7 @@ body {
     padding: 2.5rem 0 2.5rem 0;
     gap: 1.2rem;
     background-color: #000000;
+
 }
 
 .footer__nav-legal__lista {
