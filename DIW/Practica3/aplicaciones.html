@@ -1,175 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Document</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
-    <header class="header">
-      <h1 class="header__titulo"><a href="index.html">IA aldía</a></h1>
-    </header>
-    <nav class="header__nav">
-      <ul class="header__nav-lista">
-        <li id="header__nav-item-activo" class="header__nav-item">
-          <a href="./aplicaciones.html">Aplicaciones</a>
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header__titulo"><a href="index.html">IA aldía</a></h1>
+  </header>
+  <nav class="header__nav">
+    <ul class="header__nav-lista">
+      <li id="header__nav-item-activo" class="header__nav-item">
+        <a href="./aplicaciones.html">Aplicaciones</a>
+      </li>
+      <li class="header__nav-item"><a href="">Noticias</a></li>
+      <li class="header__nav-item"><a href="./en-el-cine.html">En el cine</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="app-section">
+      <h2 class="app-section__titulo">
+        Aplicaciones de Inteligencia Artificial
+      </h2>
+      <article class="app-section__articulo">
+        <h2 class="app-section__articulo-titulo">DALL-E 2</h2>
+        <p class="app-section__articulo-parrafo">
+          DALL-E es un sistema de IA que, recurriendo a una potente base de
+          datos, puede crear imágenes realistas a partir de una descripción
+          elaborada en lenguaje natural.
+        </p>
+        <p class="app-section__articulo-enlace">
+          <a href="https://openai.com/product/dall-e-2" target="_blank">
+            Sitio oficial de DALL-E</a>
+        </p>
+      </article>
+
+      <article class="app-section__articulo">
+        <h2 class="app-section__articulo-titulo">Midjourney</h2>
+        <p class="app-section__articulo-parrafo">
+          Midjourney es una herramienta que permite crear imágenes a partir de
+          descripciones dadas en lenguaje natural. Funciona a través de
+          Discord. <a href="https://discord.com" target="_blank">Discord</a>
+        </p>
+
+        <p class="app-section__articulo-enlace">
+          <a href="https://www.midjourney.com/home/" target="_blank"><span>&gt;</span> Sitio oficial de Midjourney</a>
+        </p>
+      </article>
+
+      <article class="app-section__articulo">
+        <h2 class="app-section__articulo-titulo">Synthesia</h2>
+        <p class="app-section__articulo-parrafo">
+          Synthesia es una herramienta para construir vídeos a partir de
+          texto. Avatares humanos y voces generadas con IA pueden leer los
+          textos proporcionados.
+        </p>
+        <p class="app-section__articulo-enlace">
+          <a href="https://www.synthesia.io/" target="_blank"><span>&gt;</span> Sitio oficial de Synthesia</a>
+        </p>
+      </article>
+
+      <article class="app-section__articulo">
+        <h2 class="app-section__articulo-titulo">ChatGPT</h2>
+        <p class="app-section__articulo-parrafo">
+          ChatGPT es una inteligencia artificial conversacional. Procesa y
+          genera texto con una calidad y fluidez muy cercana a la de un ser
+          humano.
+        </p>
+        <p class="app-section__articulo-enlace">
+          <a href="https://chat.openai.com/" target="_blank"><span>&gt;</span> Sitio oficial de ChatGPT</a>
+        </p>
+      </article>
+
+      <article class="app-section__articulo">
+        <h2 class="app-section__articulo-titulo">Codeium</h2>
+        <p class="app-section__articulo-parrafo">
+          Codeium es una herramienta de IA que permite autocompletar
+          fragmentos de código. Tiene extensiones para navegadores y
+          plataformas de programación.
+        </p>
+        <p class="app-section__articulo-enlace">
+          <a href="https://codeium.com/" target="_blank"><span>&gt;</span> Sitio oficial de Codeium</a>
+        </p>
+      </article>
+
+      <article class="app-section__articulo">
+        <h2 class="app-section__articulo-titulo">GitHub Copilot</h2>
+        <p class="app-section__articulo-parrafo">
+          GitHub Copilot convierte las indicaciones que se le hagan en
+          lenguaje natural en sugerencias de codificación en diversos
+          lenguajes de programación.
+        </p>
+        <p class="app-section__articulo-enlace">
+          <a href="https://github.com/features/copilot" target="_blank"><span>&gt;</span> Sitio oficial de GitHub
+            Copilot</a>
+        </p>
+      </article>
+
+      <article class="app-section__articulo">
+        <h2 class="app-section__articulo-titulo">AI Suggests</h2>
+        <p class="app-section__articulo-parrafo">
+          AI Suggests, a partir de una temática indicada por el usuario,
+          genera contenido original para blogs utilizando inteligencia
+          artificial.
+        </p>
+        <p class="app-section__articulo-enlace">
+          <a href="https://ai-suggests.com/" target="_blank"><span>&gt;</span> Sitio oficial de AI Suggests</a>
+        </p>
+      </article>
+    </section>
+  </main>
+  <footer class="footer">
+    <nav class="footer__nav-legal">
+      <ul class="footer__nav-legal__lista">
+        <li class="footer__nav-legal__item">
+          <a href="#">Sobre nosotros</a>
         </li>
-        <li class="header__nav-item"><a href="">Noticias</a></li>
-        <li class="header__nav-item"><a href="">En el cine</a></li>
+        <li class="footer__nav-legal__item"><a href="#">Aviso legal</a></li>
+        <li class="footer__nav-legal__item">
+          <a href="#">Política de privacidad</a>
+        </li>
+        <li class="footer__nav-legal__item">
+          <a href="#">Politica de cookies</a>
+        </li>
       </ul>
     </nav>
 
-    <main>
-      <section class="app-section">
-        <h2 class="app-section_titulo">
-          Aplicaciones de Inteligencia Artificial
-        </h2>
-        <article class="app-section__articulo">
-          <h2 class="app-section__articulo-titulo">DALL-E 2</h2>
-          <p class="app-section__articulo-parrafo">
-            DALL-E es un sistema de IA que, recurriendo a una potente base de
-            datos, puede crear imágenes realistas a partir de una descripción
-            elaborada en lenguaje natural.
-          </p>
-          <p class="app-section__articulo-enlace">
-            <a href="https://openai.com/product/dall-e-2" target="_blank">
-              Sitio oficial de DALL-E</a
-            >
-          </p>
-        </article>
+    <nav class="footer__nav-social">
+      <ul class="footer__nav-social__lista">
+        <li class="footer__nav-social__logo">
+          <a href="#" target="_blank"><img src="./materiales3/img/twitter.svg" alt="logo twiter" /></a>
+        </li>
+        <li class="footer__nav-social__logo">
+          <a href="#" target="_blank"><img src="./materiales3/img/instagram.svg" alt="logo isntagram" /></a>
+        </li>
+        <li class="footer__nav-social__logo">
+          <a href="#" target="_blank"><img src="./materiales3/img/youtube.svg" alt="logo youtube" /></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="contenedor-copyright">
+      <p class="footer__copyright">2023 &copy; IA al día</p>
+      <p class="footer__autor">Actividad realizada por Ramón Moreno Albert</p>
+    </div>
+  </footer>
+</body>
 
-        <article class="app-section__articulo">
-          <h2 class="app-section__articulo-titulo">Midjourney</h2>
-          <p class="app-section__articulo-parrafo">
-            Midjourney es una herramienta que permite crear imágenes a partir de
-            descripciones dadas en lenguaje natural. Funciona a través de
-            Discord. <a href="https://discord.com" target="_blank">Discord</a>
-          </p>
-
-          <p class="app-section__articulo-enlace">
-            <a href="https://www.midjourney.com/home/" target="_blank"
-              ><span>&gt;</span> Sitio oficial de Midjourney</a
-            >
-          </p>
-        </article>
-
-        <article class="app-section__articulo">
-          <h2 class="app-section__articulo-titulo">Synthesia</h2>
-          <p class="app-section__articulo-parrafo">
-            Synthesia es una herramienta para construir vídeos a partir de
-            texto. Avatares humanos y voces generadas con IA pueden leer los
-            textos proporcionados.
-          </p>
-          <p class="app-section__articulo-enlace">
-            <a href="https://www.synthesia.io/" target="_blank"
-              ><span>&gt;</span> Sitio oficial de Synthesia</a
-            >
-          </p>
-        </article>
-
-        <article class="app-section__articulo">
-          <h2 class="app-section__articulo-titulo">ChatGPT</h2>
-          <p class="app-section__articulo-parrafo">
-            ChatGPT es una inteligencia artificial conversacional. Procesa y
-            genera texto con una calidad y fluidez muy cercana a la de un ser
-            humano.
-          </p>
-          <p class="app-section__articulo-enlace">
-            <a href="https://chat.openai.com/" target="_blank"
-              ><span>&gt;</span> Sitio oficial de ChatGPT</a
-            >
-          </p>
-        </article>
-
-        <article class="app-section__articulo">
-          <h2 class="app-section__articulo-titulo">Codeium</h2>
-          <p class="app-section__articulo-parrafo">
-            Codeium es una herramienta de IA que permite autocompletar
-            fragmentos de código. Tiene extensiones para navegadores y
-            plataformas de programación.
-          </p>
-          <p class="app-section__articulo-enlace">
-            <a href="https://codeium.com/" target="_blank"
-              ><span>&gt;</span> Sitio oficial de Codeium</a
-            >
-          </p>
-        </article>
-
-        <article class="app-section__articulo">
-          <h2 class="app-section__articulo-titulo">GitHub Copilot</h2>
-          <p class="app-section__articulo-parrafo">
-            GitHub Copilot convierte las indicaciones que se le hagan en
-            lenguaje natural en sugerencias de codificación en diversos
-            lenguajes de programación.
-          </p>
-          <p class="app-section__articulo-enlace">
-            <a href="https://github.com/features/copilot" target="_blank"
-              ><span>&gt;</span> Sitio oficial de GitHub Copilot</a
-            >
-          </p>
-        </article>
-
-        <article class="app-section__articulo">
-          <h2 class="app-section__articulo-titulo">AI Suggests</h2>
-          <p class="app-section__articulo-parrafo">
-            AI Suggests, a partir de una temática indicada por el usuario,
-            genera contenido original para blogs utilizando inteligencia
-            artificial.
-          </p>
-          <p class="app-section__articulo-enlace">
-            <a href="https://ai-suggests.com/" target="_blank"
-              ><span>&gt;</span> Sitio oficial de AI Suggests</a
-            >
-          </p>
-        </article>
-      </section>
-    </main>
-    <footer class="footer">
-      <nav class="footer__nav-legal">
-        <ul class="footer__nav-legal__lista">
-          <li class="footer__nav-legal__item">
-            <a href="#">Sobre nosotros</a>
-          </li>
-          <li class="footer__nav-legal__item"><a href="#">Aviso legal</a></li>
-          <li class="footer__nav-legal__item">
-            <a href="#">Política de privacidad</a>
-          </li>
-          <li class="footer__nav-legal__item">
-            <a href="#">Politica de cookies</a>
-          </li>
-        </ul>
-      </nav>
-
-      <nav class="footer__nav-social">
-        <ul class="footer__nav-social__lista">
-          <li class="footer__nav-social__logo">
-            <a href="#" target="_blank"
-              ><img src="./materiales3/img/twitter.svg" alt="logo twiter"
-            /></a>
-          </li>
-          <li class="footer__nav-social__logo">
-            <a href="#" target="_blank"
-              ><img src="./materiales3/img/instagram.svg" alt="logo isntagram"
-            /></a>
-          </li>
-          <li class="footer__nav-social__logo">
-            <a href="#" target="_blank"
-              ><img src="./materiales3/img/youtube.svg" alt="logo youtube"
-            /></a>
-          </li>
-        </ul>
-      </nav>
-      <div class="contenedor-copyright">
-        <p class="footer__copyright">2023 &copy; IA al día</p>
-        <p class="footer__autor">Actividad realizada por Ramón Moreno Albert</p>
-      </div>
-    </footer>
-  </body>
 </html>
