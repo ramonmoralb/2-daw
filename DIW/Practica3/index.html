@@ -1,145 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-  <title>Document</title>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-
-<body>
-
-  <header class="header">
-    <h1 class="header__titulo"><a href="index.html">IA aldía</a></h1>
-  </header>
-  <nav class="header__nav">
-    <ul class="header__nav-lista">
-      <li class="header__nav-item"><a href="./aplicaciones.html">Aplicaciones</a></li>
-      <li class="header__nav-item"><a href="">Noticias</a></li>
-      <li class="header__nav-item"><a href="">En el cine</a></li>
-    </ul>
-  </nav>
-  <main>
-    <section class="section-lema">
-      <h2 class="section-lema__descripcion">
-        Noticias y recursos sobre inteligencia artificial
-      </h2>
-    </section>
-    <section class="section-info">
-      <h2 class="section-info__h2">¿Qué es IA al día?</h2>
-      <p class="section-info__parrafo">
-        La inteligencia artificial es la disciplina de las ciencias de la
-        computación que tiene como propósito crear máquinas que imiten la
-        inteligencia humana para realizar tareas y que pueden mejorar a medida
-        que van recopilando información.
-      </p>
-      <p class="section-info__parrafo">
-        En <strong>IA al día</strong> encontrarás información esencial sobre
-        esta disciplina y el debate que su uso origina.
-      </p>
-    </section>
-
-    <section class="section-articulos">
-
-      <h2 class="section-articulos__titulo">Al día</h2>
-
-      <article class="section-articulos__articulo">
-        <figure class="section-articulos__articulo__figure">
-          <img class="section-articulos__articulo__figure__img" src="./materiales3/img/n-geoffrey-hinton.jpg"
-            alt="Robot sentado en un banco obesrvando un libro en papel.">
-          <figcaption class="section-articulos__articulo__figure__figcaption">
-            <time datetime="2023-05-02">02-05-2023</time>
-          </figcaption>
-        </figure>
-        <h2 class="section-articulos__articulo__titulo">
-          <a href="#">Geoffrey Hinton advierte de los peligros de la IA </a>
-        </h2>
-        <p class="section-articulos__articulo__parrafo-info">
-          Geoffrey Hinton, uno de los pioneros de la inteligencia artificial,
-          se une a las voces críticas que alertan sobre los peligros de la IA
-          y defiende que los científicos deben colaborar en el control de esta
-          tecnología…
-        </p>
-        <a class="section-articulos__articulo__leermas" href="#"><span>&gt;</span> Leer más...</a>
-      </article>
-
-      <article class="section-articulos__articulo">
-        <figure class="section-articulos__articulo__figure">
-          <img class="section-articulos__articulo__figure__img" src="./materiales3/img/n-ue-ia.jpg"
-            alt="Representación gráfica del Parlamento Europeo y la tecnología de IA.">
-          <figcaption class="section-articulos__articulo__figure__figcaption">
-            <time datetime="2023-04-20">20-04-2023</time>
-          </figcaption>
-        </figure>
-        <h2 class="section-articulos__articulo__titulo">
-          <a href="#">Bruselas prepara la ley de IA para regular su avance</a>
-        </h2>
-        <p class="section-articulos__articulo__parrafo-info">
-          Una propuesta de ley de Inteligencia Artificial se está negociando
-          en estos momentos en el Parlamento Europeo. La ley pretende proteger
-          a los consumidores que usen o sean objeto de sistemas de IA…
-        </p>
-        <a class="section-articulos__articulo__leermas" href="#"><span>&gt;</span> Leer más...</a>
-      </article>
-
-      <article class="section-articulos__articulo">
-        <figure class="section-articulos__articulo__figure">
-          <img class="section-articulos__articulo__figure__img" src="./materiales3/img/n-despacho42.jpg"
-            alt="Ilustración de un micrófono y una inteligencia artificial en el podcast Despacho 42.">
-          <figcaption class="section-articulos__articulo__figure__figcaption">
-            <time datetime="2023-02-23">23-02-2023</time>
-          </figcaption>
-        </figure>
-        <h2 class="section-articulos__articulo__titulo">
-          <a href="#">Despacho 42: Inteligencia artificial y arte</a>
-        </h2>
-        <p class="section-articulos__articulo__parrafo-info">
-          En el podcast Despacho 42 de 23 de febrero, el profesor César
-          Córcoles y la profesora Susanna Tesconi conversan sobre IA y arte
-          con Andrés Burbano, profesor de los estudios de Artes y Humanidades
-          de la UOC…
-        </p>
-        <a class="section-articulos__articulo__leermas" href="despacho-42.html"><span>&gt;</span> Leer más...</a>
-      </article>
-    </section>
-  </main>
-  <footer class="footer">
-
-
-    <nav class="footer__nav-legal">
-      <ul class="footer__nav-legal__lista">
-        <li class="footer__nav-legal__item"><a href="#">Sobre nosotros</a></li>
-        <li class="footer__nav-legal__item"><a href="#">Aviso legal</a></li>
-        <li class="footer__nav-legal__item">
-          <a href="#">Política de privacidad</a>
+  <body>
+    <header class="header">
+      <h1 class="header__titulo"><a href="index.html">IA aldía</a></h1>
+    </header>
+    <nav class="header__nav">
+      <ul class="header__nav-lista">
+        <li class="header__nav-item">
+          <a href="./aplicaciones.html">Aplicaciones</a>
         </li>
-        <li class="footer__nav-legal__item">
-          <a href="#">Politica de cookies</a>
-        </li>
+        <li class="header__nav-item"><a href="">Noticias</a></li>
+        <li class="header__nav-item"><a href="">En el cine</a></li>
       </ul>
     </nav>
+    <main>
+      <section class="section-lema">
+        <h2 class="section-lema__descripcion">
+          Noticias y recursos sobre inteligencia artificial
+        </h2>
+      </section>
+      <section class="section-info">
+        <h2 class="section-info__h2">¿Qué es IA al día?</h2>
+        <p class="section-info__parrafo">
+          La inteligencia artificial es la disciplina de las ciencias de la
+          computación que tiene como propósito crear máquinas que imiten la
+          inteligencia humana para realizar tareas y que pueden mejorar a medida
+          que van recopilando información.
+        </p>
+        <p class="section-info__parrafo">
+          En <strong>IA al día</strong> encontrarás información esencial sobre
+          esta disciplina y el debate que su uso origina.
+        </p>
+      </section>
 
-    <nav class="footer__nav-social">
-      <ul class="footer__nav-social__lista">
-        <li class="footer__nav-social__logo"><a href="#" target="_blank"><img src="./materiales3/img/twitter.svg"
-              alt="logo twiter"></a></li>
-        <li class="footer__nav-social__logo"><a href="#" target="_blank"><img src="./materiales3/img/instagram.svg"
-              alt="logo isntagram"></a></li>
-        <li class="footer__nav-social__logo"><a href="#" target="_blank"><img src="./materiales3/img/youtube.svg"
-              alt="logo youtube"></a></li>
-      </ul>
-    </nav>
+      <section class="section-articulos">
+        <h2 class="section-articulos__titulo">Al día</h2>
 
+        <article class="section-articulos__articulo">
+          <figure class="section-articulos__articulo__figure">
+            <img
+              class="section-articulos__articulo__figure__img"
+              src="./materiales3/img/n-geoffrey-hinton.jpg"
+              alt="Robot sentado en un banco obesrvando un libro en papel."
+            />
+            <figcaption class="section-articulos__articulo__figure__figcaption">
+              <time datetime="2023-05-02">02-05-2023</time>
+            </figcaption>
+          </figure>
+          <h2 class="section-articulos__articulo__titulo">
+            <a href="#">Geoffrey Hinton advierte de los peligros de la IA </a>
+          </h2>
+          <p class="section-articulos__articulo__parrafo-info">
+            Geoffrey Hinton, uno de los pioneros de la inteligencia artificial,
+            se une a las voces críticas que alertan sobre los peligros de la IA
+            y defiende que los científicos deben colaborar en el control de esta
+            tecnología…
+          </p>
+          <a class="section-articulos__articulo__leermas" href="#"
+            ><span>&gt;</span> Leer más...</a
+          >
+        </article>
 
-    <div class="contenedor-copyright">
-      <p class="footer__copyright">2023 &copy; IA al día</p>
-      <p class="footer__autor">Actividad realizada por Ramón Moreno Albert</p>
-    </div>
+        <article class="section-articulos__articulo">
+          <figure class="section-articulos__articulo__figure">
+            <img
+              class="section-articulos__articulo__figure__img"
+              src="./materiales3/img/n-ue-ia.jpg"
+              alt="Representación gráfica del Parlamento Europeo y la tecnología de IA."
+            />
+            <figcaption class="section-articulos__articulo__figure__figcaption">
+              <time datetime="2023-04-20">20-04-2023</time>
+            </figcaption>
+          </figure>
+          <h2 class="section-articulos__articulo__titulo">
+            <a href="#">Bruselas prepara la ley de IA para regular su avance</a>
+          </h2>
+          <p class="section-articulos__articulo__parrafo-info">
+            Una propuesta de ley de Inteligencia Artificial se está negociando
+            en estos momentos en el Parlamento Europeo. La ley pretende proteger
+            a los consumidores que usen o sean objeto de sistemas de IA…
+          </p>
+          <a class="section-articulos__articulo__leermas" href="#"
+            ><span>&gt;</span> Leer más...</a
+          >
+        </article>
 
-  </footer>
-</body>
+        <article class="section-articulos__articulo">
+          <figure class="section-articulos__articulo__figure">
+            <img
+              class="section-articulos__articulo__figure__img"
+              src="./materiales3/img/n-despacho42.jpg"
+              alt="Ilustración de un micrófono y una inteligencia artificial en el podcast Despacho 42."
+            />
+            <figcaption class="section-articulos__articulo__figure__figcaption">
+              <time datetime="2023-02-23">23-02-2023</time>
+            </figcaption>
+          </figure>
+          <h2 class="section-articulos__articulo__titulo">
+            <a href="#">Despacho 42: Inteligencia artificial y arte</a>
+          </h2>
+          <p class="section-articulos__articulo__parrafo-info">
+            En el podcast Despacho 42 de 23 de febrero, el profesor César
+            Córcoles y la profesora Susanna Tesconi conversan sobre IA y arte
+            con Andrés Burbano, profesor de los estudios de Artes y Humanidades
+            de la UOC…
+          </p>
+          <a
+            class="section-articulos__articulo__leermas"
+            href="despacho-42.html"
+            ><span>&gt;</span> Leer más...</a
+          >
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <nav class="footer__nav-legal">
+        <ul class="footer__nav-legal__lista">
+          <li class="footer__nav-legal__item">
+            <a href="#">Sobre nosotros</a>
+          </li>
+          <li class="footer__nav-legal__item"><a href="#">Aviso legal</a></li>
+          <li class="footer__nav-legal__item">
+            <a href="#">Política de privacidad</a>
+          </li>
+          <li class="footer__nav-legal__item">
+            <a href="#">Politica de cookies</a>
+          </li>
+        </ul>
+      </nav>
 
+      <nav class="footer__nav-social">
+        <ul class="footer__nav-social__lista">
+          <li class="footer__nav-social__logo">
+            <a href="#" target="_blank"
+              ><img src="./materiales3/img/twitter.svg" alt="logo twiter"
+            /></a>
+          </li>
+          <li class="footer__nav-social__logo">
+            <a href="#" target="_blank"
+              ><img src="./materiales3/img/instagram.svg" alt="logo isntagram"
+            /></a>
+          </li>
+          <li class="footer__nav-social__logo">
+            <a href="#" target="_blank"
+              ><img src="./materiales3/img/youtube.svg" alt="logo youtube"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="contenedor-copyright">
+        <p class="footer__copyright">2023 &copy; IA al día</p>
+        <p class="footer__autor">Actividad realizada por Ramón Moreno Albert</p>
+      </div>
+    </footer>
+  </body>
 </html>
