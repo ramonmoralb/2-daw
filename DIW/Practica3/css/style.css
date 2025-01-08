@@ -16,6 +16,11 @@
     --color-hover-enlace-texto: rgb(0, 0, 0);
 }
 
+q {
+    quotes: "«" "»";
+
+}
+
 /*Quito los estilos por defecto**/
 * {
     margin: 0;
@@ -607,4 +612,127 @@ body {
     .cine-section__titulo {
         grid-column: span 2;
     }
+}
+
+/*despacho-42*/
+.despacho__article {
+    display: grid;
+    width: 90%;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.despacho__article-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.despacho__article-header__titulo {
+    font-size: 1.7rem;
+    line-height: 2rem;
+    align-items: center;
+
+}
+
+.despacho__article-header__figure {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    img {
+        width: 100%;
+    }
+}
+
+.despacho__article-header__figcaption {
+    font-size: 0.8rem;
+}
+
+.despacho__article-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.despacho__article-section hgroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.despacho__article-section-titulo {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.despacho__article-section-lista {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.despacho__article-section-lista-item {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
+}
+
+
+.despacho__article-section-lista-item-titulo {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+}
+
+.despacho__article-section-parrafo-lista-parrafo a {
+    color: var(--color-enlace-texto);
+
+}
+
+.despacho__article-section-parrafo-lista-parrafo a:hover {
+    color: var(---color-hover-enlace-texto);
+
+}
+
+.despacho__article-footer-info-img {
+    width: 60px;
+    height: 60px;
+    margin-top: 0.5rem;
+    border-radius: 15px;
+}
+
+.despacho__article-footer-parrafo {
+    color: var(--color-contraste);
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.despacho__article-footer-parrafo:hover {
+    color: var(--color-hover-enlace-texto);
+}
+
+.despacho__article-footer-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--color-descripcion--apps);
+}
+
+.container-despacho__article-footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.despacho__article-footer-info-lista-item {
+    color: var(--color-enlace-texto);
+}
+
+.despacho__article-footer-info-lista-item:hover {
+    color: var(--color-hover-enlace-texto);
 }
