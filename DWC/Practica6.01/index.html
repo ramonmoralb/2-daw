@@ -5,30 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
         <h1>Agenda - 6.01 LocalStorage</h1>
     </header>
+    <nav>
+        <button id="boton-anadir">Añadir</button>
+        <button id="boton-listar">Listar</button>
+        <button>Buscar</button>
+        <button>Editar</button>
+    </nav>
     <main>
-        <form id="anadirAgenda">
+        <form class="formulario visible" id="formulario-anadir">
             <div>
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre">
-
+                <p class="error-nombre"></p>
             </div>
             <div>
                 <label for="apellidos">Apellidos</label>
                 <input type="text" name="apellidos" required>
-
+                <p class="error-apellidos"></p>
+            </div>
+            <div>
+                <label for="direccion">Dirección</label>
+                <input type="text" name="direccion" required>
+                <p class="error-direccion"></p>
             </div>
             <div>
                 <label for="telefono">Telefono</label>
                 <input type="text" name="telefono" required>
+                <p class="error-telefono"></p>
             </div>
             <button type="submit">Añadir</button>
         </form>
+        <ul id="lista-agenda"></ul>
+        <button id="boton-borrar-agenda">Borrar agenda</button>
+        <ul id="lista-contactos"></ul>
     </main>
     <footer>
         <small>Práctica 6.01 DAW - RMA</small>
