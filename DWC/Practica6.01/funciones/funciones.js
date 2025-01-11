@@ -1,55 +1,6 @@
-const listaContactos = document.getElementById("lista-contactos");
+import { validarForm, validarPromt } from "../validaciones/validaciones.js";
+const listaContactosFitrados = document.getElementById("lista-contactos-filtrados");
 
-const validarForm = (nombre, apellidos, direccion, telefono) => {
-    document.querySelector(".error-nombre").innerHTML = ""
-    document.querySelector(".error-apellidos").innerHTML = ""
-    document.querySelector(".error-telefono").innerHTML = ""
-    document.querySelector(".error-direccion").innerHTML = ""
-    let valido = true;
-    const patternNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]{3,}$/;
-    const patternApellidos = /^[A-Za-z\sÁÉÍÓÚáéíóúÑñ]{3,}$/;
-    const patternDireccion = /^.{3,}$/;
-    if (!patternNombre.test(nombre)) {
-        document.querySelector(".error-nombre").innerHTML = "El nombre debe contener 5 caracteres, y no debe contener números ni espacios."
-        valido = false;
-    }
-    if (!patternApellidos.test(apellidos)) {
-        document.querySelector(".error-apellidos").innerHTML = "Los apellidos deben contener al menos 5 caracteres, y no debe contener números."
-        valido = false;
-
-    } if (!patternDireccion.test(direccion)) {
-        document.querySelector(".error-direccion").innerHTML = "La direccion es erronea."
-        valido = false;
-
-    }
-    if (isNaN(telefono) && telefono.length < 9) {
-        document.querySelector(".error-telefono").innerHTML = "El teléfono contener 9 dígitos númericos"
-        valido = false;
-    }
-    return valido;
-}
-const validarPromt = (nombre, apellidos, direccion, telefono) => {
-
-    let valido = true;
-    const patternNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]{3,}$/;
-    const patternApellidos = /^[A-Za-z\sÁÉÍÓÚáéíóúÑñ]{3,}$/;
-    const patternDireccion = /^.{3,}$/;
-    if (!patternNombre.test(nombre)) {
-
-        valido = false;
-    }
-    if (!patternApellidos.test(apellidos)) {
-        valido = false;
-
-    } if (!patternDireccion.test(direccion)) {
-        valido = false;
-
-    }
-    if (isNaN(telefono) && telefono.length < 9) {
-        valido = false;
-    }
-    return valido;
-}
 const anadirLocalStore = (contacto) => {
     var agenda = JSON.parse(localStorage.getItem("agenda"));
     if (agenda === null) {
@@ -58,12 +9,8 @@ const anadirLocalStore = (contacto) => {
     agenda.push(contacto);
     localStorage.setItem("agenda", JSON.stringify(agenda))
     actualizarLista();
+}
 
-}
-const borrarAgenda = () => {
-    localStorage.clear();
-    actualizarLista();
-}
 const contactoToLi = (contacto, indice) => {
     const { nombre, apellidos, direccion, telefono } = contacto;
     const li = document.createElement("li");
@@ -94,36 +41,36 @@ const contactoToLi = (contacto, indice) => {
 }
 
 const listar = () => {
-    if (listaContactos.style.display === "none" || listaContactos.style.display === "") {
+    if (listaContactosFitrados.style.display === "none" || listaContactosFitrados.style.display === "") {
 
-        listaContactos.style.display = "block";
-        listaContactos.innerHTML = "";
+        listaContactosFitrados.style.display = "block";
+        listaContactosFitrados.innerHTML = "";
         var agenda = JSON.parse(localStorage.getItem("agenda"));
         if (agenda === null) {
             agenda = [];
         }
         if (agenda.length === 0) {
-            listaContactos.innerHTML = "<li>Lista vacía.</li>";
+            listaContactosFitrados.innerHTML = "<li>Lista vacía.</li>";
         } else {
             agenda.forEach((contacto, indice) => {
-                listaContactos.appendChild(contactoToLi(contacto, indice));
+                listaContactosFitrados.appendChild(contactoToLi(contacto, indice));
             });
         }
     } else {
-        listaContactos.style.display = "none";
+        listaContactosFitrados.style.display = "none";
     }
 }
 const actualizarLista = () => {
-    listaContactos.innerHTML = "";
+    listaContactosFitrados.innerHTML = "";
     var agenda = JSON.parse(localStorage.getItem("agenda"));
     if (agenda === null) {
         agenda = [];
     }
     if (agenda.length === 0) {
-        listaContactos.innerHTML = "<li>Lista vacía.</li>";
+        listaContactosFitrados.innerHTML = "<li>Lista vacía.</li>";
     } else {
         agenda.forEach((contacto, indice) => {
-            listaContactos.appendChild(contactoToLi(contacto, indice));
+            listaContactosFitrados.appendChild(contactoToLi(contacto, indice));
         });
     }
 }
@@ -136,15 +83,16 @@ const borrarContacto = (indiceContacto) => {
     localStorage.setItem("agenda", JSON.stringify(agenda))
     actualizarLista();
 }
+
 const mostrarContacto = (contactoFiltrados) => {
-    listaContactos.innerHTML = "";
-    listaContactos.classList.remove("visible");
+    listaContactosFitrados.innerHTML = "";
+    listaContactosFitrados.classList.remove("visible");
     if (contactoFiltrados.length > 0) {
-        contactoFiltrados.forEach(contacto => listaContactos.appendChild(contactoToLi(contacto)))
+        contactoFiltrados.forEach(contacto => listaContactosFitrados.appendChild(contactoToLi(contacto)))
     }
 }
 
-const buscarContacto = (contactoObj, fn) => { // recibe la función necesaria segun lo que se necesite
+const buscarContacto = (contactoObj, fn) => { // recibe la función necesaria según lo que se necesite
     const agenda = JSON.parse(localStorage.getItem("agenda"))
     if (agenda !== null && agenda.length > 0) {
         const resultado = agenda.filter((contacto) => contacto.nombre === contactoObj.nombre || contacto.apellidos === contactoObj.apellidos || contacto.telefono === contactoObj.telefono);
@@ -153,6 +101,7 @@ const buscarContacto = (contactoObj, fn) => { // recibe la función necesaria se
         return [];
     }
 }
+
 const editarContacto = (indice) => {
     var agenda = JSON.parse(localStorage.getItem("agenda"));
     var nombre = prompt("Nuevo nombre:")
@@ -177,4 +126,8 @@ const editarContacto = (indice) => {
     }
     actualizarLista();
 }
-export { validarForm, anadirLocalStore, borrarAgenda, listar, borrarContacto, buscarContacto, mostrarContacto, editarContacto };
+
+const isForm = (formulario) => {
+    formulario.classList.contains("visible") ? formulario.classList.remove("visible") : formulario.classList.add("visible");
+}
+export { validarForm, anadirLocalStore, listar, borrarContacto, buscarContacto, mostrarContacto, editarContacto, isForm };

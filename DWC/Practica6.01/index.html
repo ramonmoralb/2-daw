@@ -9,68 +9,71 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <h1>Agenda - 6.01 LocalStorage</h1>
     </header>
-    <nav>
-        <button id="boton-anadir">Añadir</button>
-        <button id="boton-listar">Listar</button>
-        <button id="boton-buscar">Buscar</button>
-    </nav>
-    <main>
-        <form class="formulario visible" id="formulario-anadir">
-            <div>
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre">
-                <p class="error-nombre"></p>
-            </div>
-            <div>
-                <label for="apellidos">Apellidos</label>
-                <input type="text" name="apellidos" required>
-                <p class="error-apellidos"></p>
-            </div>
-            <div>
-                <label for="direccion">Dirección</label>
-                <input type="text" name="direccion" required>
-                <p class="error-direccion"></p>
-            </div>
-            <div>
-                <label for="telefono">Telefono</label>
-                <input type="text" name="telefono" required>
-                <p class="error-telefono"></p>
-            </div>
-            <button type="submit">Añadir</button>
+    <div class="contenedor-div">
 
-        </form>
-        <form class="formulario visible" id="formulario-buscar">
-            <div>
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre">
-                <p class="error-nombre"></p>
-            </div>
-            <div>
-                <label for="apellidos">Apellidos</label>
-                <input type="text" name="apellidos">
-                <p class="error-apellidos"></p>
-            </div>
-            <div>
-                <label for="direccion">Dirección</label>
-                <input type="text" name="direccion">
-                <p class="error-direccion"></p>
-            </div>
-            <div>
-                <label for="telefono">Telefono</label>
-                <input type="text" name="telefono">
-                <p class="error-telefono"></p>
-            </div>
-            <button type="submit">Buscar</button>
-        </form>
+        <main class="contenedor-main">
+            <nav class="nav-menu">
+                <button class="btn-menu" id="boton-anadir">Añadir</button>
+                <button class="btn-menu" id="boton-listar">Listar</button>
+                <button class="btn-menu" id="boton-buscar">Buscar</button>
+            </nav>
+            <form class="formulario visible" id="formulario-anadir">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre">
+                    <p class="error-nombre"></p>
+                </div>
+                <div>
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" name="apellidos" required>
+                    <p class="error-apellidos"></p>
+                </div>
+                <div>
+                    <label for="direccion">Dirección</label>
+                    <input type="text" name="direccion" required>
+                    <p class="error-direccion"></p>
+                </div>
+                <div>
+                    <label for="telefono">Telefono</label>
+                    <input type="text" name="telefono" required>
+                    <p class="error-telefono"></p>
+                </div>
+                <button type="submit">Añadir</button>
 
-        <ul id="lista-agenda"></ul>
-        <button id="boton-borrar-agenda">Borrar agenda</button>
-        <ul id="lista-contactos"></ul>
-    </main>
-    <footer>
+            </form>
+            <form class="formulario visible" id="formulario-buscar">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre">
+                    <p class="error-nombre"></p>
+                </div>
+                <div>
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" name="apellidos">
+                    <p class="error-apellidos"></p>
+                </div>
+                <div>
+                    <label for="direccion">Dirección</label>
+                    <input type="text" name="direccion">
+                    <p class="error-direccion"></p>
+                </div>
+                <div>
+                    <label for="telefono">Telefono</label>
+                    <input type="text" name="telefono">
+                    <p class="error-telefono"></p>
+                </div>
+                <button type="submit">Buscar</button>
+            </form>
+
+            <ul class="lista-contactos" id="lista-agenda"></ul>
+
+            <ul id="lista-contactos-filtrados"></ul>
+        </main>
+    </div>
+    <footer class="pie-pagina">
         <small>Práctica 6.01 DAW - RMA</small>
     </footer>
 </body>
