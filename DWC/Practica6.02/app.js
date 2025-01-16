@@ -6,14 +6,17 @@ import {
   buscarContacto,
   mostrarContacto,
   isForm,
-  sincronizarDatosAFiresTore
+  listarLocalStorage,
+  listarFireBase,
 } from "./funciones/funciones.js";
+import { addAgendaFB } from "./firebase/firebase.js";
 
-import { fetchDatos, addAgendaFB } from "./firebase/firebase.js";
 document.addEventListener("DOMContentLoaded", async () => {
   const anadirBoton = document.getElementById("boton-anadir");
   const botonListar = document.getElementById("boton-listar");
   const botonBuscar = document.getElementById("boton-buscar");
+
+
   const botonesBorrarEntrada = document.querySelectorAll(
     "boton-borrar-entrada"
   );
@@ -78,7 +81,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const botonSincronizar = document.getElementById("sincronizar");
   botonSincronizar.addEventListener("click", addAgendaFB)
+  listarLocalStorage();
+  listarFireBase();
 
-  const prueba = await fetchDatos();
-  // console.log(prueba);
+
 });

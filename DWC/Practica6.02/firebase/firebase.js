@@ -2,13 +2,16 @@ import {
   getFirestore,
   collection,
   getDocs,
+  updateDoc,
   getDoc,
   addDoc,
   setDoc,
   doc,
   writeBatch,
+  deleteDoc,
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 import { app } from "./firebaseDatos.js";
+import { listarFireBase, listarLocalStorage } from "../funciones/funciones.js";
 
 const db = getFirestore(app);
 
@@ -36,15 +39,14 @@ const addAgendaFB = async () => {
 
   //todo cambiar telefonos por id
   // recupero los telefonos de la agenda para usarlos como identificador
-  const telefonosAgendaAcutalFB = [];
+  const idsAgendaAcutalFB = [];
   agendaActualFB.forEach((contacto) => {
-
-    telefonosAgendaAcutalFB.push(contacto.telefono)
+    idsAgendaAcutalFB.push(contacto.id)
   });
 
-  //todo cambiar telefonos por id
+
   agendaActualLS.forEach((contacto) => {
-    if (!telefonosAgendaAcutalFB.includes(contacto.telefono)) {
+    if (!idsAgendaAcutalFB.includes(contacto.id)) {
       contactosAAnadir.push(contacto);
     }
   })
@@ -52,7 +54,7 @@ const addAgendaFB = async () => {
 
   const batch = writeBatch(db);
   contactosAAnadir.forEach((contacto) => { // añade a la coleccion de fb
-    const docRef = doc(collection(db, "contactos"));
+    const docRef = doc(collection(db, "contactos"), contacto.id); // Importante el segundo parametro, sera la ref en la base de datos (id)
     batch.set(docRef, contacto);
   });
 
@@ -61,10 +63,11 @@ const addAgendaFB = async () => {
   //todo cambiar telefonos por id
   // borrar de FireBase lo que se borre en localstorage al sincronizar
   const agendaFBActualizada = await fetchDatos(); // recupera los datos de firebase para chekear
-  const telefonosAgendaAcutalizadaFB = [];
+  const idsAgendaAcutalizadaFB = [];
   agendaFBActualizada.forEach((contacto) => {
-    telefonosAgendaAcutalizadaFB.push(contacto.telefono)
+    idsAgendaAcutalizadaFB.push(contacto.id)
   });
+  console.log(idsAgendaAcutalizadaFB)
 
 
   console.log("ls", agendaActualLS);
@@ -72,5 +75,57 @@ const addAgendaFB = async () => {
 
   console.log("fb", agendaActualFBParaCheckear);
   console.log("contactos añadidos")
+  listarFireBase();
+  listarLocalStorage();
 }
-export { fetchDatos, addAgendaFB };
+
+const actualizarContacto = async (id, nuevoId, nuevoNombre, nuevoApellidos, nuevoDireccion, nuevoTelefono) => {
+  try {
+    const colleccionContacos = collection(db, "contactos");
+    const anteriorDocRef = doc(colleccionContacos, id);
+    const nuevoDocRef = doc(colleccionContacos, nuevoId);
+
+
+    const docSnap = await getDoc(oldDocRef);
+    if (!docSnap.exists()) {
+      console.log("No se encontró el documento con id:", id);
+      return;
+    }
+
+    await setDoc(nuevoDocRef, {
+      id: nuevoId,
+      nombre: nuevoNombre,
+      apellidos: nuevoApellidos,
+      direccion: nuevoDireccion,
+      telefono: nuevoTelefono,
+    });
+
+    //emimino el documento anterior
+    await deleteDoc(anteriorDocRef);
+
+    console.log("Contacto migrado a un nuevo ID correctamente.");
+  } catch (error) {
+    console.log("Error al migrar el contacto:", error);
+  }
+};
+
+const eliminarContacto = async (id) => {
+  try {
+    const colleccionContacos = collection(db, "contactos");
+    const oldDocRef = doc(colleccionContacos, id);
+    const docSnap = await getDoc(oldDocRef);
+    if (!docSnap.exists()) {
+      console.log("No se encontró el documento con id:", id);
+      return;
+    }
+    await deleteDoc(oldDocRef);
+    console.log("Contacto borrado");
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
+
+
+export { fetchDatos, addAgendaFB, actualizarContacto, eliminarContacto };
