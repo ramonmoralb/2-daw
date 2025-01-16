@@ -21,7 +21,7 @@ const validarForm = (nombre, apellidos, direccion, telefono) => {
         valido = false;
 
     }
-    if (isNaN(telefono) && telefono.length < 9) {
+    if (!/^\d{9}$/.test(telefono)) {
         document.querySelector(".error-telefono").innerHTML = "El teléfono contener 9 dígitos númericos"
         valido = false;
     }
@@ -41,7 +41,7 @@ const validarPromt = (nombre, apellidos, direccion, telefono) => {
     } if (!patternDireccion.test(direccion)) {
         valido = false;
     }
-    if (isNaN(telefono) && telefono.length < 9) {
+    if (!/^\d{9}$/.test(telefono)) {
         valido = false;
     }
     return valido;

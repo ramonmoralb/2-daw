@@ -2,12 +2,27 @@ import { validarForm, validarPromt } from "../validaciones/validaciones.js";
 const listaContactosFitrados = document.getElementById("lista-contactos-filtrados");
 
 const anadirLocalStore = (contacto) => {
+    var anadirContacto = true;
+
     var agenda = JSON.parse(localStorage.getItem("agenda"));
     if (agenda === null) {
         agenda = [];
     }
-    agenda.push(contacto);
-    localStorage.setItem("agenda", JSON.stringify(agenda))
+
+
+    if (agenda.length > 0) {
+
+        agenda.forEach((contactoAgenda) => {
+            if (contacto.telefono === contactoAgenda.telefono) {
+                alert(`El teléfono ya existe en el contacto del localStorage de [ ${contacto.nombre} ${contacto.apellidos} ]`);
+                anadirContacto = false;
+            }
+        })
+    }
+    if (anadirContacto) {
+        agenda.push(contacto);
+        localStorage.setItem("agenda", JSON.stringify(agenda))
+    }
     actualizarLista();
 }
 
@@ -60,6 +75,7 @@ const listar = () => {
         listaContactosFitrados.style.display = "none";
     }
 }
+
 const actualizarLista = () => {
     listaContactosFitrados.innerHTML = "";
     var agenda = JSON.parse(localStorage.getItem("agenda"));
@@ -108,6 +124,7 @@ const editarContacto = (indice) => {
     var apellidos = prompt("Nuevos apellidos:")
     var direccion = prompt("Nuevo dirección:")
     var telefono = prompt("Nuevo Teléfono:")
+    var id = telefono;
     if (validarPromt(nombre, apellidos, direccion, telefono)) {
         if (nombre === null) {
             nombre = agenda[indice].nombre;
@@ -117,8 +134,10 @@ const editarContacto = (indice) => {
             direccion = agenda[indice].direccion;
         } if (telefono === null) {
             telefono = agenda[indice].telefono;
+            id = agenda[indice].telefono;
+
         }
-        agenda[indice] = { nombre, apellidos, direccion, telefono }
+        agenda[indice] = { id, nombre, apellidos, direccion, telefono }
         localStorage.setItem("agenda", JSON.stringify(agenda))
     }
     else {
@@ -126,8 +145,15 @@ const editarContacto = (indice) => {
     }
     actualizarLista();
 }
+const sincronizarDatosAFiresTore = () => {
+    var agenda = JSON.parse(localStorage.getItem("agenda"));
+    if (agenda === null) {
+        agenda = [];
+    }
+    console.log(agenda)
+}
 
 const isForm = (formulario) => {
     formulario.classList.contains("visible") ? formulario.classList.remove("visible") : formulario.classList.add("visible");
 }
-export { validarForm, anadirLocalStore, listar, borrarContacto, buscarContacto, mostrarContacto, editarContacto, isForm };
+export { validarForm, anadirLocalStore, listar, borrarContacto, buscarContacto, mostrarContacto, editarContacto, isForm, sincronizarDatosAFiresTore };

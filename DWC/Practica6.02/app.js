@@ -6,9 +6,10 @@ import {
   buscarContacto,
   mostrarContacto,
   isForm,
+  sincronizarDatosAFiresTore
 } from "./funciones/funciones.js";
 
-import { fetchDatos } from "./firebase/firebase.js";
+import { fetchDatos, addAgendaFB } from "./firebase/firebase.js";
 document.addEventListener("DOMContentLoaded", async () => {
   const anadirBoton = document.getElementById("boton-anadir");
   const botonListar = document.getElementById("boton-listar");
@@ -16,9 +17,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const botonesBorrarEntrada = document.querySelectorAll(
     "boton-borrar-entrada"
   );
+
+
   const form = document.getElementById("formulario-anadir");
   const formBuscar = document.getElementById("formulario-buscar");
-  const formEditar = document.getElementById("formulario-editar");
 
   botonesBorrarEntrada.forEach((boton) =>
     boton.addEventListener("click", (e) => {
@@ -34,13 +36,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     const apellidos = e.target.apellidos.value;
     const direccion = e.target.direccion.value;
     const telefono = e.target.telefono.value;
+    const id = e.target.telefono.value;
 
     if (validarForm(nombre, apellidos, direccion, telefono)) {
       e.target.nombre.value = "";
       e.target.apellidos.value = "";
       e.target.direccion.value = "";
       e.target.telefono.value = "";
-      const contacto = { nombre, apellidos, direccion, telefono };
+      const contacto = { id, nombre, apellidos, direccion, telefono };
       anadirLocalStore(contacto);
     }
   });
@@ -73,6 +76,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
+  const botonSincronizar = document.getElementById("sincronizar");
+  botonSincronizar.addEventListener("click", addAgendaFB)
+
   const prueba = await fetchDatos();
-  console.log(prueba);
+  // console.log(prueba);
 });
