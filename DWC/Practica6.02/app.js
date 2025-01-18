@@ -83,6 +83,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   botonSincronizar.addEventListener("click", addAgendaFB)
   listarLocalStorage();
   listarFireBase();
-
-
 });

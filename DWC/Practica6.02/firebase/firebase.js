@@ -59,22 +59,6 @@ const addAgendaFB = async () => {
   });
 
   await batch.commit();
-
-  //todo cambiar telefonos por id
-  // borrar de FireBase lo que se borre en localstorage al sincronizar
-  const agendaFBActualizada = await fetchDatos(); // recupera los datos de firebase para chekear
-  const idsAgendaAcutalizadaFB = [];
-  agendaFBActualizada.forEach((contacto) => {
-    idsAgendaAcutalizadaFB.push(contacto.id)
-  });
-  console.log(idsAgendaAcutalizadaFB)
-
-
-  console.log("ls", agendaActualLS);
-  const agendaActualFBParaCheckear = await fetchDatos(); // recupera los datos de firebase para chekear
-
-  console.log("fb", agendaActualFBParaCheckear);
-  console.log("contactos añadidos")
   listarFireBase();
   listarLocalStorage();
 }
@@ -86,9 +70,8 @@ const actualizarContacto = async (id, nuevoId, nuevoNombre, nuevoApellidos, nuev
     const nuevoDocRef = doc(colleccionContacos, nuevoId);
 
 
-    const docSnap = await getDoc(oldDocRef);
+    const docSnap = await getDoc(anteriorDocRef);
     if (!docSnap.exists()) {
-      console.log("No se encontró el documento con id:", id);
       return;
     }
 
@@ -103,7 +86,6 @@ const actualizarContacto = async (id, nuevoId, nuevoNombre, nuevoApellidos, nuev
     //emimino el documento anterior
     await deleteDoc(anteriorDocRef);
 
-    console.log("Contacto migrado a un nuevo ID correctamente.");
   } catch (error) {
     console.log("Error al migrar el contacto:", error);
   }
@@ -112,20 +94,17 @@ const actualizarContacto = async (id, nuevoId, nuevoNombre, nuevoApellidos, nuev
 const eliminarContacto = async (id) => {
   try {
     const colleccionContacos = collection(db, "contactos");
-    const oldDocRef = doc(colleccionContacos, id);
-    const docSnap = await getDoc(oldDocRef);
+    const anteriorDocRef = doc(colleccionContacos, id);
+    const docSnap = await getDoc(anteriorDocRef);
     if (!docSnap.exists()) {
-      console.log("No se encontró el documento con id:", id);
       return;
     }
-    await deleteDoc(oldDocRef);
-    console.log("Contacto borrado");
+    await deleteDoc(anteriorDocRef);
   } catch (error) {
     console.log(error)
   }
 
 }
-
 
 
 export { fetchDatos, addAgendaFB, actualizarContacto, eliminarContacto };

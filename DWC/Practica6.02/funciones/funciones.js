@@ -94,7 +94,6 @@ const actualizarLista = (listaHtmlElement) => {
 
 const borrarContacto = async (indiceContacto) => {
     const agenda = await JSON.parse(localStorage.getItem("agenda"));
-
     await eliminarContacto(agenda[indiceContacto].id);
     agenda.splice(indiceContacto, 1);
     localStorage.setItem("agenda", JSON.stringify(agenda))
@@ -145,7 +144,7 @@ const editarContacto = (indice) => {
             nuevoId = agenda[indice].id;
         }
 
-        console.log(agenda[indice].id);
+
 
         actualizarContacto(agenda[indice].id, nuevoId, nuevoNombre, nuevoApellidos, nuevoDireccion, nuevoTelefono);
 
@@ -176,7 +175,6 @@ const listarLocalStorage = async () => {
 }
 const listarFireBase = async () => {
     const contactos = await fetchDatos();
-    console.log(contactos)
     const listaFB = document.getElementById("lista-comparacion-fb");
     listaFB.innerHTML = "";
 
