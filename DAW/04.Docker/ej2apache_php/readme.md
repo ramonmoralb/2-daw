@@ -17,7 +17,6 @@ Este proyecto es una práctica para el ciclo de **Desarrollo de Aplicaciones Web
 ## Requisitos
 
 - **Docker**: Asegúrate de tener **Docker** instalado en tu máquina. Si no lo tienes, puedes seguir la documentación oficial para instalarlo: [Docker Install](https://docs.docker.com/get-docker/).
-- **Docker Compose** (opcional, si deseas usar un archivo `docker-compose.yml` para facilitar el manejo de contenedores).
 
 
 ## Instalación
