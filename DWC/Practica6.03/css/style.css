@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.header h1 {
+    padding: 25px;
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+        "nav nav nav"
+        "formulario formulario aside"
+        "divContactos divContactos aside";
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Ajusta proporciones */
+    grid-template-rows: auto auto auto;
+    /* Filas automáticas según contenido */
+    gap: 1rem;
+
+}
+
+.nav-menu {
+    grid-area: nav;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 55px;
+    gap: 5rem;
+
+}
+
+button {
+    border: 0px;
+    border-radius: 5px;
+    background-color: rgb(12, 152, 108);
+    height: 2rem;
+    width: 4rem;
+    color: white;
+}
+
+#container-form {
+    grid-area: formulario;
+    display: flex;
+    justify-content: center;
+}
+
+#formulario-anadir,
+#formulario-buscar,
+#formulario-editar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formulario {
+    width: 500px;
+    padding: 2rem;
+    border: 1px gray solid;
+    border-radius: 3rem;
+    margin: 1rem;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+
+
+.formulario div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#container-div {
+    grid-area: divContactos;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#filtrado-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lista-contactos,
+#lista-aside-filtrados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#lista-aside-filtrados li {
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    border: 1px gray solid;
+    border-radius: 3rem;
+    margin: 1rem;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+
+
+}
+
+#lista-contactos li {
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    border: 1px gray solid;
+    border-radius: 3rem;
+    margin: 1rem;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+.aside-filtrado {
+    grid-area: aside;
+}
+
+.container-div {
+    visibility: hidden;
+    display: none;
+}
+
+.visible {
+    display: block;
+    visibility: visible;
+}
