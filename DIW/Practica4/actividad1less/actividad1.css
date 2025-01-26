@@ -1,0 +1,23 @@
+.menu-navegacion {
+  background-color: black;
+  padding: 1rem;
+}
+.menu-navegacion ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+}
+.menu-navegacion ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+}
+.menu-navegacion ul li a:hover {
+  background-color: gray;
+  color: black;
+}
