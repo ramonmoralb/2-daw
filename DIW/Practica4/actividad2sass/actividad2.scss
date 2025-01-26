@@ -1,0 +1,69 @@
+@use 'sass:color';
+@use "sass:math";
+
+$color-enlace: rgb(102, 0, 255);
+/*funcion de color*/
+$color-nav: gray;
+$color-enlace-35luminosidad: color.scale($color-enlace, $lightness: -35%);
+$numero-items-menu: 3;
+/*funcion matemática*/
+$ancho-items: math.div(100%, $numero-items-menu);
+
+.nav {
+    background-color: $color-nav;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    border-radius: 10px;
+}
+
+@mixin enlaceTransicion() {
+    background-color: $color-enlace-35luminosidad;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@mixin subrayado() {
+    text-decoration: underline;
+}
+
+%base-item-menu {
+    width: $ancho-items;
+    background-color: $color-enlace;
+    text-decoration: none;
+    color: white;
+    padding: 2rem;
+    border: 0;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+    &:hover {
+        @include enlaceTransicion();
+        transform: translateY(-3px);
+    }
+
+    &:active {
+        @include subrayado();
+        transform: scale(0.95);
+    }
+}
+
+.nav {
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style: none;
+
+        li {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .enlace {
+            @extend %base-item-menu;
+        }
+    }
+}

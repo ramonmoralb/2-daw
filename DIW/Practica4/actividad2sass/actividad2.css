@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/*funcion de color*/
+/*funcion matemática*/
+.nav {
+  background-color: gray;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.nav .menu .enlace {
+  width: 33.3333333333%;
+  background-color: rgb(102, 0, 255);
+  text-decoration: none;
+  color: white;
+  padding: 2rem;
+  border: 0;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+.nav .menu .enlace:hover {
+  background-color: rgb(66.3, 0, 165.75);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+.nav .menu .enlace:active {
+  text-decoration: underline;
+  transform: scale(0.95);
+}
+
+.nav .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+}
+.nav .menu li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=actividad2.css.map */
